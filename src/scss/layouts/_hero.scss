@@ -1,0 +1,106 @@
+.hero {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+  background-image: url("/src/img/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Темний напівпрозорий фон для читабельності тексту */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Тінь над фоном */
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2; /* Щоб текст був поверх затемнення */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Текстовий блок */
+  .hero-text-box {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      color: #f4d03f;
+    }
+
+    .hero-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+
+      &--dark {
+        color: #fff;
+      }
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #f1f1f1;
+
+      &--dark {
+        color: #e6e6e6;
+      }
+    }
+  }
+}
+
+/* Адаптивність */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 80px 15px;
+
+    .hero-text-box {
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .hero-title {
+        font-size: 36px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 60px 10px;
+
+    .hero-text-box {
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 12px;
+      }
+    }
+  }
+}

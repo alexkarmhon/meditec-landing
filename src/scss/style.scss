@@ -1,6 +1,8 @@
-@use "fonts";
-@use "reset";
-@use "vars";
-@use "global";
-@use "main";
-@use "badges";
+@use "base/reset";
+@use "base/common";
+@use "base/container";
+
+@use "components/mobile-menu";
+
+@use "layouts/header";
+@use "layouts/hero";

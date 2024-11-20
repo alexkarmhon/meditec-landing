@@ -1,0 +1,36 @@
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  width: 60px;
+  background: linear-gradient(to top, #94a7ae, #d8e3e7);
+  border-radius: 12px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  .cross-icon {
+    display: none;
+  }
+
+  &.is-open .cross-icon {
+    display: block;
+  }
+
+  &.is-open .burger-icon {
+    display: none;
+  }
+}
+
+.mobile-menu-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  .mobile-menu-btn:hover &,
+  .mobile-menu-btn:focus & {
+    fill: var(--accent-color);
+  }
+}
