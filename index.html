@@ -2,7 +2,7 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/meditec-landing/sass.svg" />
+    <link rel="icon" type="image/png" href="/meditec-landing/assets/header-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       Крем для зняття болю в суглобах діє максимально прямим шляхом. Швидко
@@ -15,72 +15,67 @@
   </head>
   <body>
     <div class="wrapper">
-      <main class="main">
+      <header class="header">
         <div class="container">
-          <a
-            class="main-logo"
-            href="https://sass-lang.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              class="main-logo-img"
-              src="/meditec-landing/assets/logo-sass.png"
-              alt="Sass logo"
-              width="360"
-              height="360"
-            />
-          </a>
-
-          <h1 class="main-title title">
-            <span>Sass</span> <br />simple starter template
-          </h1>
-
-          <ul class="main-badges badges">
-            <li class="badges-item">
-              <a class="badges-link" href="https://vitejs.dev/" target="_blank"
-                >Vite</a
-              >
-            </li>
-            <li class="badges-item">
-              <a
-                class="badges-link"
-                href="https://elad2412.github.io/the-new-css-reset/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                The New CSS Reset
-              </a>
-            </li>
-            <li class="badges-item">
-              <a
-                class="badges-link"
-                href="https://www.npmjs.com/package/autoprefixer"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Autoprefixer
-              </a>
-            </li>
-            <li class="badges-item">
-              <a
-                class="badges-link"
-                href="https://www.npmjs.com/package/postcss-sort-media-queries"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                postcss-sort-media-queries
-              </a>
-            </li>
-          </ul>
+          <nav class="nav-bar">
+            <a href="./index.html" class="logo link">
+              <img src="/meditec-landing/assets/header-logo.png" alt="logotype" />
+            </a>
+            <div class="menu">
+              <ul class="menu__lang-bar">
+                <li><a href="">Укр</a></li>
+                <li><a href="/ru.html">Рус</a></li>
+                <li><a href="">Eng</a></li>
+              </ul>
+              <ul class="menu__links-bar">
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#production">Каталог</a></li>
+                <li><a href="#advantages">Переваги</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+              </ul>
+            </div>
+          </nav>
+          <button type="button" class="mobile-menu-btn" data-menu-button>
+            <svg
+              class="mobile-menu-icon"
+              aria-label="Перемикач мобільного меню"
+            >
+              <use
+                class="burger-icon"
+                href="/meditec-landing/assets/symbol-defs.svg#icon-burger-menu"
+              ></use>
+              <use
+                class="cross-icon"
+                href="./images/symbol-defs.svg#icon-cross"
+              ></use>
+            </svg>
+          </button>
         </div>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="container">
+            <div class="hero-content-box">
+              <div class="hero-content-text"></div>
+              <div class="hero-content-image"></div>
+              <div></div>
+            </div>
+          </div>
+        </section>
+        <section class="about" id="about">
+          <div class="container"></div>
+        </section>
+        <section class="production" id="production">
+          <div class="container"></div>
+        </section>
+        <section class="advantages" id="advantages">
+          <div class="container"></div>
+        </section>
+        <section class="contacts" id="contacts">
+          <div class="container"></div>
+        </section>
       </main>
-      <footer class="footer">
-        <div class="container">
-          Made with ❤ by
-          <a href="#" target="_blank" rel="noopener noreferrer"> OKG </a>
-        </div>
-      </footer>
+      <footer></footer>
     </div>
 
     
