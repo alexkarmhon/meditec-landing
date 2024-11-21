@@ -11,27 +11,32 @@
     display: none;
   }
 
-  .cross-icon {
-    display: none;
-  }
+  &__icon {
+    width: 40px;
 
-  &.is-open .cross-icon {
-    display: block;
-  }
-
-  &.is-open .burger-icon {
-    display: none;
-  }
-}
-
-.mobile-menu-icon {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-
-  .mobile-menu-btn:hover &,
-  .mobile-menu-btn:focus & {
-    fill: var(--accent-color);
+    &:before,
+    &:after,
+    & div {
+      background: #fff;
+      content: "";
+      display: block;
+      height: 4.4px;
+      border-radius: 3px;
+      margin: 4px 0;
+      transition: 0.5s;
+    }
+    .is-open &:before {
+      margin: 8px 0;
+      transform: translateY(12px) rotate(135deg);
+    }
+    .is-open &:after {
+      margin: 8px 0;
+      transform: translateY(-12px) rotate(-135deg);
+    }
+    .is-open & div {
+      margin: 8px 0;
+      transform: scale(0);
+    }
   }
 }
 
