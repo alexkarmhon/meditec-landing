@@ -1,8 +1,12 @@
+@use "utils/vars";
+@use "utils/fonts";
+
 @use "base/reset";
 @use "base/common";
 @use "base/container";
 
-@use "components/mobile-menu";
+@use "components/mobile-menu-btn";
+@use "components/main-btn";
 
 @use "layouts/header";
 @use "layouts/hero";

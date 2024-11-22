@@ -1,4 +1,76 @@
 @charset "UTF-8";
+/* roboto-condensed-100 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../fonts/Roboto-Condensed-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-200 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../../fonts/Roboto-Condensed-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-300 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../fonts/Roboto-Condensed-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-regular - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/Roboto-Condensed-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-500 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../fonts/Roboto-Condensed-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-600 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../fonts/Roboto-Condensed-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-700 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../fonts/Roboto-Condensed-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-800 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../../fonts/Roboto-Condensed-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-900 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../../fonts/Roboto-Condensed-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 /***
     The new CSS reset - version 1.11 (last updated 20.9.2023)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -121,14 +193,20 @@ meter {
 }
 
 body {
-  background-color: var(--main-white-color);
-  color: var(--p-text-color);
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
+  font-family: _, Arial, sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  list-style-position: inside;
+  color: #313131;
+  background-color: #f9f9f9;
+  line-height: 24px;
+  letter-spacing: 0.01em;
 }
 
 h1,
@@ -187,10 +265,6 @@ img {
   border-radius: 2px;
 }
 
-.title {
-  color: var(--link-title-black);
-}
-
 .container {
   width: 100%;
   margin-left: auto;
@@ -241,23 +315,40 @@ img {
     display: none;
   }
 }
-.mobile-menu-btn .cross-icon {
-  display: none;
+.mobile-menu-btn__icon {
+  width: 80%;
+  cursor: pointer;
 }
-.mobile-menu-btn.is-open .cross-icon {
+.mobile-menu-btn__icon span {
   display: block;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 1.5px;
+  height: 4px;
+  background: #fff;
+  transition: all 0.3s;
+  position: relative;
 }
-.mobile-menu-btn.is-open .burger-icon {
-  display: none;
+.mobile-menu-btn__icon span + span {
+  margin-top: 6px;
 }
-
-.mobile-menu-icon {
-  width: 40px;
-  height: 40px;
-  padding: 0;
+.mobile-menu-btn__icon.active span:nth-child(1) {
+  animation: ease 0.7s top forwards;
 }
-.mobile-menu-btn:hover .mobile-menu-icon, .mobile-menu-btn:focus .mobile-menu-icon {
-  fill: var(--accent-color);
+.mobile-menu-btn__icon.not-active span:nth-child(1) {
+  animation: ease 0.7s top-2 forwards;
+}
+.mobile-menu-btn__icon.active span:nth-child(2) {
+  animation: ease 0.7s scaled forwards;
+}
+.mobile-menu-btn__icon.not-active span:nth-child(2) {
+  animation: ease 0.7s scaled-2 forwards;
+}
+.mobile-menu-btn__icon.active span:nth-child(3) {
+  animation: ease 0.7s bottom forwards;
+}
+.mobile-menu-btn__icon.not-active span:nth-child(3) {
+  animation: ease 0.7s bottom-2 forwards;
 }
 
 .mobile-menu {
@@ -294,6 +385,106 @@ img {
   height: 100vh;
 }
 
+@keyframes top {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+  50% {
+    top: 22px;
+    transform: rotate(0);
+  }
+  100% {
+    top: 22px;
+    transform: translateY(-12px) rotate(45deg);
+  }
+}
+@keyframes top-2 {
+  0% {
+    top: 22px;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 22px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+@keyframes bottom {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+  50% {
+    bottom: 22px;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 22px;
+    transform: translateY(12px) rotate(135deg);
+  }
+}
+@keyframes bottom-2 {
+  0% {
+    bottom: 22px;
+    transform: rotate(135deg);
+  }
+  50% {
+    bottom: 22px;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+}
+@keyframes scaled {
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes scaled-2 {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.main-button {
+  font-family: _, Arial, sans-serif;
+  font-size: 0.833em;
+  font-weight: 300;
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-decoration: none;
+  float: left;
+  background: linear-gradient(#fff, #d6e4ea);
+  border-radius: 12px;
+  color: #313131;
+  padding: 8px 40px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+  transition: all 350ms ease;
+  cursor: pointer;
+}
+.main-button:hover {
+  background: linear-gradient(#fff, #c3e0ed);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+  transition: all 350ms ease;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -319,6 +510,7 @@ img {
   align-items: center;
 }
 .logo img {
+  margin-left: -8px;
   width: 150px;
   height: auto;
 }
@@ -371,89 +563,129 @@ img {
   }
 }
 .hero {
-  position: relative;
-  padding: 100px 20px;
-  text-align: center;
-  color: #fff;
-  background-image: url("/src/img/header-bg.jpg");
+  background-image: url("/src/img/header-bg-1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Темний напівпрозорий фон для читабельності тексту */
-  /* Текстовий блок */
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Тінь над фоном */
-  z-index: 1;
+  padding: 0 0 40px 0;
 }
 .hero .container {
-  position: relative;
-  z-index: 2; /* Щоб текст був поверх затемнення */
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 10px;
 }
-.hero .hero-text-box {
+.hero .container .slogan-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 200px 0 0 0;
+}
+.hero .container .slogan-box .slogan {
+  width: 100%;
   max-width: 800px;
+  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  border-radius: 20px;
+}
+.hero .container .slogan-box .slogan .slogan-txt {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.hero .container .slogan-box .slogan .slogan-txt .product_title {
+  font-family: _, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  max-width: 500px;
+  color: #206096;
+  line-height: 1em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.hero .container .slogan-box .slogan .slogan-txt .product-features {
+  text-align: center;
+  list-style: none;
+  padding: 0;
   margin: 0 auto;
 }
-.hero .hero-text-box .subtitle {
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  color: #f4d03f;
+.hero .container .slogan-box .slogan .slogan-txt .product-features li {
+  display: flex;
+  text-align: start;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #666;
 }
-.hero .hero-text-box .hero-title {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
+.hero .container .slogan-box .slogan .slogan-txt .product-features li p {
+  font-family: _, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #022e4e;
+  line-height: 24px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: block;
 }
-.hero .hero-text-box .hero-title--dark {
+.hero .container .slogan-box .slogan .slogan-txt .product-features li:before {
+  content: url("/src/img/vb.png");
+  margin-right: 10px;
+}
+.hero .container .slogan-box .slogan .slogan-txt .product_card {
+  margin-top: 20px;
+}
+.hero .container .slogan-box .slogan .slogan-txt .product_card .slogan-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
   color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-.hero .hero-text-box .description {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #f1f1f1;
+.hero .container .slogan-box .slogan .slogan-txt .product_card .slogan-button:hover {
+  background-color: #0056b3;
 }
-.hero .hero-text-box .description--dark {
-  color: #e6e6e6;
+.hero .container .slogan-box .slogan .clr {
+  clear: both;
 }
-
-/* Адаптивність */
+@media screen and (max-width: 1024px) {
+  .hero .slogan-box .slogan .slogan-txt .product_title {
+    font-size: 1.8rem;
+  }
+  .hero .slogan-box .slogan .slogan-txt .vb2 li {
+    font-size: 0.95rem;
+  }
+}
 @media screen and (max-width: 768px) {
-  .hero {
-    padding: 80px 15px;
+  .hero .slogan-box {
+    align-items: flex-start;
   }
-  .hero .hero-text-box .subtitle {
-    font-size: 16px;
+  .hero .slogan-box .slogan .slogan-txt .product_title {
+    font-size: 1.6rem;
   }
-  .hero .hero-text-box .hero-title {
-    font-size: 36px;
+  .hero .slogan-box .slogan .slogan-txt .vb2 li {
+    font-size: 0.9rem;
   }
-  .hero .hero-text-box .description {
-    font-size: 14px;
+  .hero .slogan-box .slogan .slogan-txt .product_card .slogan-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 480px) {
   .hero {
-    padding: 60px 10px;
+    padding: 0;
   }
-  .hero .hero-text-box .subtitle {
-    font-size: 14px;
+  .hero .slogan-box .slogan .slogan-txt .product_title {
+    font-size: 1.4rem;
   }
-  .hero .hero-text-box .hero-title {
-    font-size: 28px;
+  .hero .slogan-box .slogan .slogan-txt .vb2 li {
+    font-size: 0.85rem;
   }
-  .hero .hero-text-box .description {
-    font-size: 12px;
+  .hero .slogan-box .slogan .slogan-txt .product_card .slogan-button {
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=style.css.map */

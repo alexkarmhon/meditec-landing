@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobile-menu");
   const buttonIcon = document.querySelector(".mobile-menu-btn__icon");
 
+  // ///// Var.1 /////
   // menuButton.addEventListener("click", () => {
   //   const isOpen = menuButton.classList.toggle("is-open"); // Додаємо/знімаємо клас `is-open`
   //   mobileMenu.classList.toggle("is-open", isOpen); // Синхронізуємо стан меню

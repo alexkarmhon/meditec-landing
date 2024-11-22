@@ -1,106 +1,151 @@
+@import "../utils/vars";
+@import "../utils/mixins";
+
 .hero {
-  position: relative;
-  padding: 100px 20px;
-  text-align: center;
-  color: #fff;
-  background-image: url("/src/img/header-bg.jpg");
+  background-image: url("/src/img/header-bg-1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Темний напівпрозорий фон для читабельності тексту */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Тінь над фоном */
-    z-index: 1;
-  }
+  padding: 0 0 40px 0;
 
   .container {
-    position: relative;
-    z-index: 2; /* Щоб текст був поверх затемнення */
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 10px;
+
+    .slogan-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      margin: 0 auto;
+      padding: 200px 0 0 0;
+
+      .slogan {
+        width: 100%;
+        max-width: 800px;
+        // padding: 40px;
+        background: $slogan-background;
+        margin-bottom: 40px;
+        border-radius: 20px;
+
+        .slogan-txt {
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+
+          .product_title {
+            @include text-style(_, 2em, 600);
+            max-width: 500px;
+            color: $main-title-color;
+            line-height: 1em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+          }
+
+          .product-features {
+            text-align: center;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+
+            li {
+              display: flex;
+              text-align: start;
+              margin-bottom: 10px;
+              font-size: 1rem;
+              color: #666;
+
+              p {
+                @include text-style(_, 1.1em, 600);
+                color: #022e4e;
+                line-height: 24px;
+                margin-bottom: 10px;
+                width: 100%;
+                display: block;
+              }
+
+              &:before {
+                content: url("/src/img/vb.png");
+                margin-right: 10px;
+              }
+            }
+          }
+
+          .product_card {
+            margin-top: 20px;
+
+            .slogan-button {
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: #007bff;
+              color: #fff;
+              border-radius: 5px;
+              text-transform: uppercase;
+              font-weight: bold;
+              cursor: pointer;
+              transition: background-color 0.3s;
+
+              &:hover {
+                background-color: #0056b3;
+              }
+            }
+          }
+        }
+
+        .clr {
+          clear: both;
+        }
+      }
+    }
   }
 
-  /* Текстовий блок */
-  .hero-text-box {
-    max-width: 800px;
-    margin: 0 auto;
-
-    .subtitle {
-      font-size: 18px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      color: #f4d03f;
+  // Адаптивність
+  @media screen and (max-width: 1024px) {
+    .slogan-box .slogan .slogan-txt .product_title {
+      font-size: 1.8rem;
     }
 
-    .hero-title {
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-
-      &--dark {
-        color: #fff;
-      }
-    }
-
-    .description {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #f1f1f1;
-
-      &--dark {
-        color: #e6e6e6;
-      }
+    .slogan-box .slogan .slogan-txt .vb2 li {
+      font-size: 0.95rem;
     }
   }
-}
 
-/* Адаптивність */
-@media screen and (max-width: 768px) {
-  .hero {
-    padding: 80px 15px;
+  @media screen and (max-width: 768px) {
+    .slogan-box {
+      align-items: flex-start;
+    }
 
-    .hero-text-box {
-      .subtitle {
-        font-size: 16px;
-      }
+    .slogan-box .slogan .slogan-txt .product_title {
+      font-size: 1.6rem;
+    }
 
-      .hero-title {
-        font-size: 36px;
-      }
+    .slogan-box .slogan .slogan-txt .vb2 li {
+      font-size: 0.9rem;
+    }
 
-      .description {
-        font-size: 14px;
-      }
+    .slogan-box .slogan .slogan-txt .product_card .slogan-button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
     }
   }
-}
 
-@media screen and (max-width: 480px) {
-  .hero {
-    padding: 60px 10px;
+  @media screen and (max-width: 480px) {
+    padding: 0;
 
-    .hero-text-box {
-      .subtitle {
-        font-size: 14px;
-      }
+    .slogan-box .slogan .slogan-txt .product_title {
+      font-size: 1.4rem;
+    }
 
-      .hero-title {
-        font-size: 28px;
-      }
+    .slogan-box .slogan .slogan-txt .vb2 li {
+      font-size: 0.85rem;
+    }
 
-      .description {
-        font-size: 12px;
-      }
+    .slogan-box .slogan .slogan-txt .product_card .slogan-button {
+      // padding: 6px 12px;
+      font-size: 0.8rem;
     }
   }
 }
