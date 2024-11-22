@@ -1,4 +1,76 @@
 @charset "UTF-8";
+/* roboto-condensed-100 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../fonts/Roboto-Condensed-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-200 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../../fonts/Roboto-Condensed-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-300 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../fonts/Roboto-Condensed-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-regular - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/Roboto-Condensed-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-500 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../fonts/Roboto-Condensed-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-600 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../fonts/Roboto-Condensed-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-700 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../fonts/Roboto-Condensed-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-800 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../../fonts/Roboto-Condensed-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-900 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../../fonts/Roboto-Condensed-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 /***
     The new CSS reset - version 1.11 (last updated 20.9.2023)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -139,14 +211,20 @@ meter {
 }
 
 body {
-  background-color: var(--main-white-color);
-  color: var(--p-text-color);
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
+  font-family: _, Arial, sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  list-style-position: inside;
+  color: #313131;
+  background-color: #f9f9f9;
+  line-height: 24px;
+  letter-spacing: 0.01em;
 }
 
 h1,
@@ -205,10 +283,6 @@ img {
   height: 4px;
   background: var(--accent-color);
   border-radius: 2px;
-}
-
-.title {
-  color: var(--link-title-black);
 }
 
 .container {
@@ -653,6 +727,44 @@ img {
             transform: scale(1);
   }
 }
+.main-button {
+  font-family: _, Arial, sans-serif;
+  font-size: 0.833em;
+  font-weight: 300;
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-decoration: none;
+  float: left;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d6e4ea));
+  background: -webkit-linear-gradient(#fff, #d6e4ea);
+  background: -moz-linear-gradient(#fff, #d6e4ea);
+  background: linear-gradient(#fff, #d6e4ea);
+  border-radius: 12px;
+  color: #313131;
+  padding: 8px 40px;
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  transition: all 350ms ease;
+  cursor: pointer;
+}
+.main-button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c3e0ed));
+  background: -webkit-linear-gradient(#fff, #c3e0ed);
+  background: -moz-linear-gradient(#fff, #c3e0ed);
+  background: linear-gradient(#fff, #c3e0ed);
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -698,6 +810,7 @@ img {
           align-items: center;
 }
 .logo img {
+  margin-left: -8px;
   width: 150px;
   height: auto;
 }
@@ -706,72 +819,125 @@ img {
   display: none;
 }
 .hero {
-  position: relative;
-  padding: 100px 20px;
-  text-align: center;
-  color: #fff;
-  background-image: url("/meditec-landing/assets/header-bg.jpg");
+  background-image: url("/meditec-landing/assets/header-bg-1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Темний напівпрозорий фон для читабельності тексту */
-  /* Текстовий блок */
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Тінь над фоном */
-  z-index: 1;
+  padding: 0 0 40px 0;
 }
 .hero .container {
-  position: relative;
-  z-index: 2; /* Щоб текст був поверх затемнення */
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 10px;
 }
-.hero .hero-text-box {
+.hero .container .slogan-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 200px 0 0 0;
+}
+.hero .container .slogan-box .slogan {
+  width: 100%;
   max-width: 800px;
+  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  border-radius: 20px;
+}
+.hero .container .slogan-box .slogan .slogan-txt {
+  padding: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+}
+.hero .container .slogan-box .slogan .slogan-txt .product_title {
+  font-family: _, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  max-width: 500px;
+  color: #206096;
+  line-height: 1em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.hero .container .slogan-box .slogan .slogan-txt .product-features {
+  text-align: center;
+  list-style: none;
+  padding: 0;
   margin: 0 auto;
 }
-.hero .hero-text-box .subtitle {
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  color: #f4d03f;
+.hero .container .slogan-box .slogan .slogan-txt .product-features li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  text-align: start;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #666;
 }
-.hero .hero-text-box .hero-title {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
+.hero .container .slogan-box .slogan .slogan-txt .product-features li p {
+  font-family: _, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #022e4e;
+  line-height: 24px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: block;
 }
-.hero .hero-text-box .hero-title--dark {
+.hero .container .slogan-box .slogan .slogan-txt .product-features li:before {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmYzNTRlZmM3MCwgMjAyMy8xMS8wOS0xMjowNTo1MyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplOTY0NmU5OS04NDU1LTIzNDAtYjgwZi1kY2VjZWI4OGZhZmIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RThCQzQzOTJBMUNDMTFFRjgyQTQ4M0VFMTUyQTgxM0UiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RThCQzQzOTFBMUNDMTFFRjgyQTQ4M0VFMTUyQTgxM0UiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjEgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Yjk3N2E3YjQtOWNlYy1mNTQ5LTljMDctYTE5NjRiMmI1NjQ0IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MGNjM2YzMmEtNTFmYi03YTRjLTg1NTItY2RjMTQxZTVlNGFjIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+2nCdnAAABFRJREFUeNqMlX9olVUYx59z3vfezVXXMtlWWA3LP0aYRv5hJBGMXCki0eiHEYSBLDJyUX+VUas/goqWRERFRUElIVGjiBltZmuToh/2w9WowHDiZtTm3J3zvu/p85z3bF5vV+3dvvc5P57z/DrP8xzjnJPnhyakY+AvydVYMeJEUicuVZoWGK8HLYyXQxexnktT15Uk6VvMN4lzO6B7JOP3Z2VyRprr66S/famYrn3jsqVvVPJn5ySfM3I88UwRgrZyYDPj88sPq2KEd6DkJ+Y9KND1XtAJT5/ntSIyWpSmS+dj8Gu/S5SzchbCS+wlaboCprcRtGTOokoFadqWJm6K+cdBwSzPc9AH/FpkRMZnxOYJSy3C2WdFbgdfgSVy+m9aMjsrvw7wkR8lKCEqtia2KDNirWFFXpf/9ynvMW9S5WfMGnbf814AG1sj4GJrzDqWlrnqAh8Et4GxIJ54yT+nMaANnnY1w+awHg8eYvwhun7BqFWu3E6Rb8SaZ6Hbma8IOxeBg3IKa7xnzr0ICpbQ1LKwUd3h/2tc7Gd/Qxn7IdbUdXFJup95tzFmMXTkDGHkgNsSc+5mHK4Li1dRF52sPco4heVdfm/0rqgCVZTKy+zNM2LUpGOMa6oIn4B/GAXtREXWVmxuBS0I15Bc5yvPue1zrosbRM8ngfe3KsJ/Bc2cuRd6gabacvffHOnht4nY72J8CSiR49cQTv07jOlHtAOgcLjipJ5bivARzsyDwamCRVWssDAMQusR8if0DjCMQmciiy6SyGkinaSgh/1WhM/4ojMypfWiCnKnuKQGmL+FLg7zUaNiS6k4LfksXrMhGsOk1rJa0CjkGeXtGfL5QvAdWDWbtu6E9TqfVfCUV1jy67WiN2ukEYbIVrhZ7TsH7NZC07jHcSQapkyJ258F1Oz2lUtzwPqVwY1r/RbLn1dUvFbrl+B9sCMIV2nvYPF96n6ci7MidKIKDvje5ONu2JdRPxa5S39ip83JyMOM7wd7wF5QrPAiF/a3EaJpG9lXTBRReEkRoYex/jzoBpImj9KfGb/AmnreG9N+B7RaMaw2KJC5Fuy84AYwDp7BkG62hsiiQROZH1zifd8L35vQI2AjeBW+uzMXTWecZO5oI+vVCmXz8bJGFIFzwRpwJXgDPMJb8DT0Bt+wU/me3zuDgv6yrBxAVl98PLucPmx5CfoYchf6WFqrD8g08x9ZV6wHTwDairvMGSlg4QTeHixLhhO2GdPmLznxL5THPcw/RdFm6BdgWcU9fABWZwpMAxm1MrwHYyd3AV9kq8msEU3XeHI6kUJdnD3yItf7tixyS8j/brAL/O2rWuTqUBv6XR5aQ3kdafO7Cet3+mLjfY+bF9TIvkNFKczPZ8+cyK0hll1gXUC1b0GgCwP9DGzy1W1C0RVLYvtbG+WK+lo5OlUqP7wNNPo7ERkCR8FkuMhZ/BF4DwSjWuZaB5YbhD+5tkn+FWAAQ6r3vykM2acAAAAASUVORK5CYII=");
+  margin-right: 10px;
+}
+.hero .container .slogan-box .slogan .slogan-txt .product_card {
+  margin-top: 20px;
+}
+.hero .container .slogan-box .slogan .slogan-txt .product_card .slogan-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
   color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
-.hero .hero-text-box .description {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #f1f1f1;
+.hero .container .slogan-box .slogan .slogan-txt .product_card .slogan-button:hover {
+  background-color: #0056b3;
 }
-.hero .hero-text-box .description--dark {
-  color: #e6e6e6;
+.hero .container .slogan-box .slogan .clr {
+  clear: both;
 }
-
-/* Адаптивність */
-
 @media screen and (min-width: 480px){
   .container {
     width: 480px;
     margin: 0 auto;
   }
 }
-
 @media screen and (min-width: 768px){
   .container {
     width: 768px;
@@ -844,7 +1010,6 @@ img {
     color: #c8aa76;
   }
 }
-
 @media screen and (min-width: 1280px){
   .container {
     width: 1200px;
@@ -856,33 +1021,43 @@ img {
     padding-right: 15px;
   }
 }
-
-@media screen and (max-width: 768px){
-  .hero {
-    padding: 80px 15px;
+@media screen and (max-width: 1024px){
+  .hero .slogan-box .slogan .slogan-txt .product_title {
+    font-size: 1.8rem;
   }
-  .hero .hero-text-box .subtitle {
-    font-size: 16px;
-  }
-  .hero .hero-text-box .hero-title {
-    font-size: 36px;
-  }
-  .hero .hero-text-box .description {
-    font-size: 14px;
+  .hero .slogan-box .slogan .slogan-txt .vb2 li {
+    font-size: 0.95rem;
   }
 }
-
+@media screen and (max-width: 768px){
+  .hero .slogan-box {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+            align-items: flex-start;
+  }
+  .hero .slogan-box .slogan .slogan-txt .product_title {
+    font-size: 1.6rem;
+  }
+  .hero .slogan-box .slogan .slogan-txt .vb2 li {
+    font-size: 0.9rem;
+  }
+  .hero .slogan-box .slogan .slogan-txt .product_card .slogan-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
 @media screen and (max-width: 480px){
   .hero {
-    padding: 60px 10px;
+    padding: 0;
   }
-  .hero .hero-text-box .subtitle {
-    font-size: 14px;
+  .hero .slogan-box .slogan .slogan-txt .product_title {
+    font-size: 1.4rem;
   }
-  .hero .hero-text-box .hero-title {
-    font-size: 28px;
+  .hero .slogan-box .slogan .slogan-txt .vb2 li {
+    font-size: 0.85rem;
   }
-  .hero .hero-text-box .description {
-    font-size: 12px;
+  .hero .slogan-box .slogan .slogan-txt .product_card .slogan-button {
+    font-size: 0.8rem;
   }
 }
