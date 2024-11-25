@@ -80,11 +80,6 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
     - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
-  all: unset;
-  display: revert;
-}
-
 /* Preferred box-sizing value */
 *,
 *::before,
@@ -105,7 +100,8 @@ html {
 /* Reapply the pointer cursor for anchor tags */
 a,
 button {
-  cursor: revert;
+  cursor: pointer;
+  border: none;
 }
 
 /* Remove list styles (bullets/numbers) */
@@ -222,7 +218,7 @@ body {
   overflow-y: scroll;
   list-style-position: inside;
   color: #313131;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   line-height: 24px;
   letter-spacing: 0.01em;
 }
@@ -238,7 +234,9 @@ p {
 }
 
 ul,
-ol {
+ol,
+menu {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -251,42 +249,13 @@ img {
      object-fit: cover;
 }
 
-.list {
-  list-style: none;
-}
-
 .adress {
   font-style: normal;
 }
 
-.link {
-  color: var(--link-title-black);
-  text-decoration: none;
-  -webkit-transition: color 250ms var(--timing-function-cubic);
-  -moz-transition: color 250ms var(--timing-function-cubic);
-  transition: color 250ms var(--timing-function-cubic);
-}
-.link:hover, .link:focus {
-  outline: none;
-  color: var(--accent-color);
-}
-.link.current {
-  position: relative;
-  color: var(--accent-color);
-}
-.link.current::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 4px;
-  background: var(--accent-color);
-  border-radius: 2px;
-}
-
 .container {
   width: 100%;
+  max-width: 1200;
   margin-left: auto;
   margin-right: auto;
   padding-left: 31px;
@@ -303,29 +272,20 @@ img {
           justify-content: space-between;
 }
 .mobile-menu-btn {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-     -moz-box-pack: center;
-          justify-content: center;
+  padding: 0;
   margin: 10px 0;
   width: 60px;
+  height: 45px;
   background: -webkit-gradient(linear, left bottom, left top, from(#94a7ae), to(#d8e3e7));
   background: -webkit-linear-gradient(bottom, #94a7ae, #d8e3e7);
   background: -moz-linear-gradient(bottom, #94a7ae, #d8e3e7);
   background: linear-gradient(to top, #94a7ae, #d8e3e7);
   border-radius: 12px;
+  cursor: pointer;
 }
 .mobile-menu-btn__icon {
   width: 80%;
-  cursor: pointer;
+  margin: 0 auto;
 }
 .mobile-menu-btn__icon span {
   display: block;
@@ -766,7 +726,7 @@ img {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 50%;
   z-index: 100;
@@ -811,7 +771,7 @@ img {
 }
 .logo img {
   margin-left: -8px;
-  width: 150px;
+  width: 100px;
   height: auto;
 }
 
@@ -826,8 +786,6 @@ img {
   padding: 0 0 40px 0;
 }
 .hero .container {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 0 10px;
 }
 .hero .container .slogan-box {
@@ -852,7 +810,7 @@ img {
 .hero .container .slogan-box .slogan {
   width: 100%;
   max-width: 800px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.7019607843);
   margin-bottom: 40px;
   border-radius: 20px;
 }
@@ -869,12 +827,12 @@ img {
      -moz-box-direction: normal;
           flex-direction: column;
 }
-.hero .container .slogan-box .slogan .slogan-txt .product_title {
+.hero .container .slogan-box .slogan .slogan-txt .header_title {
   font-family: _, Arial, sans-serif;
   font-size: 2em;
   font-weight: 600;
   max-width: 500px;
-  color: #206096;
+  color: #6d6d6d;
   line-height: 1em;
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -932,12 +890,264 @@ img {
 .hero .container .slogan-box .slogan .clr {
   clear: both;
 }
+
+.production {
+  margin: 0;
+  padding: 40px 0 40px;
+  width: 100%;
+  display: block;
+  background: #ffffff;
+}
+.production .container {
+  padding: 0 10px;
+}
+.production .container .content {
+  width: 80%;
+  margin: 0 auto;
+}
+.production .container .content .title {
+  font-family: _, Arial, sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  color: #66696c;
+  text-align: center;
+  line-height: 1.6em;
+  margin: 0 auto 0;
+  padding: 20px 0 20px;
+  width: 60%;
+  border-bottom: 1px dotted #66696c;
+}
+.production .container .content .title::before {
+  content: "";
+  background-position: center;
+  background-size: cover;
+  background-color: #ffffff;
+  position: relative;
+  background-repeat: no-repeat;
+  display: block;
+  height: 16px;
+  width: 16px;
+  padding: 0 30px;
+  margin: 0 auto;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  bottom: -85px;
+}
+.production .container .content .title::after {
+  content: "";
+  background-position: center;
+  background-size: cover;
+  background-image: url(/meditec-landing/vb.png);
+  position: relative;
+  background-repeat: no-repeat;
+  display: block;
+  height: 16px;
+  width: 16px;
+  margin: 0 auto 0;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  bottom: -30px;
+}
+.production .container .content .text-part {
+  font-family: _, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #313131;
+  text-align: center;
+  line-height: 25px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 12px 0 60px;
+  margin: 0 auto 20px;
+}
+.production .product-card {
+  position: relative;
+  display: block;
+  width: 98%;
+  max-width: 420px;
+  margin: 10px auto 10px;
+  z-index: 50;
+  padding: 10px 10px 20px 10px;
+  text-align: left;
+  border-radius: 8px;
+  background-color: #f1f5f6;
+}
+.production .product-card__image {
+  display: block;
+  width: 100%;
+  background-color: #8e8e8e;
+  border-radius: 6px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+.production .product-card__image__link {
+  display: inline-block;
+}
+.production .product-card__image-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.production .product-card__title {
+  font-family: _, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  padding: 0;
+  color: #66696c;
+  text-align: center;
+  line-height: 25px;
+  margin: 40px auto 20px;
+}
+.production .product-card__title span {
+  font-family: _, Arial, sans-serif;
+  font-size: 0.8em;
+  font-weight: 300;
+  display: block;
+  color: #888;
+}
+.production .product-card__info {
+  font-family: _, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 400;
+  width: 100%;
+  margin: 0 auto 20px;
+  text-align: center;
+  line-height: 1.3;
+}
+.production .product-card__info .spoiler {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  margin: 20px auto;
+  width: 98%;
+}
+.production .product-card__info .spoiler input {
+  display: none;
+}
+.production .product-card__info .spoiler input + label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  width: 100%;
+  border-bottom: 1px dashed #ccc;
+  padding: 2px 10px 12px 20px;
+  color: #171717;
+  text-align: left;
+  font-size: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.production .product-card__info .spoiler input + label::after {
+  content: "+";
+  font-family: monospace;
+  color: #6b6b6b;
+  font-size: 36px;
+  font-weight: 100;
+  padding: 0px 6px 5px 6px;
+  border-radius: 6px;
+}
+.production .product-card__info .spoiler input:checked + label::after {
+  content: "-";
+  font-family: monospace;
+  color: #6b6b6b;
+  font-size: 36px;
+  font-weight: 100;
+  padding: 0px 6px 5px 6px;
+  border-radius: 6px;
+}
+.production .product-card__info .spoiler input:checked ~ .spoiler__body {
+  display: block;
+}
+.production .product-card__info .spoiler__body {
+  display: none;
+}
+.production .product-card__subtitle {
+  font-size: 13px;
+  line-height: 20px;
+  color: #66696c;
+  text-align: initial;
+  text-transform: uppercase;
+}
+.production .product-card__text {
+  font-size: 13px;
+  line-height: 20px;
+  color: #66696c;
+  text-align: initial;
+}
+.production .product-card__button {
+  margin: 20px auto 0;
+  display: block;
+  font-size: 18px;
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d6e4ea));
+  background: -webkit-linear-gradient(#fff, #d6e4ea);
+  background: -moz-linear-gradient(#fff, #d6e4ea);
+  background: linear-gradient(#fff, #d6e4ea);
+  color: #66696c;
+  font-weight: 400;
+  border: 1px solid #d5e0e4;
+  white-space: nowrap;
+  padding: 8px 24px;
+}
+
+@-webkit-keyframes waveShift {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@-moz-keyframes waveShift {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes waveShift {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
 @media screen and (min-width: 480px){
   .container {
     width: 480px;
     margin: 0 auto;
   }
 }
+
 @media screen and (min-width: 768px){
   .container {
     width: 768px;
@@ -946,6 +1156,9 @@ img {
   }
   .mobile-menu-btn {
     display: none;
+  }
+  .header {
+    position: fixed;
   }
   .nav-bar {
     -webkit-justify-content: space-around;
@@ -1010,6 +1223,7 @@ img {
     color: #c8aa76;
   }
 }
+
 @media screen and (min-width: 1280px){
   .container {
     width: 1200px;
@@ -1021,6 +1235,7 @@ img {
     padding-right: 15px;
   }
 }
+
 @media screen and (max-width: 1024px){
   .hero .slogan-box .slogan .slogan-txt .product_title {
     font-size: 1.8rem;
@@ -1029,6 +1244,7 @@ img {
     font-size: 0.95rem;
   }
 }
+
 @media screen and (max-width: 768px){
   .hero .slogan-box {
     -webkit-box-align: start;
@@ -1047,6 +1263,7 @@ img {
     font-size: 0.9rem;
   }
 }
+
 @media screen and (max-width: 480px){
   .hero {
     padding: 0;
