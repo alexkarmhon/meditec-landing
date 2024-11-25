@@ -31,7 +31,9 @@ p {
 }
 
 ul,
-ol {
+ol,
+menu {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -43,44 +45,6 @@ img {
   object-fit: cover;
 }
 
-.list {
-  list-style: none;
-}
-
 .adress {
   font-style: normal;
 }
-
-.link {
-  color: var(--link-title-black);
-  text-decoration: none;
-
-  transition: color 250ms var(--timing-function-cubic);
-
-  &:hover,
-  &:focus {
-    outline: none;
-    color: var(--accent-color);
-  }
-
-  &.current {
-    position: relative;
-    color: var(--accent-color);
-
-    &::after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-
-      content: "";
-      width: 100%;
-      height: 4px;
-      background: var(--accent-color);
-      border-radius: 2px;
-    }
-  }
-}
-
-// .title {
-//   color: var(--link-title-black);
-// }
