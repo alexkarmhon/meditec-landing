@@ -845,7 +845,7 @@ img {
   max-width: 500px;
   color: #6d6d6d;
   line-height: 1em;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
   text-transform: uppercase;
   text-align: center;
 }
