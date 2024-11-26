@@ -1,5 +1,5 @@
-@import "../utils/vars";
-@import "../utils/mixins";
+@use "../utils/vars";
+@use "../utils/mixins";
 
 .hero {
   background-image: url("/src/img/header-bg-1.jpg");
@@ -23,8 +23,7 @@
       .slogan {
         width: 100%;
         max-width: 800px;
-        // padding: 40px;
-        background: $slogan-background;
+        background: vars.$slogan-background;
         margin-bottom: 40px;
         border-radius: 20px;
 
@@ -34,9 +33,9 @@
           flex-direction: column;
 
           .header_title {
-            @include text-style(_, 2em, 600);
+            @include mixins.roboto-condensed(2em, 600);
             max-width: 500px;
-            color: $main-title-color;
+            color: vars.$main-title-color;
             line-height: 1em;
             margin-bottom: 30px;
             text-transform: uppercase;
@@ -53,11 +52,9 @@
               display: flex;
               text-align: start;
               margin-bottom: 10px;
-              font-size: 1rem;
-              color: #666;
 
               p {
-                @include text-style(_, 1.1em, 600);
+                @include mixins.calibri-regular(24px);
                 color: #022e4e;
                 line-height: 24px;
                 margin-bottom: 10px;
@@ -100,7 +97,6 @@
     }
   }
 
-  // Адаптивність
   @media screen and (max-width: 1024px) {
     .slogan-box .slogan .slogan-txt .product_title {
       font-size: 1.8rem;
@@ -142,7 +138,6 @@
     }
 
     .slogan-box .slogan .slogan-txt .product_card .slogan-button {
-      // padding: 6px 12px;
       font-size: 0.8rem;
     }
   }

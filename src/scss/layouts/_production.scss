@@ -1,12 +1,12 @@
-@import "../utils/vars";
-@import "../utils/mixins";
+@use "../utils/vars";
+@use "../utils/mixins";
 
 .production {
   margin: 0;
   padding: 40px 0 40px;
   width: 100%;
   display: block;
-  background: $background-color;
+  background: vars.$background-color;
   // background: linear-gradient(to right, #1398d3, #42bcd1);
   // background: linear-gradient(to right, #e0e9eb, #3c92db);
   // background: repeating-linear-gradient(
@@ -23,12 +23,12 @@
     padding: 0 10px;
 
     .content {
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
 
       .title {
-        @include text-style(_, 1.6em, 300);
-        color: $sub-title-color;
+        @include mixins.calibri-regular(30px);
+        color: vars.$sub-title-color;
         text-align: center;
         line-height: 1.6em;
         margin: 0 auto 0;
@@ -40,7 +40,7 @@
           content: "";
           background-position: center;
           background-size: cover;
-          background-color: $background-color;
+          background-color: vars.$background-color;
           position: relative;
           background-repeat: no-repeat;
           display: block;
@@ -69,8 +69,8 @@
       }
 
       .text-part {
-        @include text-style(_, 1.1em, 400);
-        color: $main-color;
+        @include mixins.roboto-condensed(20px, 400);
+        color: vars.$main-color;
         text-align: center;
         line-height: 25px;
         font-size: 20px;
@@ -96,7 +96,7 @@
     &__image {
       display: block;
       width: 100%;
-      background-color: $image-background-color;
+      background-color: vars.$image-background-color;
       border-radius: 6px;
       object-fit: cover;
       overflow: hidden;
@@ -114,22 +114,22 @@
     }
 
     &__title {
-      @include text-style(_, 20px, 100);
+      @include mixins.roboto-condensed(20px, 300);
       padding: 0;
-      color: $sub-title-color;
+      color: vars.$sub-title-color;
       text-align: center;
       line-height: 25px;
       margin: 40px auto 20px;
 
       span {
-        @include text-style(_, 0.8em, 300);
+        @include mixins.roboto-condensed(18px, 300);
         display: block;
         color: #888;
       }
     }
 
     &__info {
-      @include text-style(_, 1.1em, 400);
+      @include mixins.calibri-regular(15px);
       width: 100%;
       margin: 0 auto 20px;
       text-align: center;
@@ -162,7 +162,6 @@
             color: #6b6b6b;
             font-size: 36px;
             font-weight: 100;
-            padding: 0px 6px 5px 6px;
             border-radius: 6px;
           }
 
@@ -172,7 +171,6 @@
             color: #6b6b6b;
             font-size: 36px;
             font-weight: 100;
-            padding: 0px 6px 5px 6px;
             border-radius: 6px;
           }
 
@@ -183,12 +181,14 @@
 
         &__body {
           display: none;
+          padding-bottom: 20px;
+          border-bottom: 2px solid #65ccf0;
         }
       }
     }
 
     &__subtitle {
-      font-size: 13px;
+      @include mixins.roboto-condensed(13px, 700);
       line-height: 20px;
       color: #66696c;
       text-align: initial;
@@ -196,23 +196,29 @@
     }
 
     &__text {
-      font-size: 13px;
+      @include mixins.calibri-regular(13px);
       line-height: 20px;
       color: #66696c;
       text-align: initial;
     }
 
     &__button {
-      margin: 20px auto 0;
+      @include mixins.calibri-regular(18px);
       display: block;
-      font-size: 18px;
+      margin: 20px auto 0;
       border-radius: 10px;
       background: linear-gradient(#fff, #d6e4ea);
-      color: $sub-title-color;
-      font-weight: 400;
-      border: 1px solid #d5e0e4;
-      white-space: nowrap;
+      color: vars.$sub-title-color;
       padding: 8px 24px;
+      box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.4);
+      transition: all 350ms ease;
+      cursor: pointer;
+
+      &:hover {
+        background: linear-gradient(#fff, #c3e0ed);
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+        transition: all 350ms ease;
+      }
     }
   }
 }

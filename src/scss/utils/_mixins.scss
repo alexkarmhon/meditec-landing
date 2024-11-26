@@ -10,8 +10,19 @@
   color: transparent;
 }
 
-@mixin text-style($font-family: "Roboto Condensed", $font-size, $font-weight) {
-  font-family: $font-family, Arial, sans-serif;
+@mixin roboto-condensed($font-size, $font-weight) {
+  font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: $font-size;
   font-weight: $font-weight;
+}
+
+@mixin calibri-regular($font-size) {
+  font-family: "Calibri", sans-serif;
+  font-size: $font-size;
+  font-weight: 400;
+}
+@mixin calibri-bold($font-size) {
+  font-family: "Calibri", sans-serif;
+  font-size: $font-size;
+  font-weight: 700;
 }
