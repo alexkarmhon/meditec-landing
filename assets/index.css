@@ -5,7 +5,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 100;
-  src: url("../../fonts/Roboto-Condensed-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/meditec-landing/assets/Roboto-Condensed-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-200 - cyrillic_latin */
 @font-face {
@@ -13,7 +13,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 200;
-  src: url("../../fonts/Roboto-Condensed-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/src/fonts/fonts/Roboto-Condensed-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-300 - cyrillic_latin */
 @font-face {
@@ -21,7 +21,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 300;
-  src: url("../../fonts/Roboto-Condensed-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/meditec-landing/assets/Roboto-Condensed-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-regular - cyrillic_latin */
 @font-face {
@@ -29,7 +29,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 400;
-  src: url("../../fonts/Roboto-Condensed-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/meditec-landing/assets/Roboto-Condensed-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-500 - cyrillic_latin */
 @font-face {
@@ -37,7 +37,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 500;
-  src: url("../../fonts/Roboto-Condensed-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/meditec-landing/assets/Roboto-Condensed-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-600 - cyrillic_latin */
 @font-face {
@@ -45,7 +45,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 600;
-  src: url("../../fonts/Roboto-Condensed-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/meditec-landing/assets/Roboto-Condensed-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-700 - cyrillic_latin */
 @font-face {
@@ -53,7 +53,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 700;
-  src: url("../../fonts/Roboto-Condensed-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/meditec-landing/assets/Roboto-Condensed-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-800 - cyrillic_latin */
 @font-face {
@@ -61,7 +61,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 800;
-  src: url("../../fonts/Roboto-Condensed-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/meditec-landing/assets/Roboto-Condensed-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-900 - cyrillic_latin */
 @font-face {
@@ -69,7 +69,23 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 900;
-  src: url("../../fonts/Roboto-Condensed-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/meditec-landing/assets/Roboto-Condensed-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/*calibri-regular-400*/
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/meditec-landing/assets/Calibri.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/*calibri-bold-800*/
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/meditec-landing/assets/Calibri-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /***
     The new CSS reset - version 1.11 (last updated 20.9.2023)
@@ -207,7 +223,7 @@ meter {
 }
 
 body {
-  font-family: _, Arial, sans-serif;
+  font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   width: 100%;
@@ -244,7 +260,7 @@ menu {
 img {
   display: block;
   width: 100%;
-  background-color: var(--img-bg-color);
+  background-color: #8e8e8e;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -688,29 +704,23 @@ img {
   }
 }
 .main-button {
-  font-family: _, Arial, sans-serif;
-  font-size: 0.833em;
-  font-weight: 300;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   display: block;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  margin: 0 auto;
-  margin-top: 30px;
-  text-decoration: none;
-  float: left;
+  margin: 20px auto 0;
+  border-radius: 10px;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d6e4ea));
   background: -webkit-linear-gradient(#fff, #d6e4ea);
   background: -moz-linear-gradient(#fff, #d6e4ea);
   background: linear-gradient(#fff, #d6e4ea);
-  border-radius: 12px;
-  color: #313131;
-  padding: 8px 40px;
-  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
-  -webkit-transition: all 350ms ease;
-  -moz-transition: all 350ms ease;
-  transition: all 350ms ease;
+  color: #66696c;
+  padding: 8px 24px;
+  -webkit-box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  transition: all 250ms ease;
   cursor: pointer;
 }
 .main-button:hover {
@@ -720,9 +730,9 @@ img {
   background: linear-gradient(#fff, #c3e0ed);
   -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
-  -webkit-transition: all 350ms ease;
-  -moz-transition: all 350ms ease;
-  transition: all 350ms ease;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  transition: all 250ms ease;
 }
 
 .header {
@@ -773,6 +783,7 @@ img {
   margin-left: -8px;
   width: 100px;
   height: auto;
+  background-color: inherit;
 }
 
 .menu {
@@ -828,7 +839,7 @@ img {
           flex-direction: column;
 }
 .hero .container .slogan-box .slogan .slogan-txt .header_title {
-  font-family: _, Arial, sans-serif;
+  font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: 2em;
   font-weight: 600;
   max-width: 500px;
@@ -851,13 +862,11 @@ img {
   display: flex;
   text-align: start;
   margin-bottom: 10px;
-  font-size: 1rem;
-  color: #666;
 }
 .hero .container .slogan-box .slogan .slogan-txt .product-features li p {
-  font-family: _, Arial, sans-serif;
-  font-size: 1.1em;
-  font-weight: 600;
+  font-family: "Calibri", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
   color: #022e4e;
   line-height: 24px;
   margin-bottom: 10px;
@@ -902,13 +911,13 @@ img {
   padding: 0 10px;
 }
 .production .container .content {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 .production .container .content .title {
-  font-family: _, Arial, sans-serif;
-  font-size: 1.6em;
-  font-weight: 300;
+  font-family: "Calibri", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
   color: #66696c;
   text-align: center;
   line-height: 1.6em;
@@ -951,8 +960,8 @@ img {
   bottom: -30px;
 }
 .production .container .content .text-part {
-  font-family: _, Arial, sans-serif;
-  font-size: 1.1em;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 20px;
   font-weight: 400;
   color: #313131;
   text-align: center;
@@ -994,9 +1003,9 @@ img {
      object-fit: cover;
 }
 .production .product-card__title {
-  font-family: _, Arial, sans-serif;
+  font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 300;
   padding: 0;
   color: #66696c;
   text-align: center;
@@ -1004,15 +1013,15 @@ img {
   margin: 40px auto 20px;
 }
 .production .product-card__title span {
-  font-family: _, Arial, sans-serif;
-  font-size: 0.8em;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 18px;
   font-weight: 300;
   display: block;
   color: #888;
 }
 .production .product-card__info {
-  font-family: _, Arial, sans-serif;
-  font-size: 1.1em;
+  font-family: "Calibri", sans-serif;
+  font-size: 15px;
   font-weight: 400;
   width: 100%;
   margin: 0 auto 20px;
@@ -1058,7 +1067,6 @@ img {
   color: #6b6b6b;
   font-size: 36px;
   font-weight: 100;
-  padding: 0px 6px 5px 6px;
   border-radius: 6px;
 }
 .production .product-card__info .spoiler input:checked + label::after {
@@ -1067,7 +1075,6 @@ img {
   color: #6b6b6b;
   font-size: 36px;
   font-weight: 100;
-  padding: 0px 6px 5px 6px;
   border-radius: 6px;
 }
 .production .product-card__info .spoiler input:checked ~ .spoiler__body {
@@ -1075,34 +1082,56 @@ img {
 }
 .production .product-card__info .spoiler__body {
   display: none;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #65ccf0;
 }
 .production .product-card__subtitle {
+  font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: 13px;
+  font-weight: 700;
   line-height: 20px;
   color: #66696c;
   text-align: initial;
   text-transform: uppercase;
 }
 .production .product-card__text {
+  font-family: "Calibri", sans-serif;
   font-size: 13px;
+  font-weight: 400;
   line-height: 20px;
   color: #66696c;
   text-align: initial;
 }
 .production .product-card__button {
-  margin: 20px auto 0;
-  display: block;
+  font-family: "Calibri", sans-serif;
   font-size: 18px;
+  font-weight: 400;
+  display: block;
+  margin: 20px auto 0;
   border-radius: 10px;
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d6e4ea));
   background: -webkit-linear-gradient(#fff, #d6e4ea);
   background: -moz-linear-gradient(#fff, #d6e4ea);
   background: linear-gradient(#fff, #d6e4ea);
   color: #66696c;
-  font-weight: 400;
-  border: 1px solid #d5e0e4;
-  white-space: nowrap;
   padding: 8px 24px;
+  -webkit-box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  transition: all 350ms ease;
+  cursor: pointer;
+}
+.production .product-card__button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c3e0ed));
+  background: -webkit-linear-gradient(#fff, #c3e0ed);
+  background: -moz-linear-gradient(#fff, #c3e0ed);
+  background: linear-gradient(#fff, #c3e0ed);
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  transition: all 350ms ease;
 }
 
 @-webkit-keyframes waveShift {
