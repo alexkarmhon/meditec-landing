@@ -742,7 +742,7 @@ img {
 }
 
 .header {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 50%;
   z-index: 100;
@@ -987,13 +987,8 @@ img {
 }
 .production .container .content .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-}
-.production .container .content .product-list:hover > :not(:hover) {
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
-  opacity: 0.9;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 .production .product-card {
   position: relative;
@@ -1165,12 +1160,11 @@ img {
           box-shadow: 0px 0px 0px 0px rgba(146, 143, 156, 0.537254902);
 }
 .production .product-card:hover {
-  -webkit-transform: scale(1.05);
-     -moz-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.03);
+     -moz-transform: scale(1.03);
+      -ms-transform: scale(1.03);
+          transform: scale(1.03);
 }
-
 @-webkit-keyframes waveShift {
   0% {
     background-position: 0 0;
@@ -1182,7 +1176,6 @@ img {
     background-position: 0 0;
   }
 }
-
 @-moz-keyframes waveShift {
   0% {
     background-position: 0 0;
@@ -1194,7 +1187,6 @@ img {
     background-position: 0 0;
   }
 }
-
 @keyframes waveShift {
   0% {
     background-position: 0 0;
@@ -1206,14 +1198,12 @@ img {
     background-position: 0 0;
   }
 }
-
 @media screen and (min-width: 480px){
   .container {
     width: 480px;
     margin: 0 auto;
   }
 }
-
 @media screen and (min-width: 768px){
   .container {
     width: 768px;
@@ -1288,7 +1278,6 @@ img {
     color: #c8aa76;
   }
 }
-
 @media screen and (min-width: 1280px){
   .container {
     width: 1200px;
@@ -1299,8 +1288,12 @@ img {
     padding-left: 15px;
     padding-right: 15px;
   }
+  .product-list:hover > :not(:hover) {
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+    opacity: 0.9;
+  }
 }
-
 @media screen and (max-width: 1024px){
   .hero .slogan-box .slogan .slogan-txt .product_title {
     font-size: 1.8rem;
@@ -1309,7 +1302,6 @@ img {
     font-size: 0.95rem;
   }
 }
-
 @media screen and (max-width: 768px){
   .hero .slogan-box {
     -webkit-box-align: start;
@@ -1328,7 +1320,6 @@ img {
     font-size: 0.9rem;
   }
 }
-
 @media screen and (max-width: 480px){
   .hero {
     padding: 0;
