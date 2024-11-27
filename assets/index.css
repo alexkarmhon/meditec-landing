@@ -794,6 +794,8 @@ img {
           align-items: center;
 }
 .logo img {
+  -webkit-filter: drop-shadow(1px 1px 2px #766e92);
+          filter: drop-shadow(1px 1px 2px #766e92);
   margin-left: -8px;
   width: 100px;
   height: auto;
