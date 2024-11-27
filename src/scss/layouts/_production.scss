@@ -70,13 +70,8 @@
 
       .product-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 10px;
-
-        &:hover > :not(:hover) {
-          filter: blur(2px);
-          opacity: 0.9;
-        }
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
       }
     }
   }
@@ -227,8 +222,15 @@
     }
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .product-list:hover > :not(:hover) {
+    filter: blur(2px);
+    opacity: 0.9;
   }
 }
 
