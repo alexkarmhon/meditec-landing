@@ -7,17 +7,6 @@
   width: 100%;
   display: block;
   background: vars.$background-color;
-  // background: linear-gradient(to right, #1398d3, #42bcd1);
-  // background: linear-gradient(to right, #e0e9eb, #3c92db);
-  // background: repeating-linear-gradient(
-  //   115deg,
-  //   #cadbe1,
-  //   #cbdee5,
-  //   #3c92db,
-  //   #519adab9
-  // );
-  // background-size: 200% 200%;
-  // animation: waveShift 30s ease-in-out infinite;
 
   .container {
     padding: 0 10px;
@@ -140,6 +129,13 @@
         margin: 20px auto;
         width: 98%;
 
+        &__body {
+          display: none;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          border-bottom: 2px solid #65ccf0;
+        }
+
         input {
           display: none;
 
@@ -178,12 +174,6 @@
             display: block;
           }
         }
-
-        &__body {
-          display: none;
-          padding-bottom: 20px;
-          border-bottom: 2px solid #65ccf0;
-        }
       }
     }
 
@@ -200,6 +190,10 @@
       line-height: 20px;
       color: #66696c;
       text-align: initial;
+
+      strong {
+        font-size: 14px;
+      }
     }
 
     &__button {
@@ -207,17 +201,16 @@
       display: block;
       margin: 20px auto 0;
       border-radius: 10px;
-      background: linear-gradient(#fff, #d6e4ea);
+      border: 0.5px solid #cfe0e78a;
+      background: linear-gradient(#fff, #cfe0e78a);
       color: vars.$sub-title-color;
       padding: 8px 24px;
-      box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.4);
-      transition: all 350ms ease;
+      box-shadow: 0px 1px 1px 1px #928f9c89;
       cursor: pointer;
 
       &:hover {
-        background: linear-gradient(#fff, #c3e0ed);
-        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
-        transition: all 350ms ease;
+        background: linear-gradient(#fff, #d6e4ea, #cfe0e78a);
+        box-shadow: 0px 0px 0px 0px #928f9c89;
       }
     }
   }
