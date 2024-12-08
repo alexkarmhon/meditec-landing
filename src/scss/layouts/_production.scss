@@ -6,231 +6,53 @@
   padding: 40px 0 40px;
   width: 100%;
   display: block;
-  background: vars.$background-color;
+  background: vars.$background-color-production-section;
 
-  .container {
-    padding: 0 10px;
-
-    .content {
-      width: 100%;
-      margin: 0 auto;
-
-      .title {
-        @include mixins.calibri-regular(30px);
-        color: vars.$sub-title-color;
-        text-align: center;
-        line-height: 1.6em;
-        margin: 0 auto 0;
-        padding: 20px 0 20px;
-        width: 60%;
-        border-bottom: 1px dotted #66696c;
-
-        &::before {
-          content: "";
-          background-position: center;
-          background-size: cover;
-          background-color: vars.$background-color;
-          position: relative;
-          background-repeat: no-repeat;
-          display: block;
-          height: 16px;
-          width: 16px;
-          padding: 0 30px;
-          margin: 0 auto;
-          transition: 0.3s ease all;
-          bottom: -85px;
-        }
-
-        &::after {
-          content: "";
-          background-position: center;
-          background-size: cover;
-          background-image: url(/vb.png);
-          position: relative;
-          background-repeat: no-repeat;
-          display: block;
-          height: 16px;
-          width: 16px;
-          margin: 0 auto 0;
-          transition: 0.3s ease all;
-          bottom: -30px;
-        }
-      }
-
-      .text-part {
-        @include mixins.roboto-condensed(20px, 400);
-        color: vars.$main-color;
-        text-align: center;
-        line-height: 25px;
-        font-size: 20px;
-        font-weight: 400;
-        padding: 12px 0 60px;
-        margin: 0 auto 20px;
-      }
-
-      .product-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-      }
+  &__title {
+    &::before {
+      background-color: vars.$background-color-production-section;
     }
   }
 
-  .product-card {
-    position: relative;
-    display: block;
-    width: 98%;
-    max-width: 420px;
-    z-index: 50;
-    padding: 10px 10px 20px 10px;
-    text-align: left;
-    border-radius: 8px;
-    background-color: #f1f5f6;
-    transform: scale(1);
-    transition: transform 300ms ease;
+  &__description {
+    @include mixins.roboto-condensed(20px, 400);
+    color: vars.$main-color;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 12px 0 60px;
+    margin: 20px auto 0px auto;
+  }
 
-    &__image {
-      display: block;
-      width: 100%;
-      background-color: vars.$image-background-color;
-      border-radius: 6px;
-      object-fit: cover;
-      overflow: hidden;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 20px;
+  }
 
-      &__link {
-        display: inline-block;
-      }
+  &__item {
+    grid-column: span 12 / span 12;
+  }
+}
 
-      &-img {
-        width: 100%;
-        height: auto;
-        border-radius: 4px;
-        object-fit: cover;
-      }
-    }
-
-    &__title {
-      @include mixins.roboto-condensed(20px, 300);
-      padding: 0;
-      color: vars.$sub-title-color;
-      text-align: center;
-      line-height: 25px;
-      margin: 40px auto 20px;
-
-      span {
-        @include mixins.roboto-condensed(18px, 300);
-        display: block;
-        color: #888;
-      }
-    }
-
-    &__info {
-      @include mixins.calibri-regular(15px);
-      width: 100%;
-      margin: 0 auto 20px;
-      text-align: center;
-      line-height: 1.3;
-
-      .spoiler {
-        align-items: center;
-        margin: 20px auto;
-        width: 98%;
-
-        &__body {
-          display: none;
-          padding-top: 20px;
-          padding-bottom: 20px;
-          border-bottom: 2px solid #65ccf0;
-        }
-
-        input {
-          display: none;
-
-          & + label {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            border-bottom: 1px dashed #ccc;
-            padding: 2px 10px 12px 20px;
-            color: #171717;
-            text-align: left;
-            font-size: 15px;
-            overflow: hidden;
-            cursor: pointer;
-          }
-          & + label::after {
-            content: "+";
-            font-family: monospace;
-            color: #6b6b6b;
-            font-size: 36px;
-            font-weight: 100;
-            border-radius: 6px;
-          }
-
-          &:checked + label::after {
-            content: "-";
-            font-family: monospace;
-            color: #6b6b6b;
-            font-size: 36px;
-            font-weight: 100;
-            border-radius: 6px;
-          }
-
-          &:checked ~ .spoiler__body {
-            display: block;
-          }
-        }
-      }
-    }
-
-    &__subtitle {
-      @include mixins.roboto-condensed(13px, 700);
-      line-height: 20px;
-      color: #66696c;
-      text-align: initial;
-      text-transform: uppercase;
-    }
-
-    &__text {
-      @include mixins.calibri-regular(13px);
-      line-height: 20px;
-      color: #66696c;
-      text-align: initial;
-
-      strong {
-        font-size: 14px;
-      }
-    }
-
-    &__button {
-      @include mixins.calibri-regular(18px);
-      display: block;
-      margin: 20px auto 0;
-      border-radius: 10px;
-      border: 0.5px solid #cfe0e78a;
-      background: linear-gradient(#fff, #cfe0e78a);
-      color: vars.$sub-title-color;
-      padding: 8px 24px;
-      box-shadow: 0px 1px 1px 1px #928f9c89;
-      cursor: pointer;
-
-      &:hover {
-        background: linear-gradient(#fff, #d6e4ea, #cfe0e78a);
-        box-shadow: 0px 0px 0px 0px #928f9c89;
-      }
-    }
-
-    &:hover {
-      transform: scale(1.03);
+@media screen and (min-width: 768px) {
+  .production {
+    &__item {
+      grid-column: span 6 / span 12;
     }
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .product-list:hover > :not(:hover) {
-    filter: blur(2px);
-    opacity: 0.9;
+@media screen and (min-width: 1024px) {
+  .production {
+    &__list:hover > :not(:hover) {
+      filter: blur(2px);
+      opacity: 0.9;
+    }
+    &__item {
+      grid-column: span 3 / span 12;
+    }
   }
 }
 

@@ -1,0 +1,136 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.product-card {
+  position: relative;
+  display: block;
+  width: 98%;
+  max-width: 420px;
+  padding: 10px 10px 20px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border-radius: 8px;
+  background-color: #f1f5f6;
+  transform: scale(1);
+  transition: transform 300ms ease;
+
+  &__image {
+    display: block;
+    width: 100%;
+    background-color: vars.$image-background-color;
+    border-radius: 6px;
+    object-fit: cover;
+    overflow: hidden;
+
+    &__link {
+      display: inline-block;
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    @include mixins.calibri-400(15px, 24px);
+    width: 100%;
+    margin: 0 auto 20px;
+    text-align: center;
+
+    .spoiler {
+      align-items: center;
+      margin: 20px auto;
+      width: 98%;
+
+      &__body {
+        display: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #65ccf0;
+      }
+
+      input {
+        display: none;
+
+        & + label {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          border-bottom: 1px dashed #ccc;
+          padding: 2px 10px 12px 20px;
+          color: #171717;
+          text-align: left;
+          font-size: 15px;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        & + label::after {
+          content: "+";
+          font-family: monospace;
+          color: #6b6b6b;
+          font-size: 36px;
+          font-weight: 100;
+          border-radius: 6px;
+        }
+
+        &:checked + label::after {
+          content: "-";
+          font-family: monospace;
+          color: #6b6b6b;
+          font-size: 36px;
+          font-weight: 100;
+          border-radius: 6px;
+        }
+
+        &:checked ~ .spoiler__body {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    @include mixins.roboto-condensed(13px, 700);
+    line-height: 20px;
+    color: #66696c;
+    text-align: initial;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    @include mixins.calibri-400(13px, 20px);
+    color: #66696c;
+    text-align: initial;
+
+    strong {
+      font-size: 14px;
+    }
+  }
+
+  &__button {
+    @include mixins.calibri-400(18px, 20px);
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    border: 0.5px solid #cfe0e78a;
+    background: linear-gradient(#fff, #cfe0e78a);
+    color: vars.$sub-title-color;
+    padding: 8px 24px;
+    box-shadow: 0px 1px 1px 1px #928f9c89;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient(#fff, #d6e4ea, #cfe0e78a);
+      box-shadow: 0px 0px 0px 0px #928f9c89;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}

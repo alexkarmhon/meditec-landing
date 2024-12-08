@@ -6,7 +6,7 @@
 }
 
 body {
-  @include mixins.roboto-condensed(18px, 400);
+  @include mixins.calibri-400(18px, 24px);
   width: 100%;
   height: 100%;
   padding: 0;
@@ -16,8 +16,7 @@ body {
   list-style-position: inside;
   color: vars.$main-color;
   background-color: vars.$background-color;
-  line-height: 24px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.18px;
 }
 
 h1,
@@ -41,7 +40,6 @@ menu {
 img {
   display: block;
   width: 100%;
-  background-color: vars.$image-background-color;
   object-fit: cover;
 }
 

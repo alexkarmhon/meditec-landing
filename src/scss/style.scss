@@ -4,10 +4,14 @@
 @use "base/reset";
 @use "base/common";
 @use "base/container";
+@use "base/titles";
 
 @use "components/mobile-menu-btn";
+@use "components/product-card";
 @use "components/main-btn";
+@use "components/form";
 
 @use "layouts/header";
 @use "layouts/hero";
 @use "layouts/production";
+@use "layouts/advantages";

@@ -16,13 +16,15 @@
   font-weight: $font-weight;
 }
 
-@mixin calibri-regular($font-size) {
+@mixin calibri-400($font-size, $line-height) {
   font-family: "Calibri", sans-serif;
   font-size: $font-size;
+  line-height: $line-height;
   font-weight: 400;
 }
-@mixin calibri-bold($font-size) {
+@mixin calibri-700($font-size, $line-height) {
   font-family: "Calibri", sans-serif;
   font-size: $font-size;
+  line-height: $line-height;
   font-weight: 700;
 }

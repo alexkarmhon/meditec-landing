@@ -2,98 +2,87 @@
 @use "../utils/mixins";
 
 .hero {
-  background-image: url("/src/img/header-bg-1.jpg");
+  background-image: url("/images/header-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 0 0 40px 0;
 
-  .container {
-    padding: 0 10px;
+  &__slogan-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 200px 0 0 0;
+  }
 
+  &__slogan {
+    width: 100%;
+    max-width: 800px;
+    background: vars.$slogan-background;
+    margin-bottom: 40px;
+    border-radius: 20px;
+  }
+
+  &__slogan-text {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__product-features {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  &__product-feature {
+    @include mixins.calibri-400(24px, 24px);
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: start;
+    color: #022e4e;
+
+    &:before {
+      content: url("/images/vb.webp");
+      margin-right: 10px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .slogan-box .slogan .text .hero_title {
+      font-size: 25px;
+    }
+
+    .slogan-box .slogan .text .vb2 li {
+      font-size: 15px;
+    }
+
+    .slogan-box .slogan .text .product_card .slogan-button {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
     .slogan-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
+    }
 
-      margin: 0 auto;
-      padding: 200px 0 0 0;
+    .slogan-box .slogan .text .product_title {
+      font-size: 28px;
+    }
 
-      .slogan {
-        width: 100%;
-        max-width: 800px;
-        background: vars.$slogan-background;
-        margin-bottom: 40px;
-        border-radius: 20px;
+    .slogan-box .slogan .text .vb2 li {
+      font-size: 16px;
+    }
 
-        .slogan-txt {
-          padding: 30px;
-          display: flex;
-          flex-direction: column;
-
-          .header_title {
-            @include mixins.roboto-condensed(2em, 600);
-            max-width: 500px;
-            color: vars.$main-title-color;
-            line-height: 1em;
-            margin: 0 auto 30px;
-            text-transform: uppercase;
-            text-align: center;
-          }
-
-          .product-features {
-            text-align: center;
-            list-style: none;
-            padding: 0;
-            margin: 0 auto;
-
-            li {
-              display: flex;
-              text-align: start;
-              margin-bottom: 10px;
-
-              p {
-                @include mixins.calibri-regular(24px);
-                color: #022e4e;
-                line-height: 24px;
-                margin-bottom: 10px;
-                width: 100%;
-                display: block;
-              }
-
-              &:before {
-                content: url("/src/img/vb.png");
-                margin-right: 10px;
-              }
-            }
-          }
-
-          .product_card {
-            margin-top: 20px;
-
-            .slogan-button {
-              display: inline-block;
-              padding: 10px 20px;
-              background-color: #007bff;
-              color: #fff;
-              border-radius: 5px;
-              text-transform: uppercase;
-              font-weight: bold;
-              cursor: pointer;
-              transition: background-color 0.3s;
-
-              &:hover {
-                background-color: #0056b3;
-              }
-            }
-          }
-        }
-
-        .clr {
-          clear: both;
-        }
-      }
+    .slogan-box .slogan .text .product_card .slogan-button {
+      padding: 8px 16px;
+      font-size: 18px;
     }
   }
 
@@ -104,41 +93,6 @@
 
     .slogan-box .slogan .slogan-txt .vb2 li {
       font-size: 0.95rem;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .slogan-box {
-      align-items: flex-start;
-    }
-
-    .slogan-box .slogan .slogan-txt .product_title {
-      font-size: 1.6rem;
-    }
-
-    .slogan-box .slogan .slogan-txt .vb2 li {
-      font-size: 0.9rem;
-    }
-
-    .slogan-box .slogan .slogan-txt .product_card .slogan-button {
-      padding: 8px 16px;
-      font-size: 0.9rem;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    padding: 0;
-
-    .slogan-box .slogan .slogan-txt .product_title {
-      font-size: 1.4rem;
-    }
-
-    .slogan-box .slogan .slogan-txt .vb2 li {
-      font-size: 0.85rem;
-    }
-
-    .slogan-box .slogan .slogan-txt .product_card .slogan-button {
-      font-size: 0.8rem;
     }
   }
 }
