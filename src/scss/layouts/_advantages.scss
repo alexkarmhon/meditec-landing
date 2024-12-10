@@ -3,7 +3,7 @@
 
 .advantages {
   margin: 0;
-  padding: 40px 0 40px;
+  padding: 0px 0 40px;
   width: 100%;
   display: block;
   background: vars.$background-color-advantages-section;
@@ -16,18 +16,17 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 15px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
   }
 
   &__list-item {
-    grid-column: span 4 / span 4;
+    grid-column: span 6 / span 6;
     position: relative;
     display: block;
-    max-width: 420px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px 10px 20px 10px;
@@ -35,27 +34,92 @@
     border-radius: 8px;
   }
 
-  &__list-item-image {
-    display: block;
-    width: 120px;
-    margin: 20px auto 20px auto;
+  &__list-item-title {
+    @include mixins.calibri-400(24px, 24px);
+    color: vars.$sub-title-color;
+    margin-bottom: 12px;
   }
 
   &__list-item-text {
-    @include mixins.calibri-400(18px, 18px);
+    @include mixins.calibri-400(18px, 22px);
     text-align: center;
-    letter-spacing: 0.3px;
+  }
+
+  &__cooperation-block {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__invitation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 0 20px 0 20px;
+    margin-bottom: 20px;
+  }
+
+  &__invitation-title {
+    @include mixins.calibri-400(24px, 24px);
+    color: vars.$sub-title-color;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__invitation-text {
+    @include mixins.calibri-400(18px, 22px);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  &__form-container {
+    display: flex;
+    padding: 0 20px 0 20px;
   }
 
   @media screen and (min-width: 768px) {
     &__list-item {
-      grid-column: span 2 / span 4;
+      grid-column: span 2 / span 6;
+    }
+
+    &__list-item-title {
+      @include mixins.calibri-400(18px, 18px);
+    }
+
+    &__list-item-text {
+      @include mixins.calibri-400(14px, 16px);
+      text-align: center;
+    }
+
+    &__cooperation-block {
+      display: flex;
+      flex-direction: row;
     }
   }
 
+  @media screen and (min-width: 768px) {
+    &__invitation-container,
+    &__form-container {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }
   @media screen and (min-width: 1024px) {
-    &__list-item {
-      grid-column: span 1 / span 4;
+    &__list-item-title {
+      @include mixins.calibri-400(24px, 24px);
+    }
+
+    &__list-item-text {
+      @include mixins.calibri-400(18px, 22px);
+    }
+
+    &__invitation-text {
+      @include mixins.calibri-400(20px, 28px);
+      text-align: center;
+      margin-bottom: 12px;
     }
   }
 }

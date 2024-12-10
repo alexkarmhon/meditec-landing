@@ -52,16 +52,21 @@
 }
 
 .product-card__title {
-  @include mixins.roboto-condensed(20px, 300);
+  @include mixins.roboto-condensed(18px, 300);
   padding: 0;
   color: vars.$sub-title-color;
   text-align: center;
-  line-height: 25px;
+  line-height: 22px;
   margin: 40px auto 20px;
 
   span {
     @include mixins.roboto-condensed(18px, 300);
     display: block;
     color: #828282;
+  }
+
+  @media screen and (min-width: 1440px) {
+    @include mixins.roboto-condensed(20px, 300);
+    line-height: 24px;
   }
 }
