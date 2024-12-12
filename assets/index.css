@@ -264,6 +264,12 @@ img {
      object-fit: cover;
 }
 
+a {
+  color: rgba(57, 179, 204, 0.7607843137);
+  text-decoration: none;
+  font-weight: 700;
+}
+
 .adress {
   font-style: normal;
 }
@@ -293,7 +299,7 @@ img {
 .hero .container {
   padding: 0 10px;
 }
-.production .container, .advantages .container {
+.production .container, .advantages .container, .about .container {
   padding: 0 10px;
 }
 .hero__title {
@@ -310,7 +316,7 @@ img {
 
 .section__title {
   font-family: "Calibri", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   line-height: 48px;
   font-weight: 400;
   color: #66696c;
@@ -1004,17 +1010,19 @@ img {
   margin-bottom: 1.6em;
 }
 .form__input {
+  font-family: "Calibri", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 1em;
-  border: 0.1em solid #dadce0;
+  border: 1px solid #dadce0;
   border-radius: 0.5em;
   outline: none;
-  padding: 1em;
-  z-index: 1;
+  padding: 20px;
   background: none;
 }
 .form__input--captcha {
@@ -1048,21 +1056,18 @@ img {
   left: 0.8em;
   font-size: 0.8em;
   font-weight: 600;
-  z-index: 5;
 }
 .form__input:not(:-ms-input-placeholder).form__input:not(:focus) + .form__label {
   top: -0.5em;
   left: 0.8em;
   font-size: 0.8em;
   font-weight: 600;
-  z-index: 5;
 }
 .form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
   top: -0.5em;
   left: 0.8em;
   font-size: 0.8em;
   font-weight: 600;
-  z-index: 5;
 }
 .form__input:focus {
   border: 0.1em solid rgba(57, 179, 204, 0.7607843137);
@@ -1085,7 +1090,7 @@ img {
   color: #555;
   width: 100%;
   text-align: center;
-  height: 40px;
+  height: 50px;
   line-height: 40px;
   letter-spacing: 8px;
   border: 1px dashed #8e8e8e;
@@ -1293,14 +1298,12 @@ img {
   background-color: #ffffff;
 }
 .production__description {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  font-size: 20px;
+  font-family: "Calibri", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 400;
   color: #313131;
   text-align: center;
-  line-height: 25px;
-  font-size: 20px;
-  font-weight: 400;
   padding: 12px 0 60px;
   margin: 20px auto 0px auto;
 }
@@ -1358,12 +1361,14 @@ img {
   background-color: #f0f4f5;
 }
 .advantages__list {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 15px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .advantages__list-item {
   grid-column: span 6/span 6;
@@ -1448,6 +1453,37 @@ img {
   display: flex;
   padding: 0 20px 0 20px;
 }
+
+.about__title::before {
+  background-color: #ffffff;
+}
+.about__info-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  margin-top: 20px;
+  gap: 12px;
+}
+.about__block {
+  padding: 20px;
+}
+.about__block--images {
+  display: none;
+}
+.about__picture {
+  grid-column: span 1/span 2;
+  height: 440px;
+  border-radius: 8px;
+}
+.about__text {
+  font-family: "Calibri", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  text-align: center;
+}
 @media screen and (min-width: 480px){
   .container {
     margin: 0 auto;
@@ -1494,9 +1530,9 @@ img {
   }
   .menu__lang-bar li {
     font-size: 14px;
-    font-weight: 100;
   }
   .menu__lang-bar li a {
+    font-weight: 100;
     text-decoration: none;
     color: #66696c;
   }
@@ -1514,6 +1550,7 @@ img {
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
+    font-weight: 400;
     color: #66696c;
     -webkit-transition: color 0.2s ease-in-out;
     -moz-transition: color 0.2s ease-in-out;
@@ -1525,19 +1562,40 @@ img {
   .production__item {
     grid-column: span 6/span 12;
   }
+  .advantages__invitation-container, .advantages__form-container {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  .advantages__list::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    width: 50%;
+    margin: 0 auto 0;
+    -webkit-transform: translateX(50%);
+       -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%);
+    -webkit-transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    transition: 0.3s ease all;
+    border-bottom: 1px dotted #66696c;
+  }
   .advantages__list-item {
     grid-column: span 2/span 6;
   }
-  .advantages__list-item-title {
+  .advantages__list-item-title, .advantages__invitation-title {
     font-family: "Calibri", sans-serif;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 24px;
+    line-height: 24px;
     font-weight: 400;
   }
   .advantages__list-item-text {
     font-family: "Calibri", sans-serif;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 18px;
     font-weight: 400;
     text-align: center;
   }
@@ -1553,9 +1611,33 @@ img {
        -moz-box-direction: normal;
             flex-direction: row;
   }
-  .advantages__invitation-container, .advantages__form-container {
+  .about__block {
     width: 50%;
-    margin-bottom: 0;
+    padding: 12px;
+  }
+  .about__block--images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .about__block--text {
+    position: relative;
+  }
+  .about__button {
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 20px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 @media screen and (min-width: 1024px){
@@ -1577,10 +1659,10 @@ img {
   .production__item {
     grid-column: span 3/span 12;
   }
-  .advantages__list-item-title {
+  .advantages__list-item-title, .advantages__invitation-title {
     font-family: "Calibri", sans-serif;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 28px;
+    line-height: 28px;
     font-weight: 400;
   }
   .advantages__list-item-text {
