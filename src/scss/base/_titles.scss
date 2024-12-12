@@ -12,7 +12,7 @@
 }
 
 .section__title {
-  @include mixins.calibri-400(30px, 48px);
+  @include mixins.calibri-400(40px, 48px);
   color: vars.$section-title-color;
   background-color: inherit;
   text-align: center;

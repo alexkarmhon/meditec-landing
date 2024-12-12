@@ -15,12 +15,9 @@
   }
 
   &__description {
-    @include mixins.roboto-condensed(20px, 400);
+    @include mixins.calibri-400(24px, 32px);
     color: vars.$main-color;
     text-align: center;
-    line-height: 25px;
-    font-size: 20px;
-    font-weight: 400;
     padding: 12px 0 60px;
     margin: 20px auto 0px auto;
   }
@@ -49,7 +46,6 @@
 @media screen and (min-width: 1024px) {
   .production {
     &__list:hover > :not(:hover) {
-      // filter: blur(5px);
       opacity: 0.9;
       img {
         filter: saturate(40%);

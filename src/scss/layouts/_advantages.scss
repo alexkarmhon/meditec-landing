@@ -15,12 +15,14 @@
   }
 
   &__list {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 15px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   &__list-item {
@@ -81,16 +83,36 @@
   }
 
   @media screen and (min-width: 768px) {
+    &__invitation-container,
+    &__form-container {
+      width: 50%;
+      margin-bottom: 0;
+    }
+    &__list {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        display: block;
+        height: 1px;
+        width: 50%;
+        margin: 0 auto 0;
+        transform: translateX(50%);
+        transition: 0.3s ease all;
+        border-bottom: 1px dotted vars.$section-title-color;
+      }
+    }
     &__list-item {
       grid-column: span 2 / span 6;
     }
 
-    &__list-item-title {
-      @include mixins.calibri-400(18px, 18px);
+    &__list-item-title,
+    &__invitation-title {
+      @include mixins.calibri-400(24px, 24px);
     }
 
     &__list-item-text {
-      @include mixins.calibri-400(14px, 16px);
+      @include mixins.calibri-400(16px, 18px);
       text-align: center;
     }
 
@@ -100,16 +122,10 @@
     }
   }
 
-  @media screen and (min-width: 768px) {
-    &__invitation-container,
-    &__form-container {
-      width: 50%;
-      margin-bottom: 0;
-    }
-  }
   @media screen and (min-width: 1024px) {
-    &__list-item-title {
-      @include mixins.calibri-400(24px, 24px);
+    &__list-item-title,
+    &__invitation-title {
+      @include mixins.calibri-400(28px, 28px);
     }
 
     &__list-item-text {
