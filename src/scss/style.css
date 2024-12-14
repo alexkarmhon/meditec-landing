@@ -5,7 +5,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 100;
-  src: url("/src/fonts/Roboto-Condensed-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-200 - cyrillic_latin */
 @font-face {
@@ -13,7 +13,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 200;
-  src: url("/src/fonts/fonts/Roboto-Condensed-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/fonts/Roboto-Condensed-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-300 - cyrillic_latin */
 @font-face {
@@ -21,7 +21,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 300;
-  src: url("/src/fonts/Roboto-Condensed-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-regular - cyrillic_latin */
 @font-face {
@@ -29,7 +29,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 400;
-  src: url("/src/fonts/Roboto-Condensed-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-500 - cyrillic_latin */
 @font-face {
@@ -37,7 +37,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 500;
-  src: url("/src/fonts/Roboto-Condensed-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-600 - cyrillic_latin */
 @font-face {
@@ -45,7 +45,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 600;
-  src: url("/src/fonts/Roboto-Condensed-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-700 - cyrillic_latin */
 @font-face {
@@ -53,7 +53,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 700;
-  src: url("/src/fonts/Roboto-Condensed-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-800 - cyrillic_latin */
 @font-face {
@@ -61,7 +61,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 800;
-  src: url("/src/fonts/Roboto-Condensed-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-900 - cyrillic_latin */
 @font-face {
@@ -69,7 +69,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 900;
-  src: url("/src/fonts/Roboto-Condensed-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /*calibri-regular-400*/
 @font-face {
@@ -77,7 +77,7 @@
   font-family: "Calibri";
   font-style: normal;
   font-weight: 400;
-  src: url("/src/fonts/Calibri.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Calibri.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /*calibri-bold-800*/
 @font-face {
@@ -85,7 +85,7 @@
   font-family: "Calibri";
   font-style: normal;
   font-weight: 700;
-  src: url("/src/fonts/Calibri-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Calibri-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /***
     The new CSS reset - version 1.11 (last updated 20.9.2023)
@@ -96,6 +96,11 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
     - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
 /* Preferred box-sizing value */
 *,
 *::before,
@@ -242,8 +247,15 @@ menu {
 img {
   display: block;
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+a {
+  color: rgba(57, 179, 204, 0.7607843137);
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .adress {
@@ -269,7 +281,7 @@ img {
 .hero .container {
   padding: 0 10px;
 }
-.production .container, .advantages .container {
+.production .container, .advantages .container, .about .container {
   padding: 0 10px;
 }
 
@@ -328,7 +340,7 @@ img {
 
 .section__title {
   font-family: "Calibri", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   line-height: 48px;
   font-weight: 400;
   color: #66696c;
@@ -369,12 +381,12 @@ img {
 
 .product-card__title {
   font-family: "Roboto Condensed", Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   padding: 0;
   color: #66696c;
   text-align: center;
-  line-height: 25px;
+  line-height: 22px;
   margin: 40px auto 20px;
 }
 .product-card__title span {
@@ -383,6 +395,14 @@ img {
   font-weight: 300;
   display: block;
   color: #828282;
+}
+@media screen and (min-width: 1440px) {
+  .product-card__title {
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 24px;
+  }
 }
 
 .mobile-menu-btn {
@@ -685,12 +705,12 @@ img {
   font-weight: 400;
   display: block;
   margin: 20px auto 0;
-  border-radius: 10px;
+  border-radius: 6px;
   background: linear-gradient(#fff, #d6e4ea);
   color: #66696c;
   padding: 8px 24px;
-  box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.4);
-  transition: all 250ms ease;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);
+  transition: all 400ms ease;
   cursor: pointer;
 }
 .main-button:hover {
@@ -699,11 +719,15 @@ img {
   transition: all 250ms ease;
 }
 
+.form {
+  width: 100%;
+}
 .form__title {
   font-family: "Calibri", sans-serif;
   font-size: 24px;
   line-height: 24px;
   font-weight: 400;
+  text-align: center;
   color: #66696c;
   margin-bottom: 20px;
 }
@@ -713,17 +737,19 @@ img {
   margin-bottom: 1.6em;
 }
 .form__input {
+  font-family: "Calibri", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 1em;
-  border: 0.1em solid #dadce0;
+  border: 1px solid #dadce0;
   border-radius: 0.5em;
   outline: none;
-  padding: 1em;
-  z-index: 1;
+  padding: 20px;
   background: none;
 }
 .form__input--captcha {
@@ -755,14 +781,12 @@ img {
   left: 0.8em;
   font-size: 0.8em;
   font-weight: 600;
-  z-index: 5;
 }
 .form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
   top: -0.5em;
   left: 0.8em;
   font-size: 0.8em;
   font-weight: 600;
-  z-index: 5;
 }
 .form__input:focus {
   border: 0.1em solid rgba(57, 179, 204, 0.7607843137);
@@ -779,7 +803,7 @@ img {
   color: #555;
   width: 100%;
   text-align: center;
-  height: 40px;
+  height: 50px;
   line-height: 40px;
   letter-spacing: 8px;
   border: 1px dashed #8e8e8e;
@@ -816,19 +840,22 @@ img {
 }
 
 .form__button {
+  font-family: "Calibri", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #66696c;
   width: 100%;
   display: block;
-  padding: 16px 36px;
+  padding: 12px 36px;
   outline: none;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);
   transition: 0.4s;
 }
 
 .form__button:hover {
-  transform: scale(0.9);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .header {
@@ -889,9 +916,9 @@ img {
   }
   .menu__lang-bar li {
     font-size: 14px;
-    font-weight: 100;
   }
   .menu__lang-bar li a {
+    font-weight: 100;
     text-decoration: none;
     color: #66696c;
   }
@@ -906,6 +933,7 @@ img {
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
+    font-weight: 400;
     color: #66696c;
     transition: color 0.2s ease-in-out;
   }
@@ -999,7 +1027,7 @@ img {
 
 .production {
   margin: 0;
-  padding: 40px 0 40px;
+  padding: 0px 0 40px;
   width: 100%;
   display: block;
   background: #ffffff;
@@ -1008,14 +1036,12 @@ img {
   background-color: #ffffff;
 }
 .production__description {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  font-size: 20px;
+  font-family: "Calibri", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 400;
   color: #313131;
   text-align: center;
-  line-height: 25px;
-  font-size: 20px;
-  font-weight: 400;
   padding: 12px 0 60px;
   margin: 20px auto 0px auto;
 }
@@ -1026,6 +1052,8 @@ img {
 }
 .production__item {
   grid-column: span 12/span 12;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -1057,7 +1085,7 @@ img {
 }
 .advantages {
   margin: 0;
-  padding: 40px 0 40px;
+  padding: 0px 0 40px;
   width: 100%;
   display: block;
   background: #f0f4f5;
@@ -1066,18 +1094,19 @@ img {
   background-color: #f0f4f5;
 }
 .advantages__list {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 15px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .advantages__list-item {
-  grid-column: span 3/span 3;
+  grid-column: span 6/span 6;
   position: relative;
   display: block;
-  max-width: 420px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 10px 20px 10px;
@@ -1090,28 +1119,298 @@ img {
   line-height: 24px;
   font-weight: 400;
   color: #66696c;
-  margin-bottom: 40px;
-}
-.advantages__list-item-image {
-  display: block;
-  width: 120px;
-  margin: 20px auto 20px auto;
+  margin-bottom: 12px;
 }
 .advantages__list-item-text {
   font-family: "Calibri", sans-serif;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 22px;
   font-weight: 400;
   text-align: center;
-  letter-spacing: 0.3px;
+}
+.advantages__cooperation-block {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.advantages__invitation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 0 20px 0 20px;
+  margin-bottom: 20px;
+}
+.advantages__invitation-title {
+  font-family: "Calibri", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #66696c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.advantages__invitation-text {
+  font-family: "Calibri", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 12px;
 }
 .advantages__form-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 20px 0 20px;
 }
 @media screen and (min-width: 768px) {
-  .advantages__list-item {
-    grid-column: span 1/span 3;
+  .advantages__invitation-container, .advantages__form-container {
+    width: 50%;
+    margin-bottom: 0;
   }
+  .advantages__list::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 1px;
+    width: 50%;
+    margin: 0 auto 0;
+    transform: translateX(50%);
+    transition: 0.3s ease all;
+    border-bottom: 1px dotted #66696c;
+  }
+  .advantages__list-item {
+    grid-column: span 2/span 6;
+  }
+  .advantages__list-item-title, .advantages__invitation-title {
+    font-family: "Calibri", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  .advantages__list-item-text {
+    font-family: "Calibri", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .advantages__cooperation-block {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .advantages__list-item-title, .advantages__invitation-title {
+    font-family: "Calibri", sans-serif;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+  .advantages__list-item-text {
+    font-family: "Calibri", sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+  .advantages__invitation-text {
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+}
+
+.about {
+  padding-bottom: 40px;
+}
+.about__title::before {
+  background-color: #ffffff;
+}
+.about__info-block {
+  display: flex;
+  margin-top: 40px;
+  gap: 12px;
+}
+.about__block--images {
+  display: none;
+}
+.about__picture {
+  grid-column: span 1/span 2;
+  height: 440px;
+  border-radius: 8px;
+}
+.about__text {
+  font-family: "Calibri", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .about__block {
+    width: 50%;
+  }
+  .about__block--images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .about__block--text {
+    position: relative;
+  }
+  .about__button {
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 20px;
+    width: -moz-max-content;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.gallery {
+  margin: 0;
+  padding: 0px 0 40px;
+  width: 100%;
+  display: block;
+  background: #f0f4f5;
+}
+.gallery__title {
+  margin-bottom: 40px;
+}
+.gallery__title::before {
+  background-color: #f0f4f5;
+}
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(8, 5vw);
+  gap: 15px;
+}
+.gallery__item--1 {
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+}
+.gallery__item--2 {
+  grid-column: 3/span 2;
+  grid-row: 1/span 2;
+}
+.gallery__item--3 {
+  grid-column: 5/span 4;
+  grid-row: 1/span 5;
+}
+.gallery__item--4 {
+  grid-column: 1/span 4;
+  grid-row: 3/span 3;
+}
+.gallery__item--5 {
+  grid-column: 1/span 4;
+  grid-row: 6/span 3;
+}
+.gallery__item--6 {
+  grid-column: 5/span 4;
+  grid-row: 6/span 3;
+}
+.gallery .column {
+  float: left;
+  width: 15%;
+}
+.gallery__modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+.gallery__modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 60%;
+  max-width: 800px;
+}
+.gallery__modal-close-btn {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 45px;
+}
+.gallery__modal-close:hover, .gallery__modal-close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+.gallery__modal-slide {
+  display: none;
+}
+.gallery .prev,
+.gallery .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+.gallery .prev:hover,
+.gallery .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.gallery .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.gallery__modal-slide-counter {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.gallery__modal-caption {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+.gallery__modal-image-controls {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+.gallery img.demo {
+  opacity: 0.6;
+}
+.gallery .active,
+.gallery .demo:hover {
+  opacity: 1;
+}
+.gallery img.hover-shadow {
+  transition: 0.3s;
+}
+.gallery .hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }/*# sourceMappingURL=style.css.map */

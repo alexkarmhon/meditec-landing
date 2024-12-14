@@ -2,6 +2,7 @@
 @use "../utils/mixins";
 
 .about {
+  padding-bottom: 40px;
   &__title {
     &::before {
       background-color: vars.$background-color-production-section;
@@ -10,12 +11,8 @@
 
   &__info-block {
     display: flex;
-    margin-top: 20px;
+    margin-top: 40px;
     gap: 12px;
-  }
-
-  &__block {
-    padding: 20px;
   }
 
   &__block--images {
@@ -37,7 +34,7 @@
   @media screen and (min-width: 768px) {
     &__block {
       width: 50%;
-      padding: 12px;
+      // padding: 12px;
     }
 
     &__block--images {
