@@ -96,6 +96,11 @@
     - The "symbol *" part is to solve Firefox SVG sprite bug
     - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
 /* Preferred box-sizing value */
 *,
 *::before,
@@ -260,6 +265,7 @@ menu {
 img {
   display: block;
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1454,6 +1460,9 @@ a {
   padding: 0 20px 0 20px;
 }
 
+.about {
+  padding-bottom: 40px;
+}
 .about__title::before {
   background-color: #ffffff;
 }
@@ -1462,11 +1471,8 @@ a {
   display: -webkit-flex;
   display: -moz-box;
   display: flex;
-  margin-top: 20px;
+  margin-top: 40px;
   gap: 12px;
-}
-.about__block {
-  padding: 20px;
 }
 .about__block--images {
   display: none;
@@ -1483,6 +1489,170 @@ a {
   font-weight: 400;
   margin-bottom: 12px;
   text-align: center;
+}
+
+.gallery {
+  margin: 0;
+  padding: 0px 0 40px;
+  width: 100%;
+  display: block;
+  background: #f0f4f5;
+}
+.gallery__title {
+  margin-bottom: 40px;
+}
+.gallery__title::before {
+  background-color: #f0f4f5;
+}
+.gallery__list {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(8, 5vw);
+  gap: 15px;
+}
+.gallery__item--1 {
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+}
+.gallery__item--2 {
+  grid-column: 3/span 2;
+  grid-row: 1/span 2;
+}
+.gallery__item--3 {
+  grid-column: 5/span 4;
+  grid-row: 1/span 5;
+}
+.gallery__item--4 {
+  grid-column: 1/span 4;
+  grid-row: 3/span 3;
+}
+.gallery__item--5 {
+  grid-column: 1/span 4;
+  grid-row: 6/span 3;
+}
+.gallery__item--6 {
+  grid-column: 5/span 4;
+  grid-row: 6/span 3;
+}
+.gallery__modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 40px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(13, 19, 31, 0.8862745098);
+}
+.gallery__modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 800px;
+}
+.gallery__modal-close-btn {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 45px;
+}
+.gallery__modal-close:hover, .gallery__modal-close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+.gallery__modal-slides {
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gallery__modal-slide {
+  display: none;
+}
+.gallery__modal-control-prev, .gallery__modal-control-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  font-weight: bold;
+  -webkit-transform: translateY(-150%);
+     -moz-transform: translateY(-150%);
+      -ms-transform: translateY(-150%);
+          transform: translateY(-150%);
+  -webkit-transition: 0.6s ease;
+  -moz-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+.gallery__modal-control-prev:hover, .gallery__modal-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.gallery__modal-control-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.gallery__modal-slide-counter {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.gallery__modal-caption {
+  margin-bottom: 8px;
+  text-align: center;
+  background-color: inherit;
+  padding: 2px 16px;
+  color: white;
+}
+.gallery__modal-image-controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+          justify-content: center;
+  gap: 4px;
+}
+.gallery__modal-image-control {
+  float: left;
+  width: 15%;
+}
+.gallery__modal-image-demo {
+  opacity: 0.6;
+}
+.gallery .active, .gallery__modal-image-demo:hover {
+  opacity: 1;
+}
+.gallery__image {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+.gallery__image:hover {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (min-width: 480px){
   .container {
@@ -1613,7 +1783,6 @@ a {
   }
   .about__block {
     width: 50%;
-    padding: 12px;
   }
   .about__block--images {
     display: grid;
@@ -1714,6 +1883,14 @@ a {
     font-size: 0.95rem;
   }
 }
+@media screen and (max-width: 1024px) and (orientation: landscape){
+  .gallery__modal {
+    padding: 40px;
+  }
+  .gallery__modal-slides {
+    width: 600px;
+  }
+}
 @media screen and (max-width: 768px){
   .hero .slogan-box {
     -webkit-box-align: start;
@@ -1730,6 +1907,14 @@ a {
   .hero .slogan-box .slogan .text .product_card .slogan-button {
     padding: 8px 16px;
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 767px) and (orientation: landscape){
+  .gallery__modal {
+    padding: 40px;
+  }
+  .gallery__modal-slides {
+    width: 240px;
   }
 }
 @media screen and (max-width: 480px){
