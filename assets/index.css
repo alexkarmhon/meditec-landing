@@ -1548,6 +1548,11 @@ a {
 }
 .gallery__modal-content {
   position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1909,14 +1914,6 @@ a {
     font-size: 18px;
   }
 }
-@media screen and (max-width: 767px) and (orientation: landscape){
-  .gallery__modal {
-    padding: 40px;
-  }
-  .gallery__modal-slides {
-    width: 240px;
-  }
-}
 @media screen and (max-width: 480px){
   .hero .slogan-box .slogan .text .hero_title {
     font-size: 25px;
@@ -1926,5 +1923,13 @@ a {
   }
   .hero .slogan-box .slogan .text .product_card .slogan-button {
     font-size: 14px;
+  }
+}
+@media screen and (max-height: 430px) and (orientation: landscape){
+  .gallery__modal {
+    padding: 40px;
+  }
+  .gallery__modal-slides {
+    width: 280px;
   }
 }
