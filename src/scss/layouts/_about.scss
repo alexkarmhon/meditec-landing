@@ -3,15 +3,16 @@
 
 .about {
   padding-bottom: 40px;
+  background: vars.$background-color-section-main;
   &__title {
+    margin-bottom: 40px;
     &::before {
-      background-color: vars.$background-color-production-section;
+      background-color: vars.$background-color-section-main;
     }
   }
 
   &__info-block {
     display: flex;
-    margin-top: 40px;
     gap: 12px;
   }
 
@@ -50,7 +51,7 @@
     &__button {
       @include mixins.calibri-400(20px, 24px);
       position: absolute;
-      bottom: 20px;
+      bottom: 0px;
       width: max-content;
       left: 50%;
       transform: translateX(-50%);

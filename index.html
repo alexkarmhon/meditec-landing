@@ -767,7 +767,7 @@
                         >Введіть код</label
                       >
                       <button class="form__captcha--refresh">
-                        <img src="/public/images/arrow-path.svg" alt="" />
+                        <img src="/images/arrow-path.svg" alt="" />
                       </button>
                     </div>
                   </div>
@@ -786,12 +786,12 @@
               <div class="about__block about__block--images">
                 <img
                   class="about__picture"
-                  src="/public/images/Anatolii.webp"
+                  src="/images/Anatolii.webp"
                   alt=""
                 />
                 <img
                   class="about__picture"
-                  src="/public/images/about-img-2.webp"
+                  src="/images/about-img-2.webp"
                   alt=""
                 />
               </div>
@@ -826,88 +826,86 @@
             <div class="gallery__list">
               <figure class="gallery__item gallery__item--1">
                 <img
-                  src="/public/images/gallery/gallery-02.webp"
+                  src="/images/gallery/gallery-02.webp"
                   onclick="openModal();currentSlide(1)"
                   class="gallery__image"
                 />
               </figure>
               <figure class="gallery__item gallery__item--2">
                 <img
-                  src="/public/images/gallery/gallery-05.webp"
+                  src="/images/gallery/gallery-05.webp"
                   onclick="openModal();currentSlide(2)"
                   class="gallery__image"
                 />
               </figure>
               <figure class="gallery__item gallery__item--3">
                 <img
-                  src="/public/images/gallery/gallery-06.webp"
+                  src="/images/gallery/gallery-06.webp"
                   onclick="openModal();currentSlide(3)"
                   class="gallery__image"
                 />
               </figure>
               <figure class="gallery__item gallery__item--4">
                 <img
-                  src="/public/images/gallery/gallery-07.webp"
+                  src="/images/gallery/gallery-07.webp"
                   onclick="openModal();currentSlide(4)"
                   class="gallery__image"
                 />
               </figure>
               <figure class="gallery__item gallery__item--5">
                 <img
-                  src="/public/images/gallery/gallery-08.webp"
+                  src="/images/gallery/gallery-08.webp"
                   onclick="openModal();currentSlide(5)"
                   class="gallery__image"
                 />
               </figure>
               <figure class="gallery__item gallery__item--6">
                 <img
-                  src="/public/images/gallery/gallery-09.webp"
+                  src="/images/gallery/gallery-09.webp"
                   onclick="openModal();currentSlide(6)"
                   class="gallery__image"
                 />
               </figure>
             </div>
             <!-- Gallery Lightbox -->
-            <div id="galleryModal" class="gallery__modal">
+            <div id="galleryModal" class="gallery__modal-overlay">
               <button class="gallery__modal-close-btn" onclick="closeModal()">
-                <img src="/public/images/x-mark.svg" alt="close button icon" />
+                <img src="/images/x-mark.svg" alt="close button icon" />
               </button>
               <div class="gallery__modal-content">
                 <div class="gallery__modal-slides">
                   <div class="gallery__modal-slide">
                     <div class="gallery__modal-slide-counter">1 / 6</div>
-                    <img src="/public/images/gallery/gallery-02.webp" />
+                    <img src="/images/gallery/gallery-02.webp" />
                   </div>
                   <div class="gallery__modal-slide">
                     <div class="gallery__modal-slide-counter">2 / 6</div>
-                    <img src="/public/images/gallery/gallery-05.webp" />
+                    <img src="/images/gallery/gallery-05.webp" />
                   </div>
                   <div class="gallery__modal-slide">
                     <div class="gallery__modal-slide-counter">3 / 6</div>
-                    <img src="/public/images/gallery/gallery-06.webp" />
+                    <img src="/images/gallery/gallery-06.webp" />
                   </div>
                   <div class="gallery__modal-slide">
                     <div class="gallery__modal-slide-counter">4 / 6</div>
-                    <img src="/public/images/gallery/gallery-07.webp" />
+                    <img src="/images/gallery/gallery-07.webp" />
                   </div>
                   <div class="gallery__modal-slide">
                     <div class="gallery__modal-slide-counter">5 / 6</div>
-                    <img src="/public/images/gallery/gallery-08.webp" />
+                    <img src="/images/gallery/gallery-08.webp" />
                   </div>
                   <div class="gallery__modal-slide">
                     <div class="gallery__modal-slide-counter">6 / 6</div>
-                    <img src="/public/images/gallery/gallery-09.webp" />
+                    <img src="/images/gallery/gallery-09.webp" />
                   </div>
                 </div>
-
-                <!-- Next/previous controls -->
                 <div class="gallery__modal-controls">
                   <button
                     class="gallery__modal-control-prev"
                     onclick="plusSlides(-1)"
                   >
                     <img
-                      src="/public/images/chevron-left.svg"
+                      src="/images/chevron-left.svg"
                       alt="prev button icon"
                     />
                   </button>
@@ -916,23 +914,19 @@
                     onclick="plusSlides(1)"
                   >
                     <img
-                      src="/public/images/chevron-right.svg"
+                      src="/images/chevron-right.svg"
                       alt="prev button icon"
                     />
                   </button>
                 </div>
-
-                <!-- Caption text -->
                 <div class="gallery__modal-caption">
                   <p id="caption"></p>
                 </div>
-
-                <!-- Thumbnail image controls -->
                 <div class="gallery__modal-image-controls">
                   <div class="gallery__modal-image-control">
                     <img
                       class="gallery__modal-image-demo"
-                      src="/public/images/gallery/gallery-02.webp"
+                      src="/images/gallery/gallery-02.webp"
                       onclick="currentSlide(1)"
                       alt="Крем від болю в суглобах"
                     />
@@ -941,7 +935,7 @@
                   <div class="gallery__modal-image-control">
                     <img
                       class="gallery__modal-image-demo"
-                      src="/public/images/gallery/gallery-05.webp"
+                      src="/images/gallery/gallery-05.webp"
                       onclick="currentSlide(2)"
                       alt="Крем від м'язових спазмів"
                     />
@@ -950,7 +944,7 @@
                   <div class="gallery__modal-image-control">
                     <img
                       class="gallery__modal-image-demo"
-                      src="/public/images/gallery/gallery-06.webp"
+                      src="/images/gallery/gallery-06.webp"
                       onclick="currentSlide(3)"
                       alt="Наша продукція"
                     />
@@ -959,7 +953,7 @@
                   <div class="gallery__modal-image-control">
                     <img
                       class="gallery__modal-image-demo"
-                      src="/public/images/gallery/gallery-07.webp"
+                      src="/images/gallery/gallery-07.webp"
                       onclick="currentSlide(4)"
                       alt="Наша продукція"
                     />
@@ -967,7 +961,7 @@
                   <div class="gallery__modal-image-control">
                     <img
                       class="gallery__modal-image-demo"
-                      src="/public/images/gallery/gallery-08.webp"
+                      src="/images/gallery/gallery-08.webp"
                       onclick="currentSlide(5)"
                       alt="Наша продукція"
                     />
@@ -975,7 +969,7 @@
                   <div class="gallery__modal-image-control">
                     <img
                       class="gallery__modal-image-demo"
-                      src="/public/images/gallery/gallery-09.webp"
+                      src="/images/gallery/gallery-09.webp"
                       onclick="currentSlide(6)"
                       alt="Крем від м'язових спазмів"
                     />
@@ -987,7 +981,52 @@
         </section>
         <section class="partners" id="partners">
           <div class="container">
-            <h2 class="section__title about__title">Партнери</h2>
+            <h2 class="section__title partners__title">Партнери</h2>
+            <ul class="partners__list">
+              <li class="partners__item">
+                <a
+                  class="partners__link"
+                  target="_blank"
+                  href="https://meditec.ua/"
+                  ><img
+                    src="/images/partners/partner-01.webp"
+                    alt="meditec company logotype"
+                /></a>
+              </li>
+              <li class="partners__item">
+                <a
+                  class="partners__link"
+                  target="_blank"
+                  href="https://clinicwares.com/shop/"
+                  ><img
+                    class="partners__logo"
+                    src="/images/partners/partner-02.webp"
+                    alt="clinicwares company logotype"
+                /></a>
+              </li>
+              <li class="partners__item">
+                <a
+                  class="partners__link"
+                  target="_blank"
+                  href="https://grs-project.com/"
+                  ><img
+                    class="partners__logo"
+                    src="/images/partners/partner-03.webp"
+                    alt="grs-project company logotype"
+                /></a>
+              </li>
+              <li class="partners__item">
+                <a
+                  class="partners__link"
+                  target="_blank"
+                  href="https://scoliosis.com.ua/"
+                  ><img
+                    class="partners__logo"
+                    src="/images/partners/partner-04.webp"
+                    alt="scoliosis company logotype"
+                /></a>
+              </li>
+            </ul>
           </div>
         </section>
         <section class="contacts" id="contacts">
