@@ -130,6 +130,11 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
+modal.addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) {
+    closeModal();
+  }
+});
 window.openModal = openModal;
 window.closeModal = closeModal;
 window.currentSlide = currentSlide;
