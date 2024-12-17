@@ -1,0 +1,84 @@
+@use "../utils/vars";
+@use "../utils/mixins";
+
+.contacts {
+  padding: 40px 0 40px;
+  background: vars.$background-color-section-secondary;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  &__form-box,
+  &__contacts-box {
+    grid-column: span 2 / span 2;
+  }
+
+  &__form-box {
+    margin-bottom: 40px;
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
+  &__address-list {
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__address-list-item {
+    margin-bottom: 20px;
+  }
+
+  &__address-link {
+    display: flex;
+    align-items: center;
+
+    @include mixins.calibri-400(18px, 40px);
+    color: vars.$section-title-color;
+    line-height: 18px;
+  }
+
+  &__address-link--address {
+    margin-bottom: 12px;
+  }
+
+  &__address-link--address::before {
+    content: url("/images/icons/map-pin.svg");
+    margin-right: 12px;
+  }
+
+  &__address-link--tel::before {
+    content: url("/public/images/icons/phone.svg");
+    margin-right: 12px;
+  }
+
+  &__address-link--email::before {
+    content: url("/public/images/icons/envelope.svg");
+    margin-right: 12px;
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media screen and (min-width: 425px) {
+    &__address-link {
+      @include mixins.calibri-400(24px, 40px);
+      line-height: 18px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &__form-box,
+    &__contacts-box {
+      grid-column: span 1 / span 2;
+    }
+  }
+}

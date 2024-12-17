@@ -3,8 +3,8 @@
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
 
   .content {
     width: 100%;
@@ -14,16 +14,6 @@
   .header & {
     display: flex;
     justify-content: space-between;
-  }
-
-  .hero & {
-    padding: 0 10px;
-  }
-
-  .production &,
-  .advantages &,
-  .about & {
-    padding: 0 10px;
   }
 }
 
@@ -40,26 +30,6 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    .header & {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
-}
-@media screen and (min-width: 1280px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    .header & {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
-}
 @media screen and (min-width: 1440px) {
   .container {
     padding-left: 15px;

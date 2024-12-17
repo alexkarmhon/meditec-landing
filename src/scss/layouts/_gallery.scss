@@ -2,10 +2,7 @@
 @use "../utils/mixins";
 
 .gallery {
-  margin: 0;
   padding: 0px 0 40px;
-  width: 100%;
-  display: block;
   background: vars.$background-color-section-secondary;
 
   &__title {

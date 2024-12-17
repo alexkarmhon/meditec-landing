@@ -51,6 +51,14 @@
   }
 }
 
+.subtitle {
+  @include mixins.calibri-400(32px, 40px);
+  margin-bottom: 20px;
+  color: vars.$section-title-color;
+  background-color: inherit;
+  text-align: center;
+}
+
 .product-card__title {
   @include mixins.roboto-condensed(18px, 300);
   padding: 0;

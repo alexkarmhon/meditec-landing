@@ -3,9 +3,7 @@
 
 .form {
   width: 100%;
-  // padding: 2em;
-  // border-radius: 1em;
-  // box-shadow: 0 10px 25px rgba(90, 100, 100, 0.2);
+  min-height: fit-content;
 
   &__title {
     @include mixins.calibri-400(24px, 24px);
@@ -16,8 +14,13 @@
 
   &__input-group {
     position: relative;
-    height: 3em;
-    margin-bottom: 1.6em;
+    height: 52px;
+    margin-bottom: 24px;
+
+    &--textarea {
+      margin-bottom: 96px;
+      resize: none;
+    }
   }
 
   &__input {
@@ -36,6 +39,10 @@
     &--captcha {
       position: relative;
       height: 50px;
+    }
+
+    &--textarea {
+      height: auto;
     }
   }
 
@@ -77,10 +84,6 @@
     display: flex;
     gap: 4px;
     align-items: center;
-  }
-
-  &__group--captcha {
-    margin: 15px 0px;
   }
 
   &__preview {
