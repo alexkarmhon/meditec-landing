@@ -734,22 +734,46 @@
                 </p>
               </div>
               <div class="advantages__form-container">
-                <form class="form">
+                <form id="inv-form" class="form">
                   <h3 class="form__title">Зв'яжіться з нами</h3>
 
                   <div class="form__input-group">
-                    <input type="text" class="form__input" placeholder=" " />
-                    <label class="form__label">Ваше Ім'я</label>
+                    <input
+                      id="inv-form-name"
+                      type="text"
+                      class="form__input"
+                      name="user-name"
+                      placeholder=" "
+                    />
+                    <label for="inv-form-name" class="form__label"
+                      >Ваше Ім'я</label
+                    >
                   </div>
 
                   <div class="form__input-group">
-                    <input type="email" class="form__input" placeholder=" " />
-                    <label class="form__label">Ваш Email</label>
+                    <input
+                      id="inv-form-email"
+                      type="email"
+                      class="form__input"
+                      name="user-email"
+                      placeholder=" "
+                    />
+                    <label for="inv-form-email" class="form__label"
+                      >Ваш Email</label
+                    >
                   </div>
 
                   <div class="form__input-group">
-                    <input type="tel" class="form__input" placeholder=" " />
-                    <label class="form__label">Ваш Телефон</label>
+                    <input
+                      id="inv-form-tel"
+                      type="tel"
+                      class="form__input"
+                      name="user-tel"
+                      placeholder=" "
+                    />
+                    <label for="inv-form-tel" class="form__label"
+                      >Ваш Телефон</label
+                    >
                   </div>
 
                   <div class="form__preview"></div>
@@ -762,10 +786,13 @@
                       <input
                         type="text"
                         id="captcha_form"
+                        name="captcha"
                         class="form__input form__input--captcha"
                         placeholder=" "
                       />
-                      <label class="form__label form__label--captcha"
+                      <label
+                        for="captcha_form"
+                        class="form__label form__label--captcha"
                         >Введіть код</label
                       >
                       <button class="form__captcha--refresh">
@@ -799,20 +826,51 @@
               </div>
               <div class="about__block about__block--text">
                 <p class="about__text">
-                  Ми — <a href="https://scoliosis.com.ua">сімейна клініка</a>, з
-                  більш ніж столітнім досвідом у медицині. У двотисячних для
-                  власних потреб розробили екстракт лікувального мулу, на основі
-                  якого створюємо креми та гелі. Останні розробки були здійснені
-                  разом з професором реконструктивної медицини д-ром
-                  <a href="https://www.instagram.com/dr.antoniotoro/"
-                    >Антоніо Торо</a
-                  >.
+                  Ми —
+                  <a
+                    class="about__link"
+                    target="_blank"
+                    href="https://scoliosis.com.ua"
+                    >сімейна клініка</a
+                  >вертебрології, яка понад сто років займається лікуванням
+                  пацієнтів із болями у хребті та суглобах, патологіями постави
+                  та іншими станами, пов’язаними зі здоров’ям опорно-рухового
+                  апарату.
                 </p>
                 <p class="about__text">
-                  Окрім цих засобів, ми працюємо над створенням косметичних
-                  сироваток для догляду за шкірою та зміцнення локального
-                  імунітету. Частину продукції ми передаємо волонтерським
-                  організаціям для потреб військових медичних частин.
+                  На початку 2000-х років для власних потреб ми розробили
+                  унікальний екстракт лікувального мулу, який став основою для
+                  створення косметичних засобів із винятковими лікувальними
+                  властивостями.
+                </p>
+                <p class="about__text">
+                  Наші останні розробки здійснено у співпраці з професором
+                  реконструктивної медицини, військовим лікарем армії США,
+                  доктором
+                  <a
+                    class="about__link"
+                    target="_blank"
+                    href="https://www.instagram.com/dr.antoniotoro/"
+                    >Антоніо Торо</a
+                  >. Його багаторічний досвід у допомозі цивільним після
+                  мінно-вибухових травм дозволив нам створити надзвичайно
+                  ефективний засіб для зменшення рубців, який сьогодні є
+                  флагманом нашої лінійки продукції.
+                </p>
+                <p class="about__text">
+                  Результати використання —
+                  <a
+                    class="about__link"
+                    target="_blank"
+                    href="https://scoliosis.com.ua/"
+                    >ознайомтеся з відгуками пацієнтів та дослідженнями на
+                    нашому сайті.</a
+                  >
+                </p>
+                <p class="about__text">
+                  Ми пишаємося тим, що частину нашої продукції передаємо для
+                  забезпечення військових медичних частин, підтримуючи тих, хто
+                  цього найбільше потребує.
                 </p>
                 <button class="open_popup main-button about__button">
                   Замовити крем для військових
@@ -1031,8 +1089,137 @@
             </ul>
           </div>
         </section>
-        <section class="contacts" id="contacts">
-          <div class="container"></div>
+        <section class="contacts">
+          <div class="container contacts__container">
+            <div class="contacts__form-box">
+              <h2 class="subtitle">Виникли питання? Напишіть нам!</h2>
+              <form id="contact-form" class="form">
+                <div class="form__input-group">
+                  <input
+                    id="contact-user-name"
+                    type="text"
+                    class="form__input"
+                    placeholder=" "
+                  />
+                  <label for="contact-user-name" class="form__label"
+                    >Ваше Ім'я</label
+                  >
+                </div>
+
+                <div class="form__input-group">
+                  <input
+                    id="contact-user-email"
+                    type="email"
+                    class="form__input"
+                    placeholder=" "
+                  />
+                  <label for="contact-user-email" class="form__label"
+                    >Ваш Email</label
+                  >
+                </div>
+
+                <div class="form__input-group">
+                  <input
+                    id="contact-user-tel"
+                    type="tel"
+                    class="form__input"
+                    placeholder=" "
+                  />
+                  <label for="contact-user-tel" class="form__label"
+                    >Ваш Телефон</label
+                  >
+                </div>
+
+                <div class="form__input-group form__input-group--textarea">
+                  <textarea
+                    class="form__input form__input--textarea"
+                    rows="4"
+                    placeholder=" "
+                  ></textarea>
+                  <label class="form__label">Повідомлення</label>
+                </div>
+
+                <button type="submit" class="main-button form__button">
+                  Надіслати
+                </button>
+              </form>
+            </div>
+            <div class="contacts__contacts-box" id="contacts">
+              <address class="contacts__address">
+                <h2 class="subtitle">Контакти</h2>
+                <ul class="contacts__address-list">
+                  <li class="contacts__address-list-item">
+                    <!-- <h3 class="subtitle">Адреси:</h3> -->
+                    <a
+                      href="https://maps.app.goo.gl/j1MpnHMY7vgnngyz5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__address-link contacts__address-link--address"
+                    >
+                      <b>м.Київ</b>, вул.Героїв Оборони, 12
+                    </a>
+                    <a
+                      href="https://maps.app.goo.gl/cpN73JjcFwTmDZQU6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__address-link contacts__address-link--address"
+                    >
+                      <b>м.Київ</b>, вул.Дегтярівська, 32
+                    </a>
+                    <a
+                      href="https://maps.app.goo.gl/Gw298jjzW1CAfH3C9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__address-link contacts__address-link--address"
+                    >
+                      <b>м.Чернігів</b>, вул.Кільцева, 3Б
+                    </a>
+                  </li>
+                  <li class="contacts__address-list-item">
+                    <!-- <h3 class="subtitle">Телефон:</h3> -->
+                    <a
+                      href="tel:+380441111111"
+                      class="contacts__address-link contacts__address-link--tel"
+                    >
+                      +38 044 111 11 11
+                    </a>
+                  </li>
+                  <li class="contacts__address-list-item">
+                    <!-- <h3 class="subtitle">Пошта:</h3> -->
+                    <a
+                      href="mailto:info@elam-cosmetics.com"
+                      class="contacts__address-link contacts__address-link--email"
+                      style="text-decoration: underline"
+                    >
+                      info@elam-cosmetics.com
+                    </a>
+                  </li>
+                </ul>
+
+                <h2 class="subtitle">Ми в соцмережах</h2>
+                <img
+                  src="/meditec-landing/assets/instagram.svg"
+                  class="social-icon"
+                  alt=""
+                />
+                <img
+                  src="/meditec-landing/assets/facebook.svg"
+                  class="social-icon"
+                  alt=""
+                />
+                <img
+                  src="/meditec-landing/assets/youtube.svg"
+                  class="social-icon"
+                  alt=""
+                />
+                <img
+                  src="/meditec-landing/assets/youtube (1).svg"
+                  class="social-icon"
+                  alt=""
+                />
+              </address>
+            </div>
+          </div>
         </section>
       </main>
       <footer></footer>

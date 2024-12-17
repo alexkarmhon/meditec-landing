@@ -271,13 +271,7 @@ img {
 }
 
 a {
-  color: rgba(57, 179, 204, 0.7607843137);
   text-decoration: none;
-  font-weight: 700;
-}
-
-.adress {
-  font-style: normal;
 }
 
 .container {
@@ -285,8 +279,8 @@ a {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .container .content {
   width: 100%;
@@ -301,12 +295,6 @@ a {
   -webkit-justify-content: space-between;
      -moz-box-pack: justify;
           justify-content: space-between;
-}
-.hero .container {
-  padding: 0 10px;
-}
-.production .container, .advantages .container, .about .container {
-  padding: 0 10px;
 }
 .hero__title {
   font-family: "Roboto Condensed", Arial, sans-serif;
@@ -363,6 +351,17 @@ a {
   -moz-transition: 0.3s ease all;
   transition: 0.3s ease all;
   bottom: -30px;
+}
+
+.subtitle {
+  font-family: "Calibri", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #66696c;
+  background-color: inherit;
+  text-align: center;
 }
 
 .product-card__title {
@@ -1000,6 +999,9 @@ a {
 
 .form {
   width: 100%;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }
 .form__title {
   font-family: "Calibri", sans-serif;
@@ -1012,8 +1014,12 @@ a {
 }
 .form__input-group {
   position: relative;
-  height: 3em;
-  margin-bottom: 1.6em;
+  height: 52px;
+  margin-bottom: 24px;
+}
+.form__input-group--textarea {
+  margin-bottom: 96px;
+  resize: none;
 }
 .form__input {
   font-family: "Calibri", sans-serif;
@@ -1034,6 +1040,9 @@ a {
 .form__input--captcha {
   position: relative;
   height: 50px;
+}
+.form__input--textarea {
+  height: auto;
 }
 .form__label {
   position: absolute;
@@ -1088,9 +1097,6 @@ a {
   -webkit-align-items: center;
      -moz-box-align: center;
           align-items: center;
-}
-.form__group--captcha {
-  margin: 15px 0px;
 }
 .form__preview {
   color: #555;
@@ -1488,7 +1494,6 @@ a {
 }
 .about__picture {
   grid-column: span 1/span 2;
-  height: 440px;
   border-radius: 8px;
 }
 .about__text {
@@ -1499,12 +1504,13 @@ a {
   margin-bottom: 12px;
   text-align: center;
 }
+.about__link {
+  color: rgba(57, 179, 204, 0.7607843137);
+  font-weight: 700;
+}
 
 .gallery {
-  margin: 0;
   padding: 0px 0 40px;
-  width: 100%;
-  display: block;
   background: #f0f4f5;
 }
 .gallery__title {
@@ -1710,6 +1716,89 @@ a {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.contacts {
+  padding: 40px 0 40px;
+  background: #f0f4f5;
+}
+.contacts__container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.contacts__form-box, .contacts__contacts-box {
+  grid-column: span 2/span 2;
+}
+.contacts__form-box {
+  margin-bottom: 40px;
+}
+.contacts__address {
+  font-style: normal;
+}
+.contacts__address-list {
+  margin-bottom: 70px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+}
+.contacts__address-list-item {
+  margin-bottom: 20px;
+}
+.contacts__address-link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  font-family: "Calibri", sans-serif;
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #66696c;
+  line-height: 18px;
+}
+.contacts__address-link--address {
+  margin-bottom: 12px;
+}
+.contacts__address-link--address::before {
+  content: url("/meditec-landing/images/icons/map-pin.svg");
+  margin-right: 12px;
+}
+.contacts__address-link--tel::before {
+  content: url("/meditec-landing/assets/phone.svg");
+  margin-right: 12px;
+}
+.contacts__address-link--email::before {
+  content: url("/meditec-landing/assets/envelope.svg");
+  margin-right: 12px;
+}
+.contacts .social-icon {
+  width: 24px;
+  height: 24px;
+}
+@media screen and (min-width: 425px){
+  .contacts__address-link {
+    font-family: "Calibri", sans-serif;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}
 @media screen and (min-width: 480px){
   .container {
     margin: 0 auto;
@@ -1850,33 +1939,22 @@ a {
   }
   .about__button {
     font-family: "Calibri", sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 24px;
     font-weight: 400;
-    position: absolute;
-    bottom: 0px;
+    display: block;
+    padding: 12px 36px;
+    margin-left: auto;
+    margin-right: auto;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-       -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
   }
   .partners__item {
     grid-column: span 6/span 12;
   }
 }
 @media screen and (min-width: 1024px){
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .header .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
   .production__list:hover > :not(:hover) {
     opacity: 0.9;
   }
@@ -1917,15 +1995,8 @@ a {
   .partners__item {
     grid-column: span 3/span 12;
   }
-}
-@media screen and (min-width: 1280px){
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .header .container {
-    padding-left: 15px;
-    padding-right: 15px;
+  .contacts__form-box, .contacts__contacts-box {
+    grid-column: span 1/span 2;
   }
 }
 @media screen and (min-width: 1440px){
