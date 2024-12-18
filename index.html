@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon/header-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ea4081d692.js"
+      crossorigin="anonymous"
+    ></script>
     <title>
       Крем для зняття болю в суглобах діє максимально прямим шляхом. Швидко
       проникає в тканини, призводить протизапальну, протинабрякову та
@@ -229,10 +233,12 @@
                         </div>
                       </div>
                     </div>
-                    <button class="product-card__button">
-                      🛒
-                      <span class="product-card__button-price">Ціна:</span>
-                      450 грн.
+                    <button class="main-button main-button--product-card">
+                      <i class="fa-solid fa-cart-arrow-down"></i>
+                      <p>
+                        <span class="product-card__button-price">Ціна:</span>
+                        450 грн.
+                      </p>
                     </button>
                   </div>
                 </li>
@@ -412,10 +418,12 @@
                         </div>
                       </div>
                     </div>
-                    <button class="product-card__button">
-                      🛒
-                      <span class="product-card__button-price">Ціна:</span>
-                      350 грн.
+                    <button class="main-button main-button--product-card">
+                      <i class="fa-solid fa-cart-arrow-down"></i>
+                      <p>
+                        <span class="product-card__button-price">Ціна:</span>
+                        350 грн.
+                      </p>
                     </button>
                   </div>
                 </li>
@@ -542,10 +550,12 @@
                         </div>
                       </div>
                     </div>
-                    <button class="product-card__button">
-                      🛒
-                      <span class="product-card__button-price">Ціна:</span>
-                      400 грн.
+                    <button class="main-button main-button--product-card">
+                      <i class="fa-solid fa-cart-arrow-down"></i>
+                      <p>
+                        <span class="product-card__button-price">Ціна:</span>
+                        400 грн.
+                      </p>
                     </button>
                   </div>
                 </li>
@@ -652,10 +662,12 @@
                         </div>
                       </div>
                     </div>
-                    <button class="product-card__button">
-                      🛒
-                      <span class="product-card__button-price">Ціна:</span>
-                      350 грн.
+                    <button class="main-button main-button--product-card">
+                      <i class="fa-solid fa-cart-arrow-down"></i>
+                      <p>
+                        <span class="product-card__button-price">Ціна:</span>
+                        350 грн.
+                      </p>
                     </button>
                   </div>
                 </li>
@@ -798,7 +810,7 @@
                       </button>
                     </div>
                   </div>
-                  <button type="submit" class="main-button form__button">
+                  <button type="submit" class="main-button main-button--form">
                     Надіслати
                   </button>
                 </form>
@@ -828,6 +840,7 @@
                   <a
                     class="about__link"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://scoliosis.com.ua"
                     >сімейна клініка</a
                   >вертебрології, яка понад сто років займається лікуванням
@@ -848,6 +861,7 @@
                   <a
                     class="about__link"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.instagram.com/dr.antoniotoro/"
                     >Антоніо Торо</a
                   >. Його багаторічний досвід у допомозі цивільним після
@@ -860,6 +874,7 @@
                   <a
                     class="about__link"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://scoliosis.com.ua/"
                     >ознайомтеся з відгуками пацієнтів та дослідженнями на
                     нашому сайті.</a
@@ -870,7 +885,7 @@
                   забезпечення військових медичних частин, підтримуючи тих, хто
                   цього найбільше потребує.
                 </p>
-                <button class="open_popup main-button about__button">
+                <button class="main-button main-button--form">
                   Замовити крем для військових
                 </button>
               </div>
@@ -1045,6 +1060,7 @@
                 <a
                   class="partners__link"
                   target="_blank"
+                  rel="noopener noreferrer"
                   href="https://meditec.ua/"
                   ><img
                     src="/images/partners/partner-01.webp"
@@ -1055,6 +1071,7 @@
                 <a
                   class="partners__link"
                   target="_blank"
+                  rel="noopener noreferrer"
                   href="https://clinicwares.com/shop/"
                   ><img
                     class="partners__logo"
@@ -1066,6 +1083,7 @@
                 <a
                   class="partners__link"
                   target="_blank"
+                  rel="noopener noreferrer"
                   href="https://grs-project.com/"
                   ><img
                     class="partners__logo"
@@ -1077,6 +1095,7 @@
                 <a
                   class="partners__link"
                   target="_blank"
+                  rel="noopener noreferrer"
                   href="https://scoliosis.com.ua/"
                   ><img
                     class="partners__logo"
@@ -1091,7 +1110,7 @@
           <div class="container contacts__container">
             <div class="contacts__form-box">
               <h2 class="subtitle">Виникли питання? Напишіть нам!</h2>
-              <form id="contact-form" class="form">
+              <form id="contact-form" class="contacts__form">
                 <div class="form__input-group">
                   <input
                     id="contact-user-name"
@@ -1137,7 +1156,7 @@
                   <label class="form__label">Повідомлення</label>
                 </div>
 
-                <button type="submit" class="main-button form__button">
+                <button type="submit" class="main-button main-button--form">
                   Надіслати
                 </button>
               </form>
@@ -1147,74 +1166,83 @@
                 <h2 class="subtitle">Контакти</h2>
                 <ul class="contacts__address-list">
                   <li class="contacts__address-list-item">
-                    <!-- <h3 class="subtitle">Адреси:</h3> -->
                     <a
                       href="https://maps.app.goo.gl/j1MpnHMY7vgnngyz5"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="contacts__address-link contacts__address-link--address"
+                      class="contacts__address-link contacts__address-link--location"
                     >
+                      <i class="fa-xs fa-regular fa-map"></i>
                       <b>м.Київ</b>, вул.Героїв Оборони, 12
                     </a>
                     <a
                       href="https://maps.app.goo.gl/cpN73JjcFwTmDZQU6"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="contacts__address-link contacts__address-link--address"
+                      class="contacts__address-link contacts__address-link--location"
                     >
+                      <i class="fa-xs fa-regular fa-map"></i>
                       <b>м.Київ</b>, вул.Дегтярівська, 32
                     </a>
                     <a
                       href="https://maps.app.goo.gl/Gw298jjzW1CAfH3C9"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="contacts__address-link contacts__address-link--address"
+                      class="contacts__address-link contacts__address-link--location"
                     >
+                      <i class="fa-xs fa-regular fa-map"></i>
                       <b>м.Чернігів</b>, вул.Кільцева, 3Б
                     </a>
                   </li>
                   <li class="contacts__address-list-item">
-                    <!-- <h3 class="subtitle">Телефон:</h3> -->
-                    <a
-                      href="tel:+380441111111"
-                      class="contacts__address-link contacts__address-link--tel"
-                    >
-                      +38 044 111 11 11
+                    <a href="tel:+380441111111" class="contacts__address-link">
+                      <i class="fa-solid fa-mobile-screen-button"></i>
+                      +38 0 800 211023
                     </a>
                   </li>
                   <li class="contacts__address-list-item">
-                    <!-- <h3 class="subtitle">Пошта:</h3> -->
                     <a
                       href="mailto:info@elam-cosmetics.com"
-                      class="contacts__address-link contacts__address-link--email"
+                      class="contacts__address-link"
                       style="text-decoration: underline"
                     >
+                      <i class="fa-regular fa-envelope-open"></i>
                       info@elam-cosmetics.com
                     </a>
                   </li>
                 </ul>
 
                 <h2 class="subtitle">Ми в соцмережах</h2>
-                <img
-                  src="/public/images/icons/instagram.svg"
-                  class="social-icon"
-                  alt=""
-                />
-                <img
-                  src="/public/images/icons/facebook.svg"
-                  class="social-icon"
-                  alt=""
-                />
-                <img
-                  src="/public/images/icons/youtube.svg"
-                  class="social-icon"
-                  alt=""
-                />
-                <img
-                  src="/public/images/icons/youtube (1).svg"
-                  class="social-icon"
-                  alt=""
-                />
+                <ul class="contacts__social">
+                  <li class="contacts__social-item">
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__social-link"
+                      ><i class="fa-xl fa-brands fa-instagram"></i
+                    ></a>
+                  </li>
+                  <li class="contacts__social-item">
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__social-link"
+                    >
+                      <i class="fa-xl fa-brands fa-facebook"></i
+                    ></a>
+                  </li>
+                  <li class="contacts__social-item">
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__social-link"
+                      ><i class="fa-xl fa-brands fa-youtube"></i
+                    ></a>
+                  </li>
+                </ul>
               </address>
             </div>
           </div>

@@ -20,6 +20,12 @@
     margin-bottom: 40px;
   }
 
+  &__form {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &__address {
     font-style: normal;
   }
@@ -29,10 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  &__address-list-item {
-    margin-bottom: 20px;
+    gap: 24px;
   }
 
   &__address-link {
@@ -42,30 +45,22 @@
     @include mixins.calibri-400(18px, 40px);
     color: vars.$section-title-color;
     line-height: 18px;
+
+    i {
+      margin-right: 8px;
+      color: vars.$section-title-color;
+    }
+
+    &--location {
+      margin-bottom: 12px;
+    }
   }
 
-  &__address-link--address {
-    margin-bottom: 12px;
-  }
-
-  &__address-link--address::before {
-    content: url("/images/icons/map-pin.svg");
-    margin-right: 12px;
-  }
-
-  &__address-link--tel::before {
-    content: url("/public/images/icons/phone.svg");
-    margin-right: 12px;
-  }
-
-  &__address-link--email::before {
-    content: url("/public/images/icons/envelope.svg");
-    margin-right: 12px;
-  }
-
-  .social-icon {
-    width: 24px;
-    height: 24px;
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
   }
 
   @media screen and (min-width: 425px) {

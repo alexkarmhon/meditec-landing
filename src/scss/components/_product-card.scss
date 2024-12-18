@@ -22,6 +22,7 @@
     border-radius: 6px;
     object-fit: cover;
     overflow: hidden;
+    transition: transform 500ms ease;
 
     &__link {
       display: inline-block;
@@ -32,6 +33,10 @@
       height: auto;
       border-radius: 4px;
       object-fit: cover;
+    }
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -110,27 +115,5 @@
     strong {
       font-size: 14px;
     }
-  }
-
-  &__button {
-    @include mixins.calibri-400(18px, 20px);
-    display: block;
-    margin: 20px auto 0;
-    border-radius: 10px;
-    border: 0.5px solid #cfe0e78a;
-    background: linear-gradient(#fff, #cfe0e78a);
-    color: vars.$sub-title-color;
-    padding: 8px 24px;
-    box-shadow: 0px 1px 1px 1px #928f9c89;
-    cursor: pointer;
-
-    &:hover {
-      background: linear-gradient(#fff, #d6e4ea, #cfe0e78a);
-      box-shadow: 0px 0px 0px 0px #928f9c89;
-    }
-  }
-
-  &:hover {
-    transform: scale(1.03);
   }
 }

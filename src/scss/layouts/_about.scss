@@ -50,14 +50,5 @@
     &__block--text {
       position: relative;
     }
-
-    &__button {
-      @include mixins.calibri-400(24px, 24px);
-      display: block;
-      padding: 12px 36px;
-      margin-left: auto;
-      margin-right: auto;
-      width: max-content;
-    }
   }
 }
