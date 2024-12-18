@@ -87,6 +87,51 @@
   font-weight: 700;
   src: url("/fonts/Calibri-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+.fa-instagram {
+  font-size: 24px;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  -webkit-background-clip: text;
+          background-clip: text;
+  filter: saturate(50%);
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -ms-text-fill-color: transparent;
+}
+.fa-instagram:hover {
+  filter: saturate(100%);
+}
+
+.fa-facebook {
+  font-size: 24px;
+  color: #1877f2;
+  filter: saturate(40%);
+}
+.fa-facebook:hover {
+  filter: saturate(100%);
+}
+
+.fa-youtube {
+  font-size: 24;
+  color: #ff1212;
+  filter: saturate(40%);
+}
+
+.fa-youtube:hover {
+  filter: saturate(100%);
+}
+
+.fa-cart-arrow-down {
+  font-size: 16px;
+}
+
 /***
     The new CSS reset - version 1.11 (last updated 20.9.2023)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -569,6 +614,7 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
+  transition: transform 500ms ease;
 }
 .product-card__image__link {
   display: inline-block;
@@ -579,6 +625,9 @@ a {
   border-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.product-card__image:hover {
+  transform: scale(1.05);
 }
 .product-card__info {
   font-family: "Calibri", sans-serif;
@@ -655,42 +704,31 @@ a {
 .product-card__text strong {
   font-size: 14px;
 }
-.product-card__button {
-  font-family: "Calibri", sans-serif;
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: 400;
-  display: block;
-  margin: 20px auto 0;
-  border-radius: 10px;
-  border: 0.5px solid rgba(207, 224, 231, 0.5411764706);
-  background: linear-gradient(#fff, rgba(207, 224, 231, 0.5411764706));
-  color: #66696c;
-  padding: 8px 24px;
-  box-shadow: 0px 1px 1px 1px rgba(146, 143, 156, 0.537254902);
-  cursor: pointer;
-}
-.product-card__button:hover {
-  background: linear-gradient(#fff, #d6e4ea, rgba(207, 224, 231, 0.5411764706));
-  box-shadow: 0px 0px 0px 0px rgba(146, 143, 156, 0.537254902);
-}
-.product-card:hover {
-  transform: scale(1.03);
-}
 
 .main-button {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  font-size: 18px;
+  font-family: "Calibri", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 400;
   display: block;
   margin: 20px auto 0;
   border-radius: 6px;
-  background: linear-gradient(#fff, #d6e4ea);
+  background: linear-gradient(rgba(255, 255, 255, 0.6784313725), rgba(214, 228, 234, 0.631372549));
   color: #66696c;
   padding: 8px 24px;
-  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.2);
   transition: all 400ms ease;
+  text-align: center;
   cursor: pointer;
+}
+.main-button--form {
+  width: 100%;
+  padding: 12px 24px;
+}
+.main-button--product-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .main-button:hover {
   background: linear-gradient(#fff, #c3e0ed);
@@ -822,26 +860,6 @@ a {
 .form__captcha--refresh:hover {
   transition: 0.4s;
   transform: scale(0.9);
-}
-
-.form__button {
-  font-family: "Calibri", sans-serif;
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 400;
-  color: #66696c;
-  width: 100%;
-  display: block;
-  padding: 12px 36px;
-  outline: none;
-  border: none;
-  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);
-  transition: 0.4s;
-  text-align: center;
-}
-
-.form__button:hover {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .header {
@@ -1261,18 +1279,6 @@ a {
   .about__block--text {
     position: relative;
   }
-  .about__button {
-    font-family: "Calibri", sans-serif;
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 400;
-    display: block;
-    padding: 12px 36px;
-    margin-left: auto;
-    margin-right: auto;
-    width: -moz-max-content;
-    width: max-content;
-  }
 }
 
 .gallery {
@@ -1493,6 +1499,11 @@ a {
 .contacts__form-box {
   margin-bottom: 40px;
 }
+.contacts__form {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .contacts__address {
   font-style: normal;
 }
@@ -1501,9 +1512,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.contacts__address-list-item {
-  margin-bottom: 20px;
+  gap: 24px;
 }
 .contacts__address-link {
   display: flex;
@@ -1515,24 +1524,18 @@ a {
   color: #66696c;
   line-height: 18px;
 }
-.contacts__address-link--address {
+.contacts__address-link i {
+  margin-right: 8px;
+  color: #66696c;
+}
+.contacts__address-link--location {
   margin-bottom: 12px;
 }
-.contacts__address-link--address::before {
-  content: url("/images/icons/map-pin.svg");
-  margin-right: 12px;
-}
-.contacts__address-link--tel::before {
-  content: url("/public/images/icons/phone.svg");
-  margin-right: 12px;
-}
-.contacts__address-link--email::before {
-  content: url("/public/images/icons/envelope.svg");
-  margin-right: 12px;
-}
-.contacts .social-icon {
-  width: 24px;
-  height: 24px;
+.contacts__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 }
 @media screen and (min-width: 425px) {
   .contacts__address-link {
@@ -1546,5 +1549,34 @@ a {
 @media screen and (min-width: 1024px) {
   .contacts__form-box, .contacts__contacts-box {
     grid-column: span 1/span 2;
+  }
+}
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.footer__copyright, .footer__rights {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.footer__link {
+  color: rgba(57, 179, 204, 0.7607843137);
+  font-weight: 700;
+}
+.footer__link:hover {
+  color: #c8aa76;
+}
+@media screen and (min-width: 1024px) {
+  .footer__content {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }/*# sourceMappingURL=style.css.map */

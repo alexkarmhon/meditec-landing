@@ -1,34 +1,46 @@
 .fa-instagram {
-  color: white;
+  font-size: 24px;
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 18px;
+  background-clip: text;
+  filter: saturate(50%);
+
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -ms-text-fill-color: transparent;
 
   &:hover {
-    filter: brightness(1.1);
+    filter: saturate(100%);
   }
 }
 
 .fa-facebook {
+  font-size: 24px;
   color: #1877f2;
-  transform: scale(1.1);
-  filter: brightness(0.9);
+  filter: saturate(40%);
 
   &:hover {
-    filter: brightness(1);
+    filter: saturate(100%);
   }
 }
 
 .fa-youtube {
+  font-size: 24;
   color: #ff1212;
-  filter: brightness(0.9);
+  filter: saturate(40%);
 }
 
 .fa-youtube:hover {
-  filter: brightness(1);
+  filter: saturate(100%);
+}
+
+.fa-cart-arrow-down {
+  font-size: 16px;
 }
