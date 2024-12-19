@@ -3,14 +3,15 @@
 
 .advantages {
   margin: 0;
-  padding: 0px 0 40px;
+  padding: 40px 0;
   width: 100%;
   display: block;
-  background: vars.$background-color-advantages-section;
+  background: vars.$background-color-section-secondary;
 
-  &__title {
+  &__breaker {
+    margin-bottom: 40px;
     &::before {
-      background-color: vars.$background-color-advantages-section;
+      background: vars.$background-color-section-secondary;
     }
   }
 
@@ -21,7 +22,6 @@
     gap: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
     margin-bottom: 20px;
   }
 
@@ -31,7 +31,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px 10px 20px 10px;
+    padding: 0px 10px 20px 10px;
     text-align: center;
     border-radius: 8px;
   }
@@ -50,7 +50,8 @@
   &__cooperation-block {
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    gap: 12px;
+    // max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -60,7 +61,6 @@
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    padding: 0 20px 0 20px;
     margin-bottom: 20px;
   }
 
@@ -73,13 +73,15 @@
 
   &__invitation-text {
     @include mixins.calibri-400(18px, 22px);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     margin-bottom: 12px;
   }
 
   &__form-container {
     display: flex;
-    padding: 0 20px 0 20px;
   }
 
   @media screen and (min-width: 768px) {
@@ -119,6 +121,7 @@
     &__cooperation-block {
       display: flex;
       flex-direction: row;
+      gap: 24px;
     }
   }
 

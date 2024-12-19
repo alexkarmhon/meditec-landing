@@ -40,7 +40,7 @@
   initCaptcha();
 
   document
-    .querySelector(".form__button")
+    .querySelector(".main-button--form")
     .addEventListener("click", function (e) {
       e.preventDefault();
 

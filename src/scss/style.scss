@@ -1,6 +1,7 @@
 @use "utils/vars";
 @use "utils/fonts";
 @use "utils/fa-styles";
+@use "utils/breaker";
 
 @use "base/reset";
 @use "base/common";
@@ -18,3 +19,6 @@
 @use "layouts/advantages";
 @use "layouts/about";
 @use "layouts/gallery";
+@use "layouts/partners";
+@use "layouts/contacts";
+@use "layouts/footer";

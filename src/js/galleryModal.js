@@ -1,13 +1,14 @@
 const modal = document.getElementById("galleryModal");
+const images = document.querySelectorAll(".gallery__image");
 const slides = document.getElementsByClassName("gallery__modal-slide");
 const dots = document.getElementsByClassName("gallery__modal-image-demo");
 const captionText = document.getElementById("caption");
 
 let slideIndex = 1;
 
-function openModal() {
+const openModal = () => {
   modal.style.display = "block";
-}
+};
 
 function closeModal() {
   modal.style.display = "none";
@@ -42,7 +43,20 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
+modal.addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) {
+    closeModal();
+  }
+});
+
 window.openModal = openModal;
 window.closeModal = closeModal;
 window.currentSlide = currentSlide;
 window.plusSlides = plusSlides;
+
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    openModal();
+    currentSlide(index + 1);
+  });
+});
