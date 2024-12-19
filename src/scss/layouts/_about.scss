@@ -32,7 +32,7 @@
   }
 
   &__text {
-    @include mixins.calibri-400(20px, 24px);
+    @include mixins.calibri-400(18px, 20px);
     margin-bottom: 12px;
     text-align: center;
   }
@@ -55,6 +55,9 @@
     }
     &__block {
       width: 50%;
+    }
+    &__text {
+      @include mixins.calibri-400(20px, 24px);
     }
 
     &__block--images {

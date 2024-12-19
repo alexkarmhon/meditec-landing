@@ -12,19 +12,27 @@
 }
 
 .section__title {
-  @include mixins.calibri-400(40px, 48px);
+  @include mixins.calibri-400(30px, 36px);
   color: vars.$section-title-color;
   background-color: inherit;
   text-align: center;
   margin: 0 auto 0;
   width: 60%;
+
+  @media screen and (min-width: 1024px) {
+    @include mixins.calibri-400(40px, 48px);
+  }
 }
 
 .subtitle {
-  @include mixins.calibri-400(30px, 40px);
+  @include mixins.calibri-400(24px, 40px);
   color: vars.$section-title-color;
   background-color: inherit;
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    @include mixins.calibri-400(30px, 40px);
+  }
 }
 
 .product-card__title {
