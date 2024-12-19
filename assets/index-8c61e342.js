@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setCaptcha();
   }
   initCaptcha();
-  document.querySelector(".form__button").addEventListener("click", function(e) {
+  document.querySelector(".main-button--form").addEventListener("click", function(e) {
     e.preventDefault();
     let inputcaptchavalue = document.querySelector(
       ".form__input--captcha"
@@ -95,13 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 const modal = document.getElementById("galleryModal");
+const images = document.querySelectorAll(".gallery__image");
 const slides = document.getElementsByClassName("gallery__modal-slide");
 const dots = document.getElementsByClassName("gallery__modal-image-demo");
 const captionText = document.getElementById("caption");
 let slideIndex = 1;
-function openModal() {
+const openModal = () => {
   modal.style.display = "block";
-}
+};
 function closeModal() {
   modal.style.display = "none";
 }
@@ -139,3 +140,10 @@ window.openModal = openModal;
 window.closeModal = closeModal;
 window.currentSlide = currentSlide;
 window.plusSlides = plusSlides;
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    openModal();
+    currentSlide(index + 1);
+  });
+});
+console.log("Hello");
