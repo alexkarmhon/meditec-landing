@@ -755,6 +755,12 @@ a {
   align-items: center;
   gap: 12px;
 }
+.main-button--product-card p {
+  font-family: "Calibri", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+}
 .main-button:hover {
   background: linear-gradient(#fff, #c3e0ed);
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);

@@ -24,6 +24,10 @@
     display: flex;
     align-items: center;
     gap: 12px;
+
+    p {
+      @include mixins.calibri-400(18px, 20px);
+    }
   }
 
   &:hover {
