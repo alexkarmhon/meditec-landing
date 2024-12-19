@@ -1046,6 +1046,12 @@ a {
           align-items: center;
   gap: 12px;
 }
+.main-button--product-card p {
+  font-family: "Calibri", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+}
 .main-button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c3e0ed));
   background: -webkit-linear-gradient(#fff, #c3e0ed);
