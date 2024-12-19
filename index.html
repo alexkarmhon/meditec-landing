@@ -100,7 +100,6 @@
           <div class="container">
             <div class="production__content">
               <h2 class="production__title section__title">Продукція</h2>
-              <div class="breaker production__breaker"></div>
               <p class="text-part production__description">
                 Вся продукція виготовлена на основі екстракту лікувального мулу
                 — сімейна розробка, запатентована в Україні (Патент № 77136,
@@ -679,7 +678,6 @@
         <section class="advantages" id="advantages">
           <div class="container">
             <h2 class="advantages__title section__title">Переваги</h2>
-            <div class="breaker advantages__breaker"></div>
             <div class="advantages__list-block">
               <ul class="advantages__list">
                 <li class="advantages__list-item">
@@ -724,7 +722,9 @@
             </div>
             <div class="advantages__cooperation-block">
               <div class="advantages__invitation-container">
-                <h2 class="subtitle">Запрошуємо до співпраці!</h2>
+                <h3 class="advantages__invitation-title">
+                  Запрошуємо до співпраці!
+                </h3>
                 <p class="advantages__invitation-text">
                   Ми пропонуємо унікальні косметичні засоби для знеболення,
                   зняття запалення у суглобах, зменшення спастичності у м’язах,
@@ -744,8 +744,8 @@
                 </p>
               </div>
               <div class="advantages__form-container">
-                <form id="inv-form" class="form advantages__form">
-                  <h2 class="subtitle">Зв'яжіться з нами</h2>
+                <form id="inv-form" class="form">
+                  <h3 class="form__title">Зв'яжіться з нами</h3>
 
                   <div class="form__input-group">
                     <input
@@ -821,8 +821,7 @@
         <section class="about" id="about">
           <div class="container">
             <h2 class="section__title about__title">Про нас</h2>
-            <div class="breaker about__breaker"></div>
-            <div class="about__content">
+            <div class="about__info-block">
               <div class="about__block about__block--images">
                 <img
                   class="about__picture"
@@ -881,7 +880,7 @@
                     >сайті.</a
                   >
                 </p>
-                <p class="about__text about__text--with-btn">
+                <p class="about__text">
                   Ми пишаємося тим, що частину нашої продукції передаємо для
                   забезпечення військових медичних частин, підтримуючи тих, хто
                   цього найбільше потребує.
@@ -896,7 +895,7 @@
         <section class="gallery" id="gallery">
           <div class="container">
             <h2 class="gallery__title section__title">Галерея</h2>
-            <div class="breaker gallery__breaker"></div>
+            <!-- Gallery -->
             <div class="gallery__list">
               <figure class="gallery__item gallery__item--1">
                 <img
@@ -1056,7 +1055,6 @@
         <section class="partners" id="partners">
           <div class="container">
             <h2 class="section__title partners__title">Партнери</h2>
-            <div class="breaker partners__breaker"></div>
             <ul class="partners__list">
               <li class="partners__item">
                 <a
@@ -1111,8 +1109,8 @@
         <section class="contacts">
           <div class="container contacts__container">
             <div class="contacts__form-box">
-              <form id="contact-form" class="form contacts-form">
-                <h2 class="subtitle">Виникли питання? Напишіть нам!</h2>
+              <h2 class="subtitle">Виникли питання? Напишіть нам!</h2>
+              <form id="contact-form" class="contacts__form">
                 <div class="form__input-group">
                   <input
                     id="contact-user-name"
@@ -1124,6 +1122,7 @@
                     >Ваше Ім'я</label
                   >
                 </div>
+
                 <div class="form__input-group">
                   <input
                     id="contact-user-email"
@@ -1150,14 +1149,11 @@
 
                 <div class="form__input-group form__input-group--textarea">
                   <textarea
-                    id="contact-user-message"
                     class="form__input form__input--textarea"
                     rows="4"
                     placeholder=" "
                   ></textarea>
-                  <label for="contact-user-message" class="form__label"
-                    >Повідомлення</label
-                  >
+                  <label class="form__label">Повідомлення</label>
                 </div>
 
                 <button type="submit" class="main-button main-button--form">
@@ -1166,62 +1162,56 @@
               </form>
             </div>
             <div class="contacts__contacts-box" id="contacts">
-              <div class="contacts__address-box">
+              <address class="contacts__address">
                 <h2 class="subtitle">Контакти</h2>
-                <address class="contacts__address">
-                  <ul class="contacts__address-list">
-                    <li class="contacts__address-list-item">
-                      <a
-                        href="https://maps.app.goo.gl/j1MpnHMY7vgnngyz5"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contacts__address-link contacts__address-link--location"
-                      >
-                        <i class="fa-xs fa-regular fa-map"></i>
-                        <b>м.Київ</b>, вул.Героїв Оборони, 12
-                      </a>
-                      <a
-                        href="https://maps.app.goo.gl/cpN73JjcFwTmDZQU6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contacts__address-link contacts__address-link--location"
-                      >
-                        <i class="fa-xs fa-regular fa-map"></i>
-                        <b>м.Київ</b>, вул.Дегтярівська, 32
-                      </a>
-                      <a
-                        href="https://maps.app.goo.gl/Gw298jjzW1CAfH3C9"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contacts__address-link contacts__address-link--location"
-                      >
-                        <i class="fa-xs fa-regular fa-map"></i>
-                        <b>м.Чернігів</b>, вул.Кільцева, 3Б
-                      </a>
-                    </li>
-                    <li class="contacts__address-list-item">
-                      <a
-                        href="tel:+380441111111"
-                        class="contacts__address-link"
-                      >
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                        +38 0 800 211023
-                      </a>
-                    </li>
-                    <li class="contacts__address-list-item">
-                      <a
-                        href="mailto:info@elam-cosmetics.com"
-                        class="contacts__address-link"
-                        style="text-decoration: underline"
-                      >
-                        <i class="fa-regular fa-envelope-open"></i>
-                        info@elam-cosmetics.com
-                      </a>
-                    </li>
-                  </ul>
-                </address>
-              </div>
-              <div class="contacts__social-box">
+                <ul class="contacts__address-list">
+                  <li class="contacts__address-list-item">
+                    <a
+                      href="https://maps.app.goo.gl/j1MpnHMY7vgnngyz5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__address-link contacts__address-link--location"
+                    >
+                      <i class="fa-xs fa-regular fa-map"></i>
+                      <b>м.Київ</b>, вул.Героїв Оборони, 12
+                    </a>
+                    <a
+                      href="https://maps.app.goo.gl/cpN73JjcFwTmDZQU6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__address-link contacts__address-link--location"
+                    >
+                      <i class="fa-xs fa-regular fa-map"></i>
+                      <b>м.Київ</b>, вул.Дегтярівська, 32
+                    </a>
+                    <a
+                      href="https://maps.app.goo.gl/Gw298jjzW1CAfH3C9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contacts__address-link contacts__address-link--location"
+                    >
+                      <i class="fa-xs fa-regular fa-map"></i>
+                      <b>м.Чернігів</b>, вул.Кільцева, 3Б
+                    </a>
+                  </li>
+                  <li class="contacts__address-list-item">
+                    <a href="tel:+380441111111" class="contacts__address-link">
+                      <i class="fa-solid fa-mobile-screen-button"></i>
+                      +38 0 800 211023
+                    </a>
+                  </li>
+                  <li class="contacts__address-list-item">
+                    <a
+                      href="mailto:info@elam-cosmetics.com"
+                      class="contacts__address-link"
+                      style="text-decoration: underline"
+                    >
+                      <i class="fa-regular fa-envelope-open"></i>
+                      info@elam-cosmetics.com
+                    </a>
+                  </li>
+                </ul>
+
                 <h2 class="subtitle">Ми в соцмережах</h2>
                 <ul class="contacts__social">
                   <li class="contacts__social-item">
@@ -1253,8 +1243,7 @@
                     ></a>
                   </li>
                 </ul>
-              </div>
-              <div class="breaker contacts__breaker"></div>
+              </address>
             </div>
           </div>
         </section>

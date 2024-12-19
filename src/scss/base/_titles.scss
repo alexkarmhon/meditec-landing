@@ -17,11 +17,43 @@
   background-color: inherit;
   text-align: center;
   margin: 0 auto 0;
+  padding: 20px 0 20px;
   width: 60%;
+  border-bottom: 1px dotted vars.$section-title-color;
+
+  &::before {
+    content: "";
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+    display: block;
+    height: 16px;
+    width: 16px;
+    padding: 0 30px;
+    margin: 0 auto;
+    transition: 0.3s ease all;
+    bottom: -90px;
+  }
+
+  &::after {
+    content: "";
+    background-position: center;
+    background-size: cover;
+    background-image: url("/images/vb.webp");
+    position: relative;
+    background-repeat: no-repeat;
+    display: block;
+    height: 16px;
+    width: 16px;
+    margin: 0 auto 0;
+    transition: 0.3s ease all;
+    bottom: -30px;
+  }
 }
 
 .subtitle {
-  @include mixins.calibri-400(30px, 40px);
+  @include mixins.calibri-400(32px, 40px);
+  margin-bottom: 20px;
   color: vars.$section-title-color;
   background-color: inherit;
   text-align: center;
@@ -39,10 +71,6 @@
     @include mixins.roboto-condensed(18px, 300);
     display: block;
     color: #828282;
-  }
-
-  @media screen and (min-width: 1024px) and (max-width: 1048px) {
-    font-size: 16px;
   }
 
   @media screen and (min-width: 1440px) {
