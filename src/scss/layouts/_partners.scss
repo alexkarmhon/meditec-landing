@@ -2,11 +2,12 @@
 @use "../utils/mixins";
 
 .partners {
-  padding-bottom: 40px;
+  padding: 40px 0;
   width: 100%;
   display: block;
   background-color: vars.$background-color-section-main;
-  &__title {
+
+  &__breaker {
     margin-bottom: 40px;
     &::before {
       background-color: vars.$background-color-section-main;

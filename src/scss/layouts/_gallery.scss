@@ -2,14 +2,14 @@
 @use "../utils/mixins";
 
 .gallery {
-  padding: 0px 0 40px;
+  padding: 40px 0;
   background: vars.$background-color-section-secondary;
 
-  &__title {
-    &::before {
-      background-color: vars.$background-color-section-secondary;
-    }
+  &__breaker {
     margin-bottom: 40px;
+    &::before {
+      background: vars.$background-color-section-secondary;
+    }
   }
 
   &__list {
