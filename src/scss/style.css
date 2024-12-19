@@ -862,6 +862,28 @@ a {
   transform: scale(0.9);
 }
 
+<<<<<<< HEAD
+=======
+.form__button {
+  font-family: "Calibri", sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #66696c;
+  width: 100%;
+  display: block;
+  padding: 12px 36px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.4);
+  transition: 0.4s;
+}
+
+.form__button:hover {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+>>>>>>> parent of 8f25a8d (Partners section completed)
 .header {
   position: fixed;
   width: 100%;
@@ -1030,13 +1052,11 @@ a {
 }
 
 .production {
-  padding-bottom: 40px;
+  margin: 0;
+  padding: 0px 0 40px;
   width: 100%;
   display: block;
   background: #ffffff;
-}
-.production__title {
-  margin-bottom: 40px;
 }
 .production__title::before {
   background-color: #ffffff;
@@ -1048,9 +1068,8 @@ a {
   font-weight: 400;
   color: #313131;
   text-align: center;
-  padding-bottom: 60px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 12px 0 60px;
+  margin: 20px auto 0px auto;
 }
 .production__list {
   display: grid;
@@ -1097,9 +1116,6 @@ a {
   display: block;
   background: #f0f4f5;
 }
-.advantages__title {
-  margin-bottom: 40px;
-}
 .advantages__title::before {
   background-color: #f0f4f5;
 }
@@ -1110,6 +1126,7 @@ a {
   gap: 15px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .advantages__list-item {
@@ -1118,7 +1135,7 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding: 0px 10px 20px 10px;
+  padding: 10px 10px 20px 10px;
   text-align: center;
   border-radius: 8px;
 }
@@ -1236,16 +1253,13 @@ a {
 
 .about {
   padding-bottom: 40px;
-  background: #ffffff;
-}
-.about__title {
-  margin-bottom: 40px;
 }
 .about__title::before {
   background-color: #ffffff;
 }
 .about__info-block {
   display: flex;
+  margin-top: 40px;
   gap: 12px;
 }
 .about__block--images {
@@ -1279,6 +1293,21 @@ a {
   .about__block--text {
     position: relative;
   }
+<<<<<<< HEAD
+=======
+  .about__button {
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 20px;
+    width: -moz-max-content;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+>>>>>>> parent of 8f25a8d (Partners section completed)
 }
 
 .gallery {
@@ -1321,27 +1350,26 @@ a {
   grid-column: 5/span 4;
   grid-row: 6/span 3;
 }
-.gallery__modal-overlay {
-  display: none;
+.gallery .column {
+  float: left;
+  width: 15%;
+}
+.gallery__modal {
   position: fixed;
   z-index: 1;
-  padding-top: 40px;
+  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(13, 19, 31, 0.8862745098);
+  background-color: black;
 }
 .gallery__modal-content {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
   margin: auto;
   padding: 0;
-  width: 80%;
+  width: 60%;
   max-width: 800px;
 }
 .gallery__modal-close-btn {
@@ -1356,32 +1384,31 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-.gallery__modal-slides {
-  margin-bottom: 8px;
-  margin-left: auto;
-  margin-right: auto;
-}
 .gallery__modal-slide {
   display: none;
 }
-.gallery__modal-control-prev, .gallery__modal-control-next {
+.gallery .prev,
+.gallery .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   padding: 16px;
+  margin-top: -50px;
+  color: red;
   font-weight: bold;
-  transform: translateY(-150%);
+  font-size: 20px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   -moz-user-select: none;
        user-select: none;
   -webkit-user-select: none;
 }
-.gallery__modal-control-prev:hover, .gallery__modal-control-next:hover {
+.gallery .prev:hover,
+.gallery .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-.gallery__modal-control-next {
+.gallery .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
@@ -1393,9 +1420,8 @@ a {
   top: 0;
 }
 .gallery__modal-caption {
-  margin-bottom: 8px;
   text-align: center;
-  background-color: inherit;
+  background-color: black;
   padding: 2px 16px;
   color: white;
 }
@@ -1404,21 +1430,19 @@ a {
   justify-content: center;
   gap: 4px;
 }
-.gallery__modal-image-control {
-  float: left;
-  width: 15%;
-}
-.gallery__modal-image-demo {
+.gallery img.demo {
   opacity: 0.6;
 }
-.gallery .active, .gallery__modal-image-demo:hover {
+.gallery .active,
+.gallery .demo:hover {
   opacity: 1;
 }
-.gallery__image {
+.gallery img.hover-shadow {
   transition: 0.3s;
 }
-.gallery__image:hover {
+.gallery .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+<<<<<<< HEAD
 }
 @media screen and (max-height: 430px) and (orientation: landscape) {
   .gallery__modal {
@@ -1579,4 +1603,6 @@ a {
     flex-direction: row;
     justify-content: space-between;
   }
+=======
+>>>>>>> parent of 8f25a8d (Partners section completed)
 }/*# sourceMappingURL=style.css.map */

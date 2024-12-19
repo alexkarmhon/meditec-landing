@@ -2,15 +2,15 @@
 @use "../utils/mixins";
 
 .production {
-  padding-bottom: 40px;
+  margin: 0;
+  padding: 0px 0 40px;
   width: 100%;
   display: block;
-  background: vars.$background-color-section-main;
+  background: vars.$background-color-production-section;
 
   &__title {
-    margin-bottom: 40px;
     &::before {
-      background-color: vars.$background-color-section-main;
+      background-color: vars.$background-color-production-section;
     }
   }
 
@@ -18,9 +18,8 @@
     @include mixins.calibri-400(24px, 32px);
     color: vars.$main-color;
     text-align: center;
-    padding-bottom: 60px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 12px 0 60px;
+    margin: 20px auto 0px auto;
   }
 
   &__list {

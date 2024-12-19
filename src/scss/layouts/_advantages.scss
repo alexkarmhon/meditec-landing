@@ -6,12 +6,11 @@
   padding: 0px 0 40px;
   width: 100%;
   display: block;
-  background: vars.$background-color-section-secondary;
+  background: vars.$background-color-advantages-section;
 
   &__title {
-    margin-bottom: 40px;
     &::before {
-      background-color: vars.$background-color-section-secondary;
+      background-color: vars.$background-color-advantages-section;
     }
   }
 
@@ -22,6 +21,7 @@
     gap: 15px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 
@@ -31,7 +31,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 0px 10px 20px 10px;
+    padding: 10px 10px 20px 10px;
     text-align: center;
     border-radius: 8px;
   }

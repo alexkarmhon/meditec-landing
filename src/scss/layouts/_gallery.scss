@@ -3,11 +3,17 @@
 
 .gallery {
   padding: 0px 0 40px;
+<<<<<<< HEAD
   background: vars.$background-color-section-secondary;
+=======
+  width: 100%;
+  display: block;
+  background: vars.$background-color-advantages-section;
+>>>>>>> parent of 8f25a8d (Partners section completed)
 
   &__title {
     &::before {
-      background-color: vars.$background-color-section-secondary;
+      background-color: vars.$background-color-advantages-section;
     }
     margin-bottom: 40px;
   }
@@ -44,7 +50,7 @@
     grid-row: 6 / span 3;
   }
 
-  &__modal-overlay {
+  &__modal {
     display: none;
     position: fixed;
     z-index: 1;

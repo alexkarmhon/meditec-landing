@@ -3,16 +3,15 @@
 
 .about {
   padding-bottom: 40px;
-  background: vars.$background-color-section-main;
   &__title {
-    margin-bottom: 40px;
     &::before {
-      background-color: vars.$background-color-section-main;
+      background-color: vars.$background-color-production-section;
     }
   }
 
   &__info-block {
     display: flex;
+    margin-top: 40px;
     gap: 12px;
   }
 
@@ -50,5 +49,17 @@
     &__block--text {
       position: relative;
     }
+<<<<<<< HEAD
+=======
+
+    &__button {
+      @include mixins.calibri-400(20px, 24px);
+      position: absolute;
+      bottom: 20px;
+      width: max-content;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+>>>>>>> parent of 8f25a8d (Partners section completed)
   }
 }
