@@ -409,8 +409,8 @@ a {
 
 .section__title {
   font-family: "Calibri", sans-serif;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 30px;
+  line-height: 36px;
   font-weight: 400;
   color: #66696c;
   background-color: inherit;
@@ -421,7 +421,7 @@ a {
 
 .subtitle {
   font-family: "Calibri", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 40px;
   font-weight: 400;
   color: #66696c;
@@ -1076,7 +1076,7 @@ a {
   width: 100%;
   max-width: 500px;
   height: 100%;
-  min-height: 500px;
+  min-height: 400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1363,12 +1363,12 @@ a {
 }
 .production__description {
   font-family: "Calibri", sans-serif;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 20px;
   font-weight: 400;
   color: #313131;
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1382,39 +1382,7 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-@-webkit-keyframes waveShift {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-@-moz-keyframes waveShift {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-@keyframes waveShift {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
+
 .advantages {
   margin: 0;
   padding: 40px 0;
@@ -1513,13 +1481,18 @@ a {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-bottom: 12px;
 }
 .advantages__form-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
 }
 
 .about {
@@ -1560,8 +1533,8 @@ a {
 }
 .about__text {
   font-family: "Calibri", sans-serif;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 20px;
   font-weight: 400;
   margin-bottom: 12px;
   text-align: center;
@@ -1772,10 +1745,10 @@ a {
 .partners__list {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 20px;
+  gap: 12px;
 }
 .partners__item {
-  grid-column: span 12/span 12;
+  grid-column: span 3/span 12;
   margin-left: auto;
   margin-right: auto;
   border-radius: 6px;
@@ -1826,6 +1799,7 @@ a {
   -webkit-justify-content: space-between;
      -moz-box-pack: justify;
           justify-content: space-between;
+  gap: 30px;
 }
 .contacts__address {
   margin-top: 24px;
@@ -1846,7 +1820,7 @@ a {
   -webkit-align-items: center;
      -moz-box-align: center;
           align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 .contacts__address-link {
   display: -webkit-box;
@@ -1868,8 +1842,8 @@ a {
   margin-right: 8px;
   color: #66696c;
 }
-.contacts__address-link--location {
-  margin-bottom: 24px;
+.contacts__address-link--location:not(:last-child) {
+  margin-bottom: 16px;
 }
 .contacts__social {
   display: -webkit-box;
@@ -1885,13 +1859,14 @@ a {
      -moz-box-pack: center;
           justify-content: center;
   gap: 24px;
+  margin-top: 8px;
 }
 .contacts__breaker::before {
   background: #f0f4f5;
 }
 
 .footer {
-  padding: 20px 0;
+  padding: 20px 20px;
 }
 .footer__content {
   display: -webkit-box;
@@ -1944,6 +1919,12 @@ a {
   .container {
     padding-left: 40px;
     padding-right: 40px;
+  }
+  .subtitle {
+    font-family: "Calibri", sans-serif;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 400;
   }
   .mobile-menu-btn {
     display: none;
@@ -2010,6 +1991,13 @@ a {
   .menu__links-bar li a:hover {
     color: #c8aa76;
   }
+  .production__description {
+    font-family: "Calibri", sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    padding-bottom: 60px;
+  }
   .production__item {
     grid-column: span 6/span 12;
   }
@@ -2069,6 +2057,12 @@ a {
   .about__block {
     width: 50%;
   }
+  .about__text {
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+  }
   .about__block--images {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2092,6 +2086,12 @@ a {
   }
 }
 @media screen and (min-width: 1024px){
+  .section__title {
+    font-family: "Calibri", sans-serif;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 400;
+  }
   .production__list:hover > :not(:hover) {
     opacity: 0.9;
   }
