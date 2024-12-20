@@ -471,43 +471,40 @@ a {
   border-radius: 1.5px;
   height: 3px;
   background: #66696c;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
   position: relative;
 }
 .mobile-menu-btn__icon span + span {
   margin-top: 4px;
 }
 .mobile-menu-btn__icon.active span:nth-child(1) {
-  -webkit-animation: ease 0.7s top forwards;
-     -moz-animation: ease 0.7s top forwards;
-          animation: ease 0.7s top forwards;
+  -webkit-animation: ease 0.5s top forwards;
+     -moz-animation: ease 0.5s top forwards;
+          animation: ease 0.5s top forwards;
 }
 .mobile-menu-btn__icon.not-active span:nth-child(1) {
-  -webkit-animation: ease 0.7s top-2 forwards;
-     -moz-animation: ease 0.7s top-2 forwards;
-          animation: ease 0.7s top-2 forwards;
+  -webkit-animation: ease 0.5s top-2 forwards;
+     -moz-animation: ease 0.5s top-2 forwards;
+          animation: ease 0.5s top-2 forwards;
 }
 .mobile-menu-btn__icon.active span:nth-child(2) {
-  -webkit-animation: ease 0.7s scaled forwards;
-     -moz-animation: ease 0.7s scaled forwards;
-          animation: ease 0.7s scaled forwards;
+  -webkit-animation: ease 0.5s scaled forwards;
+     -moz-animation: ease 0.5s scaled forwards;
+          animation: ease 0.5s scaled forwards;
 }
 .mobile-menu-btn__icon.not-active span:nth-child(2) {
-  -webkit-animation: ease 0.7s scaled-2 forwards;
-     -moz-animation: ease 0.7s scaled-2 forwards;
-          animation: ease 0.7s scaled-2 forwards;
+  -webkit-animation: ease 0.5s scaled-2 forwards;
+     -moz-animation: ease 0.5s scaled-2 forwards;
+          animation: ease 0.5s scaled-2 forwards;
 }
 .mobile-menu-btn__icon.active span:nth-child(3) {
-  -webkit-animation: ease 0.7s bottom forwards;
-     -moz-animation: ease 0.7s bottom forwards;
-          animation: ease 0.7s bottom forwards;
+  -webkit-animation: ease 0.5s bottom forwards;
+     -moz-animation: ease 0.5s bottom forwards;
+          animation: ease 0.5s bottom forwards;
 }
 .mobile-menu-btn__icon.not-active span:nth-child(3) {
-  -webkit-animation: ease 0.7s bottom-2 forwards;
-     -moz-animation: ease 0.7s bottom-2 forwards;
-          animation: ease 0.7s bottom-2 forwards;
+  -webkit-animation: ease 0.5s bottom-2 forwards;
+     -moz-animation: ease 0.5s bottom-2 forwards;
+          animation: ease 0.5s bottom-2 forwards;
 }
 
 @-webkit-keyframes top {
@@ -808,7 +805,32 @@ a {
 .mobile-menu {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: end;
+  -webkit-align-items: end;
+     -moz-box-align: end;
+          align-items: end;
+  gap: 40px;
+  width: 0px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.425);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+.mobile-menu__navigation {
+  position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -828,22 +850,18 @@ a {
      -moz-box-pack: justify;
           justify-content: space-between;
   gap: 40px;
-  width: 0px;
-  height: 100vh;
-  background: #f0f8f8;
-  -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  z-index: 5;
-  overflow-y: auto;
+  width: 0%;
+  padding: 20px 0;
+  border-left: 0.5px solid rgba(118, 110, 146, 0.1803921569);
+  -webkit-box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);
+  background: #f0f4f5;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .mobile-menu__links-bar {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -851,25 +869,47 @@ a {
      -moz-box-direction: normal;
           flex-direction: column;
   gap: 12px;
-}
-.mobile-menu.is-open {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  width: 40%;
-  padding-left: 30px;
-  padding-right: 30px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .mobile-menu__lang-bar {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: flex;
+  display: none;
   gap: 6px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
      -moz-box-pack: center;
           justify-content: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.mobile-menu .subtitle {
+  display: none;
+  background: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.mobile-menu.is-open {
+  width: 100%;
+}
+.mobile-menu.is-open .mobile-menu__navigation {
+  width: 40%;
+  padding: 20px;
+}
+.mobile-menu.is-open .subtitle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+}
+.mobile-menu.is-open .mobile-menu__links-bar,
+.mobile-menu.is-open .mobile-menu__lang-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
 }
 .mobile-menu__lang {
   font-size: 16px;
@@ -1242,7 +1282,7 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #f0f8f8;
+  background-color: #ffffff;
   z-index: 1;
 }
 .header__container {
@@ -1273,6 +1313,7 @@ a {
   bottom: 0;
   left: 0;
   width: 100%;
+  border-bottom: 0.5px solid rgba(118, 110, 146, 0.1803921569);
 }
 .header__logo {
   display: -webkit-box;
