@@ -20,11 +20,9 @@
       display: block;
       width: 70%;
       margin: 0 auto;
-      // box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
       border-radius: 1.5px;
       height: 3px;
       background: vars.$sub-title-color;
-      transition: all 0.3s;
       position: relative;
     }
 
@@ -33,27 +31,27 @@
     }
 
     &.active span:nth-child(1) {
-      animation: ease 0.7s top forwards;
+      animation: ease 0.5s top forwards;
     }
 
     &.not-active span:nth-child(1) {
-      animation: ease 0.7s top-2 forwards;
+      animation: ease 0.5s top-2 forwards;
     }
 
     &.active span:nth-child(2) {
-      animation: ease 0.7s scaled forwards;
+      animation: ease 0.5s scaled forwards;
     }
 
     &.not-active span:nth-child(2) {
-      animation: ease 0.7s scaled-2 forwards;
+      animation: ease 0.5s scaled-2 forwards;
     }
 
     &.active span:nth-child(3) {
-      animation: ease 0.7s bottom forwards;
+      animation: ease 0.5s bottom forwards;
     }
 
     &.not-active span:nth-child(3) {
-      animation: ease 0.7s bottom-2 forwards;
+      animation: ease 0.5s bottom-2 forwards;
     }
   }
   //  ///// Var.1 /////
