@@ -44,6 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector("[data-menu-button]");
   const mobileMenu = document.getElementById("mobile-menu");
   const buttonIcon = document.querySelector(".mobile-menu-btn__icon");
+  const header = document.querySelector(".header");
+  mobileMenu.style.transform = `translateY(${header.offsetHeight}px)`;
+  mobileMenu.style.paddingBottom = `${header.offsetHeight + 20}px`;
   menuButton.addEventListener("click", () => {
     const isOpen = menuButton.classList.toggle("is-open");
     mobileMenu.classList.toggle("is-open", isOpen);
@@ -146,4 +149,4 @@ images.forEach((img, index) => {
     currentSlide(index + 1);
   });
 });
-console.log("Hello");
+console.log("Hello. If you see this string - code is normal");
