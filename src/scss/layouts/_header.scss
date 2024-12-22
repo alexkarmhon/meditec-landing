@@ -7,11 +7,8 @@
   width: 100%;
   background-color: vars.$background-color-section-main;
   z-index: 1;
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-  }
+  transform: translateY(0%);
+  transition: transform 500ms ease;
 
   &__nav-bar {
     display: flex;
@@ -45,6 +42,11 @@
     display: none;
     flex-direction: column;
     font-size: 13px;
+  }
+
+  &.hidden {
+    transition: transform 500ms ease;
+    transform: translateY(-100%);
   }
 }
 
