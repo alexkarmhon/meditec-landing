@@ -400,6 +400,10 @@ a {
   -webkit-justify-content: space-between;
      -moz-box-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
 }
 .hero__title {
   font-family: "Roboto Condensed", Arial, sans-serif;
@@ -1295,16 +1299,15 @@ a {
   width: 100%;
   background-color: #ffffff;
   z-index: 1;
-}
-.header__container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-          justify-content: space-between;
+  -webkit-transform: translateY(0%);
+     -moz-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  -moz-transition: transform 500ms ease, -moz-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease, -moz-transform 500ms ease;
 }
 .header__nav-bar {
   display: -webkit-box;
@@ -1350,6 +1353,17 @@ a {
      -moz-box-direction: normal;
           flex-direction: column;
   font-size: 13px;
+}
+.header.hidden {
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  -moz-transition: transform 500ms ease, -moz-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease, -moz-transform 500ms ease;
+  -webkit-transform: translateY(-100%);
+     -moz-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .menu {
