@@ -30,12 +30,32 @@
                 <li><a href="/">Eng</a></li>
               </ul>
               <ul class="menu__links-bar">
-                <li><a href="#about">Про нас</a></li>
                 <li><a href="#production">Продукція</a></li>
-                <li><a href="#advantages">Переваги</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <!-- <li><a href="#advantages">Переваги</a></li> -->
+                <!-- <li><a href="#gallery">Галерея</a></li> -->
+                <li><a href="#partners">Партнери</a></li>
                 <li><a href="#contacts">Контакти</a></li>
               </ul>
             </div>
+            <ul class="header__contacts-list">
+              <li class="menu__contact">
+                <a href="tel:+380800211023" class="mobile-menu__contact-link">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                  +38 0 800 211023
+                </a>
+              </li>
+              <li class="menu__contact">
+                <a
+                  href="mailto:info@elam-cosmetics.com"
+                  class="menu__contact-link"
+                  style="text-decoration: underline"
+                >
+                  <i class="fa-regular fa-envelope-open"></i>
+                  info@elam-cosmetics.com
+                </a>
+              </li>
+            </ul>
           </nav>
           <button type="button" class="mobile-menu-btn" data-menu-button>
             <div class="mobile-menu-btn__icon not-active">
@@ -59,6 +79,24 @@
               <li><a href="#gallery">Галерея</a></li>
               <li><a href="#partners">Партнери</a></li>
               <li><a href="#contacts">Контакти</a></li>
+            </ul>
+            <ul class="mobile-menu__contacts-list">
+              <li class="mobile-menu__contact">
+                <a href="tel:+380800211023" class="mobile-menu__contact-link">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                  +38 0 800 211023
+                </a>
+              </li>
+              <li class="mobile-menu__contact">
+                <a
+                  href="mailto:info@elam-cosmetics.com"
+                  class="mobile-menu__contact-link"
+                  style="text-decoration: underline"
+                >
+                  <i class="fa-regular fa-envelope-open"></i>
+                  info@elam-cosmetics.com
+                </a>
+              </li>
             </ul>
             <ul class="mobile-menu__lang-bar">
               <li>
@@ -823,7 +861,7 @@
                         >Введіть код</label
                       >
                       <button class="form__captcha--refresh">
-                        <img src="/images/arrow-path.svg" alt="" />
+                        <i class="fa-solid fa-arrows-rotate"></i>
                       </button>
                     </div>
                   </div>
@@ -1131,7 +1169,7 @@
         <section class="contacts">
           <div class="container contacts__container">
             <div class="contacts__form-box">
-              <form id="contact-form" class="form contacts-form">
+              <form id="contact-form" class="form contacts__form">
                 <h2 class="subtitle">Виникли питання? Напишіть нам!</h2>
                 <div class="form__input-group">
                   <input
@@ -1185,7 +1223,8 @@
                 </button>
               </form>
             </div>
-            <div class="contacts__contacts-box" id="contacts">
+            <div class="contacts__contacts-box">
+              <div class="bookmark" id="contacts"></div>
               <div class="contacts__address-box">
                 <h2 class="subtitle">Контакти</h2>
                 <address class="contacts__address">
