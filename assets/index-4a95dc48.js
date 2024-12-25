@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 (async () => {
-  const response = await fetch("/db/productsData.json");
+  const response = await fetch("/src/db/productsData.json");
   const productsData = await response.json();
   const products = productsData.products;
   const productList = document.getElementById("product-list");
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   productList.innerHTML = cards;
 })();
 (async () => {
-  const response = await fetch("/db/productsData.json");
+  const response = await fetch("/src/db/productsData.json");
   const productsData = await response.json();
   const products = productsData.products;
   const productCardModalOverlay = document.getElementById("production-modal");
