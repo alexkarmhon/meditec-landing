@@ -1,7 +1,7 @@
 export const products = [
   {
     id: "1",
-    image: "../../public/images/item-04.webp",
+    image: "/public/images/item-04.webp",
     title: "ELAM Чистий экстракт",
     volume: "100 Мл",
     paragraphs: [
@@ -20,7 +20,7 @@ export const products = [
   },
   {
     id: "2",
-    image: "../../public/images/item-01.webp",
+    image: "/public/images/item-01.webp",
     title: "ELAM від болю в суглобах",
     volume: "50 Мл",
     paragraphs: [
@@ -41,7 +41,7 @@ export const products = [
   },
   {
     id: "3",
-    image: "../../public/images/item-03.webp",
+    image: "/public/images/item-03.webp",
     title: "ELAM від м'язових спазмів",
     volume: "100 Мл",
     paragraphs: [
@@ -60,7 +60,7 @@ export const products = [
   },
   {
     id: "4",
-    image: "../../public/images/item-02.webp",
+    image: "/public/images/item-02.webp",
     title: "ELAM від рубців",
     volume: "30 Мл",
     paragraphs: [
@@ -73,7 +73,7 @@ export const products = [
   },
   {
     id: "5",
-    image: "../../public/images/item-05.webp",
+    image: "/public/images/item-05.webp",
     title: "ELAM від болю в суглобах",
     volume: "30 Мл",
     paragraphs: [
