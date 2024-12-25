@@ -1,10 +1,13 @@
-import { products } from "./products";
+(async () => {
+  const response = await fetch("/db/productsData.json");
+  const productsData = await response.json();
+  const products = productsData.products;
 
-const productList = document.getElementById("product-list");
+  const productList = document.getElementById("product-list");
 
-const cards = products
-  .map(
-    ({ id, image, title, volume, price }) => `
+  const cards = products
+    .map(
+      ({ id, image, title, volume, price }) => `
   <li class="production__item" onclick="openProductCardModal(); renderCardById(${id})">
                   <div id="${id}" class="product-card">
                     <div class="product-card__image">
@@ -33,7 +36,8 @@ const cards = products
                   </div>
                 </li>
   `
-  )
-  .join("");
+    )
+    .join("");
 
-productList.innerHTML = cards;
+  productList.innerHTML = cards;
+})();
