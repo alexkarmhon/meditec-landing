@@ -64,6 +64,106 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+(async () => {
+  const response = await fetch("/db/productsData.json");
+  const productsData = await response.json();
+  const products = productsData.products;
+  const productList = document.getElementById("product-list");
+  const cards = products.map(
+    ({ id, image, title, volume, price }) => `
+  <li class="production__item" onclick="openProductCardModal(); renderCardById(${id})">
+                  <div id="${id}" class="product-card">
+                    <div class="product-card__image">
+                        <img
+                          src=${image}
+                          alt=${title}                        
+                          loading="lazy"
+                          data-lazy="true"
+                        />
+                    </div>
+                    <h3 class="product-card__title">
+                    ${title}
+                      <span>(${volume})</span>
+                    </h3>
+                   <p class="product-card__info-more">
+                      Докладніше...
+                      <span><i class="fa-solid fa-plus"></i></span>
+                    </p>
+                    <button class="main-button main-button--product-card">
+                      <i class="fa-solid fa-cart-arrow-down"></i>
+                      <p>
+                        <span class="product-card__button-price">Ціна:</span>
+                        ${price} грн.
+                      </p>
+                    </button>
+                  </div>
+                </li>
+  `
+  ).join("");
+  productList.innerHTML = cards;
+})();
+(async () => {
+  const response = await fetch("/db/productsData.json");
+  const productsData = await response.json();
+  const products = productsData.products;
+  const productCardModalOverlay = document.getElementById("production-modal");
+  const productCardModalContent = document.getElementById(
+    "production-modal-content"
+  );
+  const productCards = document.querySelectorAll(".product-card");
+  const renderCardById = (cardId) => {
+    const { image, paragraphs, price, title, volume } = products.find(
+      (product) => product.id === `${cardId}`
+    );
+    productCardModalContent.innerHTML = `
+  <div class="production__modal-image-box">
+    <img
+      src=${image}
+      alt=${title}
+      loading="lazy"
+      data-lazy="true"
+    />
+    <h3 class="production__modal-title">
+      ${title}
+      <span>(${volume})</span>
+    </h3>
+    <button class="main-button main-button--modal-product-card">
+      <i class="fa-solid fa-cart-arrow-down"></i>
+      <p>
+        <span class="product-card__button-price">Ціна:</span>
+        ${price} грн.
+      </p>
+    </button>
+  </div>
+  <div class="production__modal-description-box">
+    ${paragraphs.map((paragraph) => `<p class="production__modal-text>${paragraph}</p>`).join("")}
+    <p
+      class="production__modal-info-less"
+      onclick="closeProductCardModal()"
+    >
+      Назад... <span><i class="fa-solid fa-minus"></i></span>
+    </p>
+  </div>`;
+  };
+  const openProductCardModal = () => {
+    productCardModalOverlay.style.display = "block";
+    productCardModalContent.scrollTop = 0;
+  };
+  const closeProductCardModal = () => {
+    productCardModalContent.innerHTML = "";
+    productCardModalOverlay.style.display = "none";
+  };
+  productCards.forEach((productCard) => {
+    productCard.addEventListener("click", () => {
+    });
+  });
+  productCardModalOverlay.addEventListener("click", (e) => {
+    e.target === e.currentTarget && closeProductCardModal();
+  });
+  window.openProductCardModal = openProductCardModal;
+  window.closeProductCardModal = closeProductCardModal;
+  window.renderCardById = renderCardById;
+})();
 (function() {
   const fonts = ["cursive"];
   let captchaValue = "";
@@ -113,9 +213,9 @@ const slides = document.getElementsByClassName("gallery__modal-slide");
 const dots = document.getElementsByClassName("gallery__modal-image-demo");
 const captionText = document.getElementById("caption");
 let slideIndex = 1;
-const openModal = () => {
+function openModal() {
   modal.style.display = "block";
-};
+}
 function closeModal() {
   modal.style.display = "none";
 }

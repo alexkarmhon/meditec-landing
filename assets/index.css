@@ -371,12 +371,18 @@ img {
   display: block;
   width: 100%;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 a {
   text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
 }
 
 .container {
@@ -455,6 +461,35 @@ a {
   font-weight: 300;
   display: block;
   color: #828282;
+}
+
+.production__modal-title {
+  font-family: "Calibri", sans-serif;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 40px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(13, 19, 31, 0.8862745098);
+}
+
+.modal-close-btn {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 45px;
 }
 
 .mobile-menu-btn {
@@ -968,11 +1003,7 @@ a {
   transition: transform 500ms ease;
   transition: transform 500ms ease, -webkit-transform 500ms ease, -moz-transform 500ms ease;
 }
-.product-card__image__link {
-  display: inline-block;
-}
-.product-card__image-img {
-  width: 100%;
+.product-card__image img {
   height: auto;
   border-radius: 4px;
   -o-object-fit: cover;
@@ -984,33 +1015,11 @@ a {
       -ms-transform: scale(1.05);
           transform: scale(1.05);
 }
-.product-card__info {
+.product-card__info-more {
   font-family: "Calibri", sans-serif;
   font-size: 15px;
   line-height: 24px;
   font-weight: 400;
-  width: 100%;
-  margin: 0 auto 20px;
-  text-align: center;
-}
-.product-card__info .spoiler {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-          align-items: center;
-  margin: 20px auto;
-  width: 98%;
-}
-.product-card__info .spoiler__body {
-  display: none;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #65ccf0;
-}
-.product-card__info .spoiler input {
-  display: none;
-}
-.product-card__info .spoiler input + label {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1028,28 +1037,7 @@ a {
   padding: 2px 10px 12px 20px;
   color: #171717;
   text-align: left;
-  font-size: 15px;
-  overflow: hidden;
   cursor: pointer;
-}
-.product-card__info .spoiler input + label::after {
-  content: "+";
-  font-family: monospace;
-  color: #6b6b6b;
-  font-size: 36px;
-  font-weight: 100;
-  border-radius: 6px;
-}
-.product-card__info .spoiler input:checked + label::after {
-  content: "-";
-  font-family: monospace;
-  color: #6b6b6b;
-  font-size: 36px;
-  font-weight: 100;
-  border-radius: 6px;
-}
-.product-card__info .spoiler input:checked ~ .spoiler__body {
-  display: block;
 }
 .product-card__subtitle {
   font-family: "Roboto Condensed", Arial, sans-serif;
@@ -1072,6 +1060,68 @@ a {
   font-size: 14px;
 }
 
+.production__modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 15px;
+  width: 90vw;
+  height: 80vh;
+  padding: 12px;
+  background: #ffffff;
+  overflow: auto;
+}
+
+.production__modal-image-box,
+.production__modal-description-box {
+  grid-column: span 12/span 12;
+  text-align: center;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+.production__modal-image-box img,
+.production__modal-description-box img {
+  height: auto;
+}
+
+.production__modal-text {
+  font-family: "Calibri", sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.production__modal-info-less {
+  font-family: "Calibri", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px dashed #ccc;
+  padding: 2px 10px 12px 20px;
+  color: #171717;
+  text-align: left;
+  cursor: pointer;
+}
 .main-button {
   font-family: "Calibri", sans-serif;
   font-size: 20px;
@@ -1099,7 +1149,7 @@ a {
   margin-top: 0;
   padding: 12px 24px;
 }
-.main-button--product-card {
+.main-button--product-card, .main-button--modal-product-card {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1110,11 +1160,14 @@ a {
           align-items: center;
   gap: 12px;
 }
-.main-button--product-card p {
+.main-button--product-card p, .main-button--modal-product-card p {
   font-family: "Calibri", sans-serif;
   font-size: 18px;
   line-height: 20px;
   font-weight: 400;
+}
+.main-button--modal-product-card {
+  margin-top: 0;
 }
 .main-button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c3e0ed));
@@ -1700,18 +1753,6 @@ a {
   grid-column: 5/span 4;
   grid-row: 6/span 3;
 }
-.gallery__modal-overlay {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 40px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(13, 19, 31, 0.8862745098);
-}
 .gallery__modal-content {
   position: relative;
   top: 50%;
@@ -1733,18 +1774,6 @@ a {
   padding: 0;
   width: 80%;
   max-width: 800px;
-}
-.gallery__modal-close-btn {
-  color: white;
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 45px;
-}
-.gallery__modal-close:hover, .gallery__modal-close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
 }
 .gallery__modal-slides {
   margin-bottom: 8px;
@@ -2261,20 +2290,57 @@ a {
     font-size: 16px;
   }
 }
+@media screen and (min-width: 1024px) and (orientation: landscape){
+  .production__modal-content {
+    width: 65vw;
+  }
+  .production__modal-image-box {
+    grid-column: span 7/span 12;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+            justify-content: center;
+  }
+  .production__modal-image-box img {
+    max-width: 100%;
+  }
+  .production__modal-description-box {
+    grid-column: span 5/span 12;
+    overflow: auto;
+  }
+}
 @media screen and (min-width: 1440px){
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .header .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
   .product-card__title {
     font-family: "Roboto Condensed", Arial, sans-serif;
     font-size: 20px;
     font-weight: 300;
     line-height: 24px;
+  }
+}
+@media screen and (min-width: 1440px) and (orientation: landscape){
+  .production__modal-image-box {
+    grid-column: span 7/span 12;
+  }
+  .production__modal-image-box img {
+    max-width: 88%;
+  }
+  .production__modal-description-box {
+    grid-column: span 5/span 12;
+    overflow: auto;
   }
 }
 @media screen and (max-width: 1024px){
@@ -2293,6 +2359,24 @@ a {
     width: 600px;
   }
 }
+@media screen and (max-width: 1023px) and (orientation: landscape){
+  .production__modal-content {
+    overflow: hidden;
+  }
+  .production__modal-image-box {
+    grid-column: span 6/span 12;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .production__modal-image-box img {
+    max-width: 90%;
+  }
+  .production__modal-description-box {
+    grid-column: span 6/span 12;
+    overflow: auto;
+  }
+}
 @media screen and (max-width: 768px){
   .hero .slogan-box {
     -webkit-box-align: start;
@@ -2309,6 +2393,21 @@ a {
   .hero .slogan-box .slogan .text .product_card .slogan-button {
     padding: 8px 16px;
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 767px) and (orientation: landscape){
+  .production__modal-image-box {
+    grid-column: span 7/span 12;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .production__modal-image-box img {
+    max-width: 80%;
+  }
+  .production__modal-description-box {
+    grid-column: span 5/span 12;
+    overflow: auto;
   }
 }
 @media screen and (max-width: 480px){
