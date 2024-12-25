@@ -1,19 +1,16 @@
-(async () => {
-  const response = await fetch("/public/db/productsData.json");
-  const productsData = await response.json();
-  const products = productsData.products;
+import { products } from "./products";
 
-  const productCardModalOverlay = document.getElementById("production-modal");
-  const productCardModalContent = document.getElementById(
-    "production-modal-content"
+const productCardModalOverlay = document.getElementById("production-modal");
+const productCardModalContent = document.getElementById(
+  "production-modal-content"
+);
+const productCards = document.querySelectorAll(".product-card");
+
+const renderCardById = (cardId) => {
+  const { image, paragraphs, price, title, volume } = products.find(
+    (product) => product.id === `${cardId}`
   );
-  const productCards = document.querySelectorAll(".product-card");
-
-  const renderCardById = (cardId) => {
-    const { image, paragraphs, price, title, volume } = products.find(
-      (product) => product.id === `${cardId}`
-    );
-    productCardModalContent.innerHTML = `
+  productCardModalContent.innerHTML = `
   <div class="production__modal-image-box">
     <img
       src=${image}
@@ -44,29 +41,28 @@
       Назад... <span><i class="fa-solid fa-minus"></i></span>
     </p>
   </div>`;
-  };
+};
 
-  const openProductCardModal = () => {
-    productCardModalOverlay.style.display = "block";
-    productCardModalContent.scrollTop = 0;
-  };
+const openProductCardModal = () => {
+  productCardModalOverlay.style.display = "block";
+  productCardModalContent.scrollTop = 0;
+};
 
-  const closeProductCardModal = () => {
-    productCardModalContent.innerHTML = "";
-    productCardModalOverlay.style.display = "none";
-  };
+const closeProductCardModal = () => {
+  productCardModalContent.innerHTML = "";
+  productCardModalOverlay.style.display = "none";
+};
 
-  productCards.forEach((productCard) => {
-    productCard.addEventListener("click", () => {
-      openProductCardModal;
-    });
+productCards.forEach((productCard) => {
+  productCard.addEventListener("click", () => {
+    openProductCardModal;
   });
+});
 
-  productCardModalOverlay.addEventListener("click", (e) => {
-    e.target === e.currentTarget && closeProductCardModal();
-  });
+productCardModalOverlay.addEventListener("click", (e) => {
+  e.target === e.currentTarget && closeProductCardModal();
+});
 
-  window.openProductCardModal = openProductCardModal;
-  window.closeProductCardModal = closeProductCardModal;
-  window.renderCardById = renderCardById;
-})();
+window.openProductCardModal = openProductCardModal;
+window.closeProductCardModal = closeProductCardModal;
+window.renderCardById = renderCardById;
