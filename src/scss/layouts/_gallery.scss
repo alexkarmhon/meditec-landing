@@ -45,19 +45,6 @@
     grid-row: 6 / span 3;
   }
 
-  &__modal-overlay {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 40px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: vars.$backdrop-color;
-  }
-
   &__modal-content {
     position: relative;
     top: 50%;
@@ -68,21 +55,6 @@
     padding: 0;
     width: 80%;
     max-width: 800px;
-  }
-
-  &__modal-close-btn {
-    color: white;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 45px;
-  }
-
-  &__modal-close:hover,
-  &__modal-close:focus {
-    color: #999;
-    text-decoration: none;
-    cursor: pointer;
   }
 
   &__modal-slides {

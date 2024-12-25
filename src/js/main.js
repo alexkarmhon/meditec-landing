@@ -2,6 +2,10 @@ import "../scss/style.scss";
 
 import "/src/js/mobile-menu.js";
 
+import "/src/js/productsListBuilder";
+
+import "/src/js/productCardModal";
+
 import "/src/js/genCaptcha";
 
 import "/src/js/galleryModal";

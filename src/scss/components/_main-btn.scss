@@ -20,7 +20,8 @@
     padding: 12px 24px;
   }
 
-  &--product-card {
+  &--product-card,
+  &--modal-product-card {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -28,6 +29,10 @@
     p {
       @include mixins.calibri-400(18px, 20px);
     }
+  }
+
+  &--modal-product-card {
+    margin-top: 0;
   }
 
   &:hover {

@@ -6,9 +6,9 @@ const captionText = document.getElementById("caption");
 
 let slideIndex = 1;
 
-const openModal = () => {
+function openModal() {
   modal.style.display = "block";
-};
+}
 
 function closeModal() {
   modal.style.display = "none";

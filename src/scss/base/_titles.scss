@@ -58,3 +58,8 @@
     line-height: 24px;
   }
 }
+
+.production__modal-title {
+  @include mixins.calibri-700(20px, 40px);
+  text-align: center;
+}

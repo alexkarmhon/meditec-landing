@@ -9,9 +9,11 @@
 @use "base/container";
 @use "base/titles";
 
+@use "components/modal-overlay";
 @use "components/mobile-menu-btn";
 @use "components/mobile-menu";
 @use "components/product-card";
+@use "components/product-card-modal";
 @use "components/main-btn";
 @use "components/form";
 
