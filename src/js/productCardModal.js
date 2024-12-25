@@ -13,7 +13,7 @@ const renderCardById = (cardId) => {
   productCardModalContent.innerHTML = `
   <div class="production__modal-image-box">
     <img
-      src=${image}
+      src=/meditec-landing${image}
       alt=${title}
       loading="lazy"
       data-lazy="true"
