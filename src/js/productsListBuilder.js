@@ -1,5 +1,5 @@
 (async () => {
-  const response = await fetch("/db/productsData.json");
+  const response = await fetch("/src/db/productsData.json");
   const productsData = await response.json();
   const products = productsData.products;
 
