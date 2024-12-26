@@ -5,7 +5,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 100;
-  src: url("/meditec-landing/fonts/Roboto-Condensed-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-100.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-200 - cyrillic_latin */
 @font-face {
@@ -21,7 +21,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 300;
-  src: url("/meditec-landing/fonts/Roboto-Condensed-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-regular - cyrillic_latin */
 @font-face {
@@ -29,7 +29,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 400;
-  src: url("/meditec-landing/fonts/Roboto-Condensed-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-500 - cyrillic_latin */
 @font-face {
@@ -37,7 +37,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 500;
-  src: url("/meditec-landing/fonts/Roboto-Condensed-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-600 - cyrillic_latin */
 @font-face {
@@ -45,7 +45,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 600;
-  src: url("/meditec-landing/fonts/Roboto-Condensed-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-700 - cyrillic_latin */
 @font-face {
@@ -53,7 +53,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 700;
-  src: url("/meditec-landing/fonts/Roboto-Condensed-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-800 - cyrillic_latin */
 @font-face {
@@ -61,7 +61,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 800;
-  src: url("/meditec-landing/fonts/Roboto-Condensed-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-condensed-900 - cyrillic_latin */
 @font-face {
@@ -69,7 +69,7 @@
   font-family: "Roboto Condensed";
   font-style: normal;
   font-weight: 900;
-  src: url("/meditec-landing/fonts/Roboto-Condensed-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Roboto-Condensed-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /*calibri-regular-400*/
 @font-face {
@@ -77,7 +77,7 @@
   font-family: "Calibri";
   font-style: normal;
   font-weight: 400;
-  src: url("/meditec-landing/fonts/Calibri.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Calibri.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /*calibri-bold-800*/
 @font-face {
@@ -85,7 +85,7 @@
   font-family: "Calibri";
   font-style: normal;
   font-weight: 700;
-  src: url("/meditec-landing/fonts/Calibri-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/fonts/Calibri-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 .fa-instagram {
   font-size: 24px;
@@ -179,7 +179,7 @@
   content: "";
   background-position: center;
   background-size: cover;
-  background-image: url("/meditec-landing/images/vb.webp");
+  background-image: url("/images/vb.webp");
   position: relative;
   background-repeat: no-repeat;
   display: block;
@@ -1423,7 +1423,7 @@ strong {
   display: none;
 }
 .hero {
-  background-image: url("/meditec-landing/images/header-bg.webp");
+  background-image: url("/images/header-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1490,7 +1490,7 @@ strong {
   color: #022e4e;
 }
 .hero__product-feature:before {
-  content: url("/meditec-landing/images/vb.webp");
+  content: url("/images/vb.webp");
   margin-right: 10px;
 }
 
