@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig({
+  base: "/meditec-landing",
   plugins: [
     ViteImageOptimizer({
       png: {
@@ -41,7 +42,6 @@ export default defineConfig({
             fileURLToPath(new URL(file, import.meta.url)),
           ])
       ),
-      // output unminified CSS file
       output: {
         assetFileNames: "assets/[name].[ext]",
       },
