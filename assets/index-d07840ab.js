@@ -155,7 +155,7 @@ const cards = products.map(
                   <div id="${id}" class="product-card">
                     <div class="product-card__image">
                         <img
-                          src=${image}
+                          src=/meditec-landing${image}
                           alt=${title}                        
                           loading="lazy"
                           data-lazy="true"
@@ -193,7 +193,7 @@ const renderCardById = (cardId) => {
   productCardModalContent.innerHTML = `
   <div class="production__modal-image-box">
     <img
-      src=${image}
+      src=/meditec-landing${image}
       alt=${title}
       loading="lazy"
       data-lazy="true"
