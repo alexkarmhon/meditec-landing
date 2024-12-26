@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const products = [
   {
     id: "1",
-    image: "/images/item-04.webp",
+    // image: "/images/item-04.webp",
+    image: "../../images/item-04.webp",
     title: "ELAM Чистий экстракт",
     volume: "100 Мл",
     paragraphs: [
@@ -86,7 +87,8 @@ const products = [
   },
   {
     id: "2",
-    image: "/images/item-01.webp",
+    // image: "/images/item-01.webp",
+    image: "../../images/item-01.webp",
     title: "ELAM від болю в суглобах",
     volume: "50 Мл",
     paragraphs: [
@@ -107,7 +109,8 @@ const products = [
   },
   {
     id: "3",
-    image: "/images/item-03.webp",
+    // image: "/images/item-03.webp",
+    image: "../../images/item-03.webp",
     title: "ELAM від м'язових спазмів",
     volume: "100 Мл",
     paragraphs: [
@@ -126,7 +129,8 @@ const products = [
   },
   {
     id: "4",
-    image: "/images/item-02.webp",
+    // image: "/images/item-02.webp",
+    image: "../../images/item-02.webp",
     title: "ELAM від рубців",
     volume: "30 Мл",
     paragraphs: [
@@ -139,7 +143,8 @@ const products = [
   },
   {
     id: "5",
-    image: "/images/item-05.webp",
+    // image: "/images/item-05.webp",
+    image: "../../images/item-05.webp",
     title: "ELAM від болю в суглобах",
     volume: "30 Мл",
     paragraphs: [
@@ -155,7 +160,7 @@ const cards = products.map(
                   <div id="${id}" class="product-card">
                     <div class="product-card__image">
                         <img
-                          src=/meditec-landing${image}
+                          src=${image}
                           alt=${title}                        
                           loading="lazy"
                           data-lazy="true"
