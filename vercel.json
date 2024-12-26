@@ -3,5 +3,11 @@
     "env": {
       "VITE_BASE_PATH": "/meditec-landing/"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/meditec-landing/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
