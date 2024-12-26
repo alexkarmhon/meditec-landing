@@ -2,7 +2,7 @@ export const products = [
   {
     id: "1",
     // image: "/images/item-04.webp",
-    image: "../images/item-04.webp",
+    image: "/public/images/item-04.webp",
     title: "ELAM Чистий экстракт",
     volume: "100 Мл",
     paragraphs: [
