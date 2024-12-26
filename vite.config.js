@@ -7,6 +7,7 @@ import { fileURLToPath } from "url";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig({
+  base: process.env.VITE_BASE_PATH || "/",
   plugins: [
     ViteImageOptimizer({
       png: {

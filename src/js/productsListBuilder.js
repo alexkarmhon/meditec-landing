@@ -9,7 +9,7 @@ const cards = products
                   <div id="${id}" class="product-card">
                     <div class="product-card__image">
                         <img
-                          src=/meditec-landing${image}
+                          src=${import.meta.env.VITE_BASE_PATH}${image}
                           alt=${title}                        
                           loading="lazy"
                           data-lazy="true"
