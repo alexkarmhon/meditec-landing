@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig({
-  base: "/meditec-landing",
+  base: "/alexkarmhon.github.io/meditec-landing",
   plugins: [
     ViteImageOptimizer({
       png: {
