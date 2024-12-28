@@ -2,11 +2,97 @@
 @use "../utils/mixins";
 
 .hero {
-  background-image: url("/images/header-bg.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 0 0 40px 0;
+  position: relative;
+  width: 100%;
+
+  .container {
+    height: 100%;
+    min-height: 50vh;
+
+    @media screen and (max-height: 767px) and (orientation: landscape) {
+      min-height: 100vh;
+    }
+    @media screen and (min-height: 768px) and (orientation: landscape) {
+      min-height: 75vh;
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: vars.$background-color-section-main;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    & .hero__slide:nth-child(4n + 1) .hero__slider-content {
+      top: 40%;
+      left: 10%;
+    }
+    & .hero__slide:nth-child(4n + 2) .hero__slider-content {
+      top: 60%;
+      right: 10%;
+    }
+    & .hero__slide:nth-child(4n + 3) .hero__slider-content {
+      top: 75%;
+      left: 5%;
+    }
+    & .hero__slide:nth-child(4n) .hero__slider-content {
+      top: 30%;
+      right: 5%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("/public/images/logotype.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      opacity: 0.3;
+      z-index: 0;
+    }
+  }
+
+  &__slide {
+    width: 100%;
+    height: 100%;
+    animation: fading 20s infinite;
+  }
+
+  &__slider-content {
+    @include mixins.calibri-400(24px, 24px);
+    position: absolute;
+    padding: 5px 24px;
+    text-align: center;
+    color: vars.$section-title-color;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.3)
+    );
+
+    @media screen and (min-width: 600px) and (max-width: 767px) {
+      @include mixins.calibri-400(32px, 32px);
+    }
+
+    @media screen and (min-width: 768px) {
+      @include mixins.calibri-400(36px, 32px);
+    }
+
+    @media screen and (min-width: 1024px) {
+      @include mixins.calibri-400(42px, 42px);
+    }
+  }
 
   &__slogan-box {
     display: flex;
@@ -52,47 +138,22 @@
       margin-right: 10px;
     }
   }
+}
 
-  @media screen and (max-width: 480px) {
-    .slogan-box .slogan .text .hero_title {
-      font-size: 25px;
-    }
-
-    .slogan-box .slogan .text .vb2 li {
-      font-size: 15px;
-    }
-
-    .slogan-box .slogan .text .product_card .slogan-button {
-      font-size: 14px;
-    }
+@keyframes fading {
+  0% {
+    opacity: 0;
   }
 
-  @media screen and (max-width: 768px) {
-    .slogan-box {
-      align-items: flex-start;
-    }
-
-    .slogan-box .slogan .text .product_title {
-      font-size: 28px;
-    }
-
-    .slogan-box .slogan .text .vb2 li {
-      font-size: 16px;
-    }
-
-    .slogan-box .slogan .text .product_card .slogan-button {
-      padding: 8px 16px;
-      font-size: 18px;
-    }
+  25% {
+    opacity: 1;
   }
 
-  @media screen and (max-width: 1024px) {
-    .slogan-box .slogan .slogan-txt .product_title {
-      font-size: 1.8rem;
-    }
+  75% {
+    opacity: 1;
+  }
 
-    .slogan-box .slogan .slogan-txt .vb2 li {
-      font-size: 0.95rem;
-    }
+  100% {
+    opacity: 0;
   }
 }

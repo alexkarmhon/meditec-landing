@@ -346,6 +346,16 @@ strong {
   font-weight: 700;
 }
 
+main {
+  position: relative;
+}
+
+section {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
@@ -468,7 +478,7 @@ strong {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(13, 19, 31, 0.8862745098);
+  background-color: rgba(180, 199, 207, 0.7137254902);
 }
 
 .modal-close-btn {
@@ -761,7 +771,7 @@ strong {
   width: 90vw;
   height: 80vh;
   padding: 12px;
-  background: #ffffff;
+  background: #f8fcfd;
   overflow: auto;
 }
 
@@ -1034,7 +1044,7 @@ strong {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #f8fcfd;
   z-index: 1;
   transform: translateY(0%);
   transition: transform 500ms ease;
@@ -1124,11 +1134,51 @@ strong {
   }
 }
 .hero {
-  background-image: url("/images/header-bg.webp");
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  width: 100%;
+}
+.hero .container {
+  height: 100%;
+  min-height: 50vh;
+}
+.hero__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f8fcfd;
+  background-image: url("/public/images/logotype.svg");
   background-repeat: no-repeat;
-  padding: 0 0 40px 0;
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero__slide {
+  width: 100%;
+  height: 100%;
+  animation: fading 20s infinite;
+}
+.hero__slider-content {
+  font-family: "Calibri", sans-serif;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  text-align: center;
+  color: #66696c;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
 }
 .hero__slogan-box {
   display: flex;
@@ -1172,53 +1222,42 @@ strong {
   content: url("/images/vb.webp");
   margin-right: 10px;
 }
-@media screen and (max-width: 480px) {
-  .hero .slogan-box .slogan .text .hero_title {
-    font-size: 25px;
-  }
-  .hero .slogan-box .slogan .text .vb2 li {
-    font-size: 15px;
-  }
-  .hero .slogan-box .slogan .text .product_card .slogan-button {
-    font-size: 14px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero .slogan-box {
-    align-items: flex-start;
-  }
-  .hero .slogan-box .slogan .text .product_title {
-    font-size: 28px;
-  }
-  .hero .slogan-box .slogan .text .vb2 li {
-    font-size: 16px;
-  }
-  .hero .slogan-box .slogan .text .product_card .slogan-button {
-    padding: 8px 16px;
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .hero .slogan-box .slogan .slogan-txt .product_title {
-    font-size: 1.8rem;
-  }
-  .hero .slogan-box .slogan .slogan-txt .vb2 li {
-    font-size: 0.95rem;
-  }
-}
 
+@keyframes fading {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.3;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .production {
   position: relative;
   padding: 40px 0;
   width: 100%;
   display: block;
-  background: #ffffff;
+  background: #f8fcfd;
 }
 .production__breaker {
   margin-bottom: 40px;
 }
 .production__breaker::before {
-  background-color: #ffffff;
+  background-color: #f8fcfd;
 }
 .production__description {
   font-family: "Calibri", sans-serif;
@@ -1266,8 +1305,6 @@ strong {
 }
 
 .advantages {
-  position: relative;
-  margin: 0;
   padding: 40px 0;
   width: 100%;
   display: block;
@@ -1415,13 +1452,13 @@ strong {
 .about {
   position: relative;
   padding: 40px 0;
-  background: #ffffff;
+  background: #f8fcfd;
 }
 .about__breaker {
   margin-bottom: 40px;
 }
 .about__breaker::before {
-  background-color: #ffffff;
+  background-color: #f8fcfd;
 }
 .about__content {
   display: flex;
@@ -1622,13 +1659,13 @@ strong {
   padding: 40px 0;
   width: 100%;
   display: block;
-  background-color: #ffffff;
+  background-color: #f8fcfd;
 }
 .partners__breaker {
   margin-bottom: 40px;
 }
 .partners__breaker::before {
-  background-color: #ffffff;
+  background-color: #f8fcfd;
 }
 .partners__list {
   display: grid;
@@ -1738,6 +1775,7 @@ strong {
 
 .footer {
   padding: 20px 20px;
+  border-top: 0.5px solid rgba(110, 127, 146, 0.1137254902);
 }
 .footer__content {
   display: flex;

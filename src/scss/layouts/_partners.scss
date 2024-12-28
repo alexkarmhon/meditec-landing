@@ -37,12 +37,6 @@
     }
   }
 
-  @media screen and (min-width: 768px) {
-    &__item {
-      grid-column: span 6 / span 12;
-    }
-  }
-
   @media screen and (min-width: 1024px) {
     &__list:hover > :not(:hover) {
       opacity: 0.9;

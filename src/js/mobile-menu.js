@@ -14,6 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mobileMenu.style.transform = `translateY(${header.offsetHeight}px)`;
   mobileMenuNav.style.height = `calc(100vh - ${header.offsetHeight}px)`;
+  window.addEventListener("scroll", () => {
+    if (header.classList.contains("hidden")) {
+      mobileMenuNav.style.height = `100vh`;
+    } else {
+      mobileMenuNav.style.height = `calc(100vh - ${header.offsetHeight}px)`;
+    }
+  });
   mobileMenu.style.paddingBottom = `${header.offsetHeight}px`;
 
   menuButton.addEventListener("click", () => {
