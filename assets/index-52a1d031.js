@@ -40,6 +40,22 @@
   }
 })();
 const style = "";
+let myIndex = 0;
+(() => {
+  const carousel = () => {
+    const slides2 = document.getElementsByClassName("hero__slide");
+    Array.from(slides2).forEach((slide) => {
+      slide.style.display = "none";
+    });
+    myIndex++;
+    if (myIndex > slides2.length) {
+      myIndex = 1;
+    }
+    slides2[myIndex - 1].style.display = "block";
+    setTimeout(carousel, 2e4);
+  };
+  carousel();
+})();
 document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector("[data-menu-button]");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -48,6 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
   mobileMenu.style.transform = `translateY(${header.offsetHeight}px)`;
   mobileMenuNav.style.height = `calc(100vh - ${header.offsetHeight}px)`;
+  window.addEventListener("scroll", () => {
+    if (header.classList.contains("hidden")) {
+      mobileMenuNav.style.height = `100vh`;
+    } else {
+      mobileMenuNav.style.height = `calc(100vh - ${header.offsetHeight}px)`;
+    }
+  });
   mobileMenu.style.paddingBottom = `${header.offsetHeight}px`;
   menuButton.addEventListener("click", () => {
     const isOpen = menuButton.classList.toggle("is-open");
