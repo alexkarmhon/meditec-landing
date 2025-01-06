@@ -1371,6 +1371,23 @@ section {
   background: #f8fcfd;
   background-color: white;
 }
+.order__subtitle {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  padding: 0;
+  color: #66696c;
+  text-align: center;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+.order__subtitle span {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  display: block;
+  color: #828282;
+}
 
 .header {
   position: fixed;

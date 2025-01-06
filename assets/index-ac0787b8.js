@@ -264,6 +264,28 @@ productCardModalOverlay.addEventListener("click", (e) => {
 window.openProductCardModal = openProductCardModal;
 window.closeProductCardModal = closeProductCardModal;
 window.renderCardById = renderCardById;
+(function() {
+  const fonts = ["cursive"];
+  function setCaptcha() {
+    let html = "qwerty".split("").map((char) => {
+      const rotate = -20 + Math.random() * 30;
+      const font = Math.trunc(Math.random() * fonts.length);
+      const isUppercase = Math.random() > 0.5 ? "uppercase" : "none";
+      return `<span
+            style="
+            transform:rotate(${rotate}deg);
+            font-family:${font[font]};
+            text-transform: ${isUppercase};
+            "
+           >${char} </span>`;
+    }).join("");
+    const captcha = document.querySelectorAll(".form__preview");
+    captcha.forEach((c) => {
+      c.innerHTML = html;
+    });
+  }
+  setCaptcha();
+})();
 const modal = document.getElementById("galleryModal");
 const images = document.querySelectorAll(".gallery__image");
 const slides = document.getElementsByClassName("gallery__modal-slide");
@@ -328,13 +350,15 @@ window.addEventListener("scroll", () => {
   lastScrollY = currentScrollY;
 });
 const productOrderModalOverlay = document.getElementById("order-modal");
-const form = document.getElementById("emailForm");
+const form = document.getElementById("orderForm");
+const orderTitle = document.getElementById("productTitle");
 const openProductOrderModal = (productId) => {
   console.log(productId);
   productOrderModalOverlay.style.display = "block";
   const { id, title, volume, price } = products.find(
     (product) => product.id === `${productId}`
   );
+  orderTitle.innerText = `${title} (${volume})`;
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const orderForm = e.target;
