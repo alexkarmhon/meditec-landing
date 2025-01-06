@@ -1,11 +1,8 @@
 const productOrderModalOverlay = document.getElementById("order-modal");
-const form = document.getElementById("emailForm");
+const form = document.getElementById("orderForm");
+const orderTitle = document.getElementById("productTitle");
 
 import { products } from "./products";
-
-const getProductOrderForm = (product) => {
-  console.log(product);
-};
 
 const openProductOrderModal = (productId) => {
   console.log(productId);
@@ -14,6 +11,8 @@ const openProductOrderModal = (productId) => {
   const { id, title, volume, price } = products.find(
     (product) => product.id === `${productId}`
   );
+
+  orderTitle.innerText = `${title} (${volume})`;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -44,7 +43,8 @@ productOrderModalOverlay.addEventListener("click", (e) => {
 window.openProductOrderModal = openProductOrderModal;
 window.closeProductOrderModal = closeProductOrderModal;
 /////////////////////////////////////////////////////////////////////////////
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "http://localhost:3000"; //for localhost
+// const BASE_URL = "https://meditec-landing.vercel.app";
 function sendOrder(feedback) {
   fetch(`${BASE_URL}/api/feedback`, {
     method: "POST", // Виправлено "metod" на "method"

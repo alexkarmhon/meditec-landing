@@ -179,8 +179,9 @@
                 <img src="/images/x-mark.svg" alt="close button icon" />
               </button>
               <div id="order-modal-content" class="order modal-content">
-                <form id="emailForm" class="form order__form">
+                <form id="orderForm" class="form order__form">
                   <h2 class="subtitle">Оформлення замовлення</h2>
+                  <h3 id="productTitle" class="order__subtitle"></h3>
                   <div class="form__input-group">
                     <input
                       id="order-user-name"
@@ -221,9 +222,9 @@
                       >Ваш Телефон</label
                     >
                   </div>
-                  <div class="form__preview">qwerty</div>
+                  <div class="form__preview"></div>
                   <div
-                    id="captcha"
+                    id="order-captcha"
                     class="form__input-group form__input-group--captcha"
                   >
                     <div class="form__captcha">
@@ -362,7 +363,7 @@
                   <div class="form__preview"></div>
 
                   <div
-                    id="captcha"
+                    id="feedback-captcha"
                     class="form__input-group form__input-group--captcha"
                   >
                     <div class="form__captcha">
@@ -378,9 +379,9 @@
                         class="form__label form__label--captcha"
                         >Введіть код</label
                       >
-                      <button class="form__captcha--refresh">
+                      <!-- <button class="form__captcha--refresh">
                         <i class="fa-solid fa-arrows-rotate"></i>
-                      </button>
+                      </button> -->
                     </div>
                   </div>
                   <button type="submit" class="main-button main-button--form">

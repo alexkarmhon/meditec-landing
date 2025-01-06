@@ -11,7 +11,11 @@ const app = express();
 // Використання CORS
 app.use(
   cors({
-    origin: ["http://localhost:4173", "http://localhost:5173"], // URL вашого клієнтського додатка
+    origin: [
+      "http://localhost:4173",
+      "http://localhost:5173",
+      "https://meditec-landing.vercel.app",
+    ], // URL вашого клієнтського додатка
   })
 );
 

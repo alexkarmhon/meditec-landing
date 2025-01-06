@@ -12,4 +12,19 @@
   padding: 12px;
   background: vars.$background-color-section-main;
   background-color: white;
+
+  &__subtitle {
+    @include mixins.roboto-condensed(24px, 300);
+    padding: 0;
+    color: vars.$sub-title-color;
+    text-align: center;
+    line-height: 22px;
+    margin-bottom: 20px;
+
+    span {
+      @include mixins.roboto-condensed(24px, 300);
+      display: block;
+      color: #828282;
+    }
+  }
 }
