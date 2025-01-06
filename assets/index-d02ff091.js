@@ -174,25 +174,28 @@ const products = [
 const productList = document.getElementById("product-list");
 const cards = products.map(
   ({ id, image, title, volume, price }) => `
-  <li class="production__item" onclick="openProductCardModal(); renderCardById(${id})">
+  <li class="production__item">
                   <div id="${id}" class="product-card">
-                    <div class="product-card__image">
+                    <div onclick="openProductCardModal(); renderCardById(${id})">
+                      <div class="product-card__image">
                         <img
                           src=${image}
                           alt=${title}                        
                           loading="lazy"
                           data-lazy="true"
                         />
+                      </div>
+                      <h3 class="product-card__title">
+                        ${title}
+                        <span>(${volume})</span>
+                      </h3>
+                      <p class="product-card__info-more">
+                        Докладніше...
+                        <span><i class="fa-solid fa-plus"></i></span>
+                      </p>
                     </div>
-                    <h3 class="product-card__title">
-                    ${title}
-                      <span>(${volume})</span>
-                    </h3>
-                   <p class="product-card__info-more">
-                      Докладніше...
-                      <span><i class="fa-solid fa-plus"></i></span>
-                    </p>
-                    <button class="main-button main-button--product-card">
+                    
+                    <button onclick="openProductOrderModal(${id})" class="main-button main-button--product-card">
                       <i class="fa-solid fa-cart-arrow-down"></i>
                       <p>
                         <span class="product-card__button-price">Ціна:</span>
@@ -261,49 +264,6 @@ productCardModalOverlay.addEventListener("click", (e) => {
 window.openProductCardModal = openProductCardModal;
 window.closeProductCardModal = closeProductCardModal;
 window.renderCardById = renderCardById;
-(function() {
-  const fonts = ["cursive"];
-  let captchaValue = "";
-  function genCaptcha() {
-    let value = btoa(Math.random() * 1e9);
-    value = value.substr(0, 5 + Math.random() * 5);
-    captchaValue = value;
-  }
-  function setCaptcha() {
-    let html = captchaValue.split("").map((char) => {
-      const rotate = -20 + Math.random() * 30;
-      const font = Math.trunc(Math.random() * fonts.length);
-      return `<span
-            style="
-            transform:rotate(${rotate}deg);
-            font-family:${font[font]};
-            "
-           >${char} </span>`;
-    }).join("");
-    document.querySelector(".form__preview").innerHTML = html;
-  }
-  function initCaptcha() {
-    document.querySelector(".form__captcha--refresh").addEventListener("click", function(e) {
-      e.preventDefault();
-      genCaptcha();
-      setCaptcha();
-    });
-    genCaptcha();
-    setCaptcha();
-  }
-  initCaptcha();
-  document.querySelector(".main-button--form").addEventListener("click", function(e) {
-    e.preventDefault();
-    let inputcaptchavalue = document.querySelector(
-      ".form__input--captcha"
-    ).value;
-    if (inputcaptchavalue === captchaValue) {
-      alert("Ok");
-    } else {
-      alert("Invalid Captcha");
-    }
-  });
-})();
 const modal = document.getElementById("galleryModal");
 const images = document.querySelectorAll(".gallery__image");
 const slides = document.getElementsByClassName("gallery__modal-slide");
@@ -367,4 +327,58 @@ window.addEventListener("scroll", () => {
   }
   lastScrollY = currentScrollY;
 });
+const productOrderModalOverlay = document.getElementById("order-modal");
+const form = document.getElementById("emailForm");
+const openProductOrderModal = (productId) => {
+  console.log(productId);
+  productOrderModalOverlay.style.display = "block";
+  const { id, title, volume, price } = products.find(
+    (product) => product.id === `${productId}`
+  );
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const orderForm = e.target;
+    const feedbackFormData = new FormData(e.target);
+    feedbackFormData.append("productId", id);
+    feedbackFormData.append("productTitle", title);
+    feedbackFormData.append("productVolume", volume);
+    feedbackFormData.append("productPrice", price);
+    console.log(feedbackFormData);
+    const feedback = Object.fromEntries(feedbackFormData);
+    console.log(feedback);
+    sendOrder(feedback);
+    orderForm.reset();
+    closeProductOrderModal();
+  });
+};
+const closeProductOrderModal = () => {
+  productOrderModalOverlay.style.display = "none";
+};
+productOrderModalOverlay.addEventListener("click", (e) => {
+  e.target === e.currentTarget && closeProductOrderModal();
+});
+window.openProductOrderModal = openProductOrderModal;
+window.closeProductOrderModal = closeProductOrderModal;
+const BASE_URL = "http://localhost:3000";
+function sendOrder(feedback) {
+  fetch(`${BASE_URL}/api/feedback`, {
+    method: "POST",
+    // Виправлено "metod" на "method"
+    headers: {
+      "Content-Type": "application/json"
+      // Правильний формат
+    },
+    body: JSON.stringify(feedback)
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  }).then((data) => {
+    console.log("Відповідь сервера:", data);
+    alert("Success");
+  }).catch((error) => {
+    console.error("Помилка:", error);
+  });
+}
 console.log("Hello. If you see this string - code is normal");
