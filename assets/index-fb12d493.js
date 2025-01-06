@@ -383,11 +383,10 @@ productOrderModalOverlay.addEventListener("click", (e) => {
 });
 window.openProductOrderModal = openProductOrderModal;
 window.closeProductOrderModal = closeProductOrderModal;
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://meditec-landing.vercel.app";
 function sendOrder(feedback) {
   fetch(`${BASE_URL}/api/feedback`, {
     method: "POST",
-    // Виправлено "metod" на "method"
     headers: {
       "Content-Type": "application/json"
       // Правильний формат
