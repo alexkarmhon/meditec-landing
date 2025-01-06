@@ -5,15 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "node server.js",
     "build": "vite build --base=/meditec-landing/",
     "preview": "vite preview",
-    "watch": "npx vite build --watch"
+    "watch": "npx vite build --watch",
+    "serve": "concurrently \"vite\" \"node server.js\""
   },
   "browserslist": [
     "cover 99.5%"
   ],
   "devDependencies": {
     "autoprefixer": "^10.4.4",
+    "concurrently": "^9.1.2",
     "fast-glob": "^3.3.1",
     "imagemin": "^8.0.1",
     "imagemin-webp": "^8.0.0",
@@ -23,5 +26,13 @@
     "svgo": "^3.0.2",
     "vite": "^4.4.5",
     "vite-plugin-image-optimizer": "^1.1.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16",
+    "vite-express": "*"
   }
 }

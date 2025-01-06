@@ -48,4 +48,13 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    proxy: {
+      "/api/send-email": {
+        target: "https://api.sendgrid.com/v3/mail/send",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });
