@@ -1,8 +1,33 @@
+import { products } from "./products";
+
 const productOrderModalOverlay = document.getElementById("order-modal");
 const form = document.getElementById("orderForm");
 const orderTitle = document.getElementById("productTitle");
+// const BASE_URL = "http://localhost:3000"; //for localhost
+const BASE_URL = "https://meditec-landing.vercel.app";
 
-import { products } from "./products";
+function sendOrder(feedback) {
+  fetch(`${BASE_URL}/api/order`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json", // Правильний формат
+    },
+    body: JSON.stringify(feedback),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Відповідь сервера:", data);
+      alert("Success");
+    })
+    .catch((error) => {
+      console.error("Помилка:", error);
+    });
+}
 
 const openProductOrderModal = (productId) => {
   console.log(productId);
@@ -43,27 +68,3 @@ productOrderModalOverlay.addEventListener("click", (e) => {
 window.openProductOrderModal = openProductOrderModal;
 window.closeProductOrderModal = closeProductOrderModal;
 /////////////////////////////////////////////////////////////////////////////
-// const BASE_URL = "http://localhost:3000"; //for localhost
-const BASE_URL = "https://meditec-landing.vercel.app";
-function sendOrder(feedback) {
-  fetch(`${BASE_URL}/api/feedback`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json", // Правильний формат
-    },
-    body: JSON.stringify(feedback),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Відповідь сервера:", data);
-      alert("Success");
-    })
-    .catch((error) => {
-      console.error("Помилка:", error);
-    });
-}

@@ -16,4 +16,6 @@ import "/src/js/hiddenHeader";
 
 import "/src/js/orderProduct";
 
+import "/src/js/invitation";
+
 console.log("Hello. If you see this string - code is normal");
