@@ -12,16 +12,7 @@ const corsMiddleware = cors({
 export default async function handler(req, res) {
   corsMiddleware(req, res, async () => {
     if (req.method === "POST") {
-      const {
-        name,
-        email,
-        tel,
-        captcha,
-        productId,
-        productTitle,
-        productVolume,
-        productPrice,
-      } = req.body;
+      const { name, email, tel, message } = req.body;
 
       const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
@@ -41,13 +32,8 @@ export default async function handler(req, res) {
         to: "89o.kh89@gmail.com",
         subject: `Повідомлення від ${name}`,
         text: `
-        Повідомлення від ${name}, тел: ${tel}, email: ${email} 
-        Код перевірки: ${captcha}. 
-        Замовлення товару:
-          id - ${productId}, 
-          назва - ${productTitle}, 
-          об'єм -  ${productVolume}, 
-          ціна - ${productPrice}грн`,
+        Повідомлення від: ${name}, тел: ${tel}, email: ${email}  
+        Текст повідомлення: ${message}`,
       };
 
       try {

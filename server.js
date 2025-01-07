@@ -30,7 +30,7 @@ app.post("/api/order", async (req, res) => {
   const {
     name,
     email,
-    phone,
+    tel,
     captcha,
     productId,
     productTitle,
@@ -56,7 +56,7 @@ app.post("/api/order", async (req, res) => {
     to: "89o.kh89@gmail.com",
     subject: `Повідомлення від ${name}`,
     text: `
-      Повідомлення від ${name}, тел: ${phone}, email: ${email} 
+      Повідомлення від: ${name}, тел: ${tel}, email: ${email} 
       Код перевірки: ${captcha}. 
       Замовлення товару:
         id - ${productId}, 
@@ -95,9 +95,43 @@ app.post("/api/invitation", async (req, res) => {
     to: "89o.kh89@gmail.com",
     subject: `Повідомлення від ${name}`,
     text: `
-      Повідомлення від ${name}, тел: ${tel}, email: ${email} 
+      Повідомлення від: ${name}, тел: ${tel}, email: ${email} 
       Код перевірки: ${captcha}. 
       Запит на зворотній зв'язок стосовно співпраці.`,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: "Лист успішно відправлено" });
+  } catch (error) {
+    res.status(500).send("Помилка відправки листа.");
+    res.status(500).json({ error: "Помилка відправки листа." });
+  }
+});
+
+app.post("/api/contact", async (req, res) => {
+  const { name, email, tel, message } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.VITE_APP_USER,
+      pass: process.env.VITE_APP_PASS,
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+  });
+
+  const mailOptions = {
+    from: `${email}`,
+    to: "89o.kh89@gmail.com",
+    subject: `Повідомлення від ${name}`,
+    text: `
+      Повідомлення від: ${name}, тел: ${tel}, email: ${email}  
+      Текст повідомлення: ${message}`,
   };
 
   try {

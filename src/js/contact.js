@@ -1,13 +1,14 @@
-const form = document.getElementById("inv-form");
+const form = document.getElementById("contact-form");
 const BASE_URL = "http://localhost:3000"; //for localhost
 // const BASE_URL = "https://meditec-landing.vercel.app";
-const sendInvitation = (invitation) => {
-  fetch(`${BASE_URL}/api/invitation`, {
+
+const sendContact = (contact) => {
+  fetch(`${BASE_URL}/api/contact`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(invitation),
+    body: JSON.stringify(contact),
   })
     .then((response) => {
       if (!response.ok) {
@@ -20,19 +21,20 @@ const sendInvitation = (invitation) => {
       alert("Success");
     })
     .catch((error) => {
-      console.error("Помилка:", error);
+      console.error(`Помилка: ${error}`);
     });
 };
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  alert("Invitation");
+  alert("Send contact");
 
-  const invForm = e.target;
-  const invFormData = new FormData(invForm);
-  const invUserData = Object.fromEntries(invFormData);
-  console.log(invUserData);
-  sendInvitation(invUserData);
+  const contactForm = e.target;
+  console.log(contactForm);
+  const contactFormData = new FormData(contactForm);
+  const contactUserData = Object.fromEntries(contactFormData);
+  console.log(contactUserData);
+  sendContact(contactUserData);
 
-  invForm.reset();
+  contactForm.reset();
 });

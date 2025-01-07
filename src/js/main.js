@@ -18,4 +18,6 @@ import "/src/js/orderProduct";
 
 import "/src/js/invitation";
 
+import "/src/js/contact";
+
 console.log("Hello. If you see this string - code is normal");
