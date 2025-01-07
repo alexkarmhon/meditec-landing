@@ -350,15 +350,14 @@ window.addEventListener("scroll", () => {
   lastScrollY = currentScrollY;
 });
 const productOrderModalOverlay = document.getElementById("order-modal");
-const form$1 = document.getElementById("orderForm");
+const form$2 = document.getElementById("orderForm");
 const orderTitle = document.getElementById("productTitle");
-const BASE_URL$1 = "https://meditec-landing.vercel.app";
+const BASE_URL$2 = "http://localhost:3000";
 function sendOrder(feedback) {
-  fetch(`${BASE_URL$1}/api/order`, {
+  fetch(`${BASE_URL$2}/api/order`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
-      // Правильний формат
     },
     body: JSON.stringify(feedback)
   }).then((response) => {
@@ -380,7 +379,7 @@ const openProductOrderModal = (productId) => {
     (product) => product.id === `${productId}`
   );
   orderTitle.innerText = `${title} (${volume})`;
-  form$1.addEventListener("submit", (e) => {
+  form$2.addEventListener("submit", (e) => {
     e.preventDefault();
     const orderForm = e.target;
     const feedbackFormData = new FormData(e.target);
@@ -404,14 +403,13 @@ productOrderModalOverlay.addEventListener("click", (e) => {
 });
 window.openProductOrderModal = openProductOrderModal;
 window.closeProductOrderModal = closeProductOrderModal;
-const form = document.getElementById("inv-form");
-const BASE_URL = "https://meditec-landing.vercel.app";
+const form$1 = document.getElementById("inv-form");
+const BASE_URL$1 = "http://localhost:3000";
 const sendInvitation = (invitation) => {
-  fetch(`${BASE_URL}/api/invitation`, {
+  fetch(`${BASE_URL$1}/api/invitation`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
-      // Правильний формат
     },
     body: JSON.stringify(invitation)
   }).then((response) => {
@@ -426,7 +424,7 @@ const sendInvitation = (invitation) => {
     console.error("Помилка:", error);
   });
 };
-form.addEventListener("submit", (e) => {
+form$1.addEventListener("submit", (e) => {
   e.preventDefault();
   alert("Invitation");
   const invForm = e.target;
@@ -435,5 +433,37 @@ form.addEventListener("submit", (e) => {
   console.log(invUserData);
   sendInvitation(invUserData);
   invForm.reset();
+});
+const form = document.getElementById("contact-form");
+const BASE_URL = "http://localhost:3000";
+const sendContact = (contact) => {
+  fetch(`${BASE_URL}/api/contact`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(contact)
+  }).then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  }).then((data) => {
+    console.log("Відповідь сервера:", data);
+    alert("Success");
+  }).catch((error) => {
+    console.error(`Помилка: ${error}`);
+  });
+};
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Send contact");
+  const contactForm = e.target;
+  console.log(contactForm);
+  const contactFormData = new FormData(contactForm);
+  const contactUserData = Object.fromEntries(contactFormData);
+  console.log(contactUserData);
+  sendContact(contactUserData);
+  contactForm.reset();
 });
 console.log("Hello. If you see this string - code is normal");
