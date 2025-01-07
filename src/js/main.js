@@ -20,4 +20,6 @@ import "/src/js/invitation";
 
 import "/src/js/contact";
 
+import "/src/js/scrollToTop";
+
 console.log("Hello. If you see this string - code is normal");
