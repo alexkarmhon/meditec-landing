@@ -1,6 +1,6 @@
 const form = document.getElementById("inv-form");
-const BASE_URL = "http://localhost:3000"; //for localhost
-// const BASE_URL = "https://meditec-landing.vercel.app";
+// const BASE_URL = "http://localhost:3000"; //for localhost
+const BASE_URL = "https://meditec-landing.vercel.app";
 const sendInvitation = (invitation) => {
   fetch(`${BASE_URL}/api/invitation`, {
     method: "POST",

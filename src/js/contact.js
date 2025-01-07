@@ -1,6 +1,6 @@
 const form = document.getElementById("contact-form");
-const BASE_URL = "http://localhost:3000"; //for localhost
-// const BASE_URL = "https://meditec-landing.vercel.app";
+// const BASE_URL = "http://localhost:3000"; //for localhost
+const BASE_URL = "https://meditec-landing.vercel.app";
 
 const sendContact = (contact) => {
   fetch(`${BASE_URL}/api/contact`, {
