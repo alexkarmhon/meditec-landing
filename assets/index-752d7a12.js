@@ -352,7 +352,7 @@ window.addEventListener("scroll", () => {
 const productOrderModalOverlay = document.getElementById("order-modal");
 const form$2 = document.getElementById("orderForm");
 const orderTitle = document.getElementById("productTitle");
-const BASE_URL$2 = "http://localhost:3000";
+const BASE_URL$2 = "https://meditec-landing.vercel.app";
 function sendOrder(feedback) {
   fetch(`${BASE_URL$2}/api/order`, {
     method: "POST",
@@ -404,7 +404,7 @@ productOrderModalOverlay.addEventListener("click", (e) => {
 window.openProductOrderModal = openProductOrderModal;
 window.closeProductOrderModal = closeProductOrderModal;
 const form$1 = document.getElementById("inv-form");
-const BASE_URL$1 = "http://localhost:3000";
+const BASE_URL$1 = "https://meditec-landing.vercel.app";
 const sendInvitation = (invitation) => {
   fetch(`${BASE_URL$1}/api/invitation`, {
     method: "POST",
@@ -435,7 +435,7 @@ form$1.addEventListener("submit", (e) => {
   invForm.reset();
 });
 const form = document.getElementById("contact-form");
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://meditec-landing.vercel.app";
 const sendContact = (contact) => {
   fetch(`${BASE_URL}/api/contact`, {
     method: "POST",
