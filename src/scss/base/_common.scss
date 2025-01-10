@@ -63,3 +63,8 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
+
+.text-link {
+  color: vars.$links-color;
+  font-weight: 700;
+}

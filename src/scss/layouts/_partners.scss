@@ -22,7 +22,7 @@
   }
 
   &__item {
-    grid-column: span 3 / span 12;
+    grid-column: span 6 / span 12;
     margin-left: auto;
     margin-right: auto;
     border-radius: 6px;
@@ -37,6 +37,18 @@
     }
   }
 
+  @media screen and (min-width: 768px) {
+    &__list:hover > :not(:hover) {
+      opacity: 0.9;
+      img {
+        filter: saturate(40%);
+      }
+    }
+    &__item {
+      grid-column: span 4 / span 12;
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     &__list:hover > :not(:hover) {
       opacity: 0.9;
@@ -45,7 +57,7 @@
       }
     }
     &__item {
-      grid-column: span 3 / span 12;
+      grid-column: span 2 / span 12;
     }
   }
 }

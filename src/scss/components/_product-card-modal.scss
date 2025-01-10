@@ -13,20 +13,29 @@
   height: 80vh;
   padding: 12px;
   background: vars.$background-color-section-main;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .production__modal-image-box,
 .production__modal-description-box {
   grid-column: span 12 / span 12;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
   text-align: center;
   gap: 12px;
-  padding-bottom: 20px;
+  max-height: 95%;
 
   img {
     height: auto;
   }
 }
+
+// .production__modal-description-box {
+//   overflow: auto;
+// }
 
 .production__modal-text {
   @include mixins.calibri-400(16px, 16px);
@@ -58,12 +67,11 @@
 
   .production__modal-description-box {
     grid-column: span 5 / span 12;
-    overflow: auto;
   }
 }
 @media screen and (max-width: 1023px) and (orientation: landscape) {
   .production__modal-content {
-    overflow: hidden;
+    overflow: auto;
   }
 
   .production__modal-image-box {
@@ -71,13 +79,12 @@
     height: max-content;
 
     img {
-      max-width: 90%;
+      max-width: 80%;
     }
   }
 
   .production__modal-description-box {
     grid-column: span 6 / span 12;
-    overflow: auto;
   }
 }
 
@@ -87,10 +94,6 @@
   }
   .production__modal-image-box {
     grid-column: span 7 / span 12;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     img {
       max-width: 100%;
@@ -103,6 +106,11 @@
 }
 
 @media screen and (min-width: 1440px) and (orientation: landscape) {
+  .production__modal-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   .production__modal-image-box {
     grid-column: span 7 / span 12;
 
@@ -112,6 +120,12 @@
   }
   .production__modal-description-box {
     grid-column: span 5 / span 12;
-    overflow: auto;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100%;
+    scrollbar-width: thin;
   }
 }

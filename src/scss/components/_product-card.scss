@@ -3,9 +3,11 @@
 
 .product-card {
   position: relative;
+  overflow: hidden;
   display: block;
   width: 98%;
   max-width: 420px;
+
   padding: 10px 10px 20px 10px;
   margin-left: auto;
   margin-right: auto;
@@ -15,6 +17,20 @@
   transform: scale(1);
   transition: transform 300ms ease;
 
+  .discount {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 52px;
+    padding-left: 6px;
+    padding-top: 12px;
+    background-color: #ff732d;
+    border-right: 1px solid #ff732d;
+    border-bottom-right-radius: 999px;
+  }
+
   &__image {
     display: block;
     width: 100%;
@@ -22,7 +38,7 @@
     border-radius: 6px;
     object-fit: cover;
     overflow: hidden;
-    transition: transform 500ms ease;
+    transition: transform 700ms ease;
 
     img {
       height: auto;
@@ -31,7 +47,7 @@
     }
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.2);
     }
   }
 

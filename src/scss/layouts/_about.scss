@@ -45,11 +45,6 @@
     justify-content: space-between;
   }
 
-  &__link {
-    color: vars.$links-color;
-    font-weight: 700;
-  }
-
   @media screen and (min-width: 768px) {
     &__content {
       gap: 24px;
