@@ -1,5 +1,5 @@
-@use "../utils/mixins";
-@use "../utils/vars";
+@use '../utils/mixins';
+@use '../utils/vars';
 
 * {
   box-sizing: border-box;
@@ -67,4 +67,9 @@ section {
 .text-link {
   color: vars.$links-color;
   font-weight: 700;
+}
+
+.ru-link {
+  text-decoration: line-through;
+  text-decoration-color: red;
 }

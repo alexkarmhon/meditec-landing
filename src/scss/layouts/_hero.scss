@@ -1,5 +1,5 @@
-@use "../utils/vars";
-@use "../utils/mixins";
+@use '../utils/vars';
+@use '../utils/mixins';
 
 .hero {
   position: relative;
@@ -48,13 +48,13 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("/public/images/logotype.svg");
+      background-image: url('/images/logotype.svg');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
@@ -134,7 +134,7 @@
     color: #022e4e;
 
     &:before {
-      content: url("/images/vb.webp");
+      content: url('/images/vb.webp');
       margin-right: 10px;
     }
   }

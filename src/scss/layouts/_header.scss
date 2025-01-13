@@ -1,5 +1,5 @@
-@use "../utils/mixins";
-@use "../utils/vars";
+@use '../utils/mixins';
+@use '../utils/vars';
 
 .header {
   position: fixed;
@@ -17,7 +17,7 @@
     padding: 10px 0;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -75,16 +75,21 @@
 
       li {
         font-size: 14px;
+      }
+    }
 
-        a {
-          font-weight: 100;
-          text-decoration: none;
-          color: vars.$nav-links-color;
+    &__lang-bar-link {
+      font-weight: 100;
+      text-decoration: none;
+      color: vars.$nav-links-color;
 
-          &:hover {
-            color: vars.$links-accent-color;
-          }
-        }
+      &--ru {
+        text-decoration: line-through;
+        text-decoration-color: red;
+      }
+
+      &:hover {
+        color: vars.$links-accent-color;
       }
     }
 
