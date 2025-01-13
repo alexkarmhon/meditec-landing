@@ -1,5 +1,5 @@
-@use "../utils/vars";
-@use "../utils/mixins";
+@use '../utils/vars';
+@use '../utils/mixins';
 
 .hero__title {
   @include mixins.roboto-condensed(36px, 600);
@@ -33,6 +33,13 @@
   @media screen and (min-width: 768px) {
     @include mixins.calibri-400(30px, 40px);
   }
+}
+
+.chapter-title {
+  @include mixins.calibri-400(20px, 40px);
+  color: vars.$section-title-color;
+  background-color: inherit;
+  text-align: center;
 }
 
 .product-card__title {

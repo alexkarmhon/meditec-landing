@@ -1,5 +1,5 @@
-@use "../utils/vars";
-@use "../utils/mixins";
+@use '../utils/vars';
+@use '../utils/mixins';
 
 .partners {
   position: relative;
@@ -38,6 +38,9 @@
   }
 
   @media screen and (min-width: 768px) {
+    &__list {
+      gap: 20px;
+    }
     &__list:hover > :not(:hover) {
       opacity: 0.9;
       img {

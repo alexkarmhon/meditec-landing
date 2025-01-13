@@ -1,5 +1,5 @@
-@use "../utils/vars";
-@use "../utils/mixins";
+@use '../utils/vars';
+@use '../utils/mixins';
 
 .production__modal-content {
   position: absolute;
@@ -32,10 +32,6 @@
     height: auto;
   }
 }
-
-// .production__modal-description-box {
-//   overflow: auto;
-// }
 
 .production__modal-text {
   @include mixins.calibri-400(16px, 16px);

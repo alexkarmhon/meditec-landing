@@ -54,34 +54,6 @@
       animation: ease 0.5s bottom-2 forwards;
     }
   }
-  //  ///// Var.1 /////
-  //   &__icon {
-  //     width: 40px;
-
-  //     &:before,
-  //     &:after,
-  //     & div {
-  //       background: #fff;
-  //       content: "";
-  //       display: block;
-  //       height: 4.4px;
-  //       border-radius: 3px;
-  //       margin: 4px 0;
-  //       transition: 0.5s;
-  //     }
-  //     .is-open &:before {
-  //       margin: 8px 0;
-  //       transform: translateY(12px) rotate(135deg);
-  //     }
-  //     .is-open &:after {
-  //       margin: 8px 0;
-  //       transform: translateY(-12px) rotate(-135deg);
-  //     }
-  //     .is-open & div {
-  //       margin: 8px 0;
-  //       transform: scale(0);
-  //     }
-  //   }
 }
 
 @keyframes top {

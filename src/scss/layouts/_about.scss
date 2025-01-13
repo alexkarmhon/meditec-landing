@@ -1,5 +1,5 @@
-@use "../utils/vars";
-@use "../utils/mixins";
+@use '../utils/vars';
+@use '../utils/mixins';
 
 .about {
   position: relative;
@@ -45,6 +45,50 @@
     justify-content: space-between;
   }
 
+  &__patents {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__patents-list {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  &__patents-list-chapter {
+    grid-column: span 12 / span 12;
+  }
+
+  &__patents-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    line-height: normal;
+    text-align: justify;
+  }
+  &__patents-links-list-item {
+    .text-link {
+      font-weight: 400;
+    }
+    &::before {
+      content: '';
+      background-position: center;
+      background-size: contain;
+      background-image: url('/images/vb.webp');
+      background-repeat: no-repeat;
+      display: inline-block;
+      margin-right: 6px;
+      margin-bottom: 1px;
+      height: 8px;
+      width: 8px;
+      transition: 0.3s ease all;
+      bottom: -8px;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     &__content {
       gap: 24px;
@@ -61,6 +105,16 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
+
+    &__patents-list-chapter {
+      grid-column: span 6 / span 12;
+      &:last-of-type {
+        grid-column: span 12 / span 12;
+        * {
+          text-align: center;
+        }
+      }
+    }
   }
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -70,6 +124,12 @@
 
     &__block {
       width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &__patents-links-list {
+      font-size: 14px;
     }
   }
 }

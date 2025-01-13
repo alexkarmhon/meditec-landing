@@ -1,16 +1,16 @@
-import { products } from "./products";
+import { products } from './products';
 
-const productOrderModalOverlay = document.getElementById("order-modal");
-const form = document.getElementById("orderForm");
-const orderTitle = document.getElementById("productTitle");
+const productOrderModalOverlay = document.getElementById('order-modal');
+const form = document.getElementById('orderForm');
+const orderTitle = document.getElementById('productTitle');
 // const BASE_URL = "http://localhost:3000"; //for localhost
-const BASE_URL = "https://meditec-landing.vercel.app";
+const BASE_URL = 'https://meditec-landing.vercel.app';
 
 function sendOrder(feedback) {
   fetch(`${BASE_URL}/api/order`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(feedback),
   })
@@ -21,17 +21,16 @@ function sendOrder(feedback) {
       return response.json();
     })
     .then((data) => {
-      console.log("Відповідь сервера:", data);
-      alert("Success");
+      console.log('Відповідь сервера:', data);
+      alert('Success');
     })
     .catch((error) => {
-      console.error("Помилка:", error);
+      console.error('Помилка:', error);
     });
 }
 
 const openProductOrderModal = (productId) => {
-  console.log(productId);
-  productOrderModalOverlay.style.display = "block";
+  productOrderModalOverlay.style.display = 'block';
 
   const { id, title, volume, price } = products.find(
     (product) => product.id === `${productId}`
@@ -39,18 +38,16 @@ const openProductOrderModal = (productId) => {
 
   orderTitle.innerText = `${title} (${volume})`;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     const orderForm = e.target;
     const feedbackFormData = new FormData(e.target);
-    feedbackFormData.append("productId", id);
-    feedbackFormData.append("productTitle", title);
-    feedbackFormData.append("productVolume", volume);
-    feedbackFormData.append("productPrice", price);
+    feedbackFormData.append('productId', id);
+    feedbackFormData.append('productTitle', title);
+    feedbackFormData.append('productVolume', volume);
+    feedbackFormData.append('productPrice', price);
 
-    console.log(feedbackFormData);
     const feedback = Object.fromEntries(feedbackFormData);
-    console.log(feedback);
     sendOrder(feedback);
     orderForm.reset();
     closeProductOrderModal();
@@ -58,10 +55,10 @@ const openProductOrderModal = (productId) => {
 };
 
 const closeProductOrderModal = () => {
-  productOrderModalOverlay.style.display = "none";
+  productOrderModalOverlay.style.display = 'none';
 };
 
-productOrderModalOverlay.addEventListener("click", (e) => {
+productOrderModalOverlay.addEventListener('click', (e) => {
   e.target === e.currentTarget && closeProductOrderModal();
 });
 

@@ -7,7 +7,6 @@ const productCardModalContent = document.getElementById(
 const productCards = document.querySelectorAll('.product-card');
 
 const renderCardById = (cardId) => {
-  console.log(cardId);
   const { id, image, paragraphs, price, title, volume, isSpecial } =
     products.find((product) => product.id === `${cardId}`);
 
