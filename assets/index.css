@@ -460,6 +460,16 @@ section {
   text-align: center;
 }
 
+.chapter-title {
+  font-family: "Calibri", sans-serif;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #66696c;
+  background-color: inherit;
+  text-align: center;
+}
+
 .product-card__title {
   font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: 18px;
@@ -1926,6 +1936,62 @@ section {
      -moz-box-pack: justify;
           justify-content: space-between;
 }
+.about__patents {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  gap: 20px;
+}
+.about__patents-list {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+.about__patents-list-chapter {
+  grid-column: span 12/span 12;
+}
+.about__patents-links-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  line-height: normal;
+  text-align: justify;
+}
+.about__patents-links-list-item .text-link {
+  font-weight: 400;
+}
+.about__patents-links-list-item::before {
+  content: "";
+  background-position: center;
+  background-size: contain;
+  background-image: url("/meditec-landing/images/vb.webp");
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 6px;
+  margin-bottom: 1px;
+  height: 8px;
+  width: 8px;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  bottom: -8px;
+}
 
 .gallery {
   position: relative;
@@ -2441,6 +2507,18 @@ section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
+  .about__patents-list-chapter {
+    grid-column: span 6/span 12;
+  }
+  .about__patents-list-chapter:last-of-type {
+    grid-column: span 12/span 12;
+  }
+  .about__patents-list-chapter:last-of-type * {
+    text-align: center;
+  }
+  .partners__list {
+    gap: 20px;
+  }
   .partners__list:hover > :not(:hover) {
     opacity: 0.9;
   }
@@ -2512,6 +2590,9 @@ section {
     font-weight: 400;
     text-align: center;
     margin-bottom: 12px;
+  }
+  .about__patents-links-list {
+    font-size: 14px;
   }
   .partners__list:hover > :not(:hover) {
     opacity: 0.9;
