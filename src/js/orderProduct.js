@@ -1,5 +1,6 @@
 import { products } from './products';
 
+const currentLang = document.documentElement.lang;
 const productOrderModalOverlay = document.getElementById('order-modal');
 const form = document.getElementById('orderForm');
 const orderTitle = document.getElementById('productTitle');
@@ -36,15 +37,17 @@ const openProductOrderModal = (productId) => {
     (product) => product.id === `${productId}`
   );
 
-  orderTitle.innerText = `${title} (${volume})`;
+  const lang = currentLang || 'uk';
+
+  orderTitle.innerText = `${title[lang]} (${volume[lang]})`;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const orderForm = e.target;
     const feedbackFormData = new FormData(e.target);
     feedbackFormData.append('productId', id);
-    feedbackFormData.append('productTitle', title);
-    feedbackFormData.append('productVolume', volume);
+    feedbackFormData.append('productTitle', title[lang]);
+    feedbackFormData.append('productVolume', volume[lang]);
     feedbackFormData.append('productPrice', price);
 
     const feedback = Object.fromEntries(feedbackFormData);

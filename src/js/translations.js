@@ -1,0 +1,28 @@
+export const translations = {
+  uk: {
+    specialBadge: '(Спеціальна пропозиція)',
+    order: 'Замовити',
+    discountLabel: 'Знижка',
+    price: 'Ціна:',
+    learnMore: 'Докладніше',
+    currency: 'грн.',
+    volumeLabel: "(об'єм)",
+    learnMore: 'Докладніше',
+    back: 'Назад',
+    patentsUA: 'База патентів України',
+    patentsUSSR: 'База патентів СРСР',
+  },
+  en: {
+    specialBadge: '(Special Offer)',
+    order: 'Order',
+    discountLabel: 'Discount',
+    price: 'Price:',
+    learnMore: 'Learn more',
+    currency: 'uah.',
+    volumeLabel: '(volume)',
+    learnMore: 'Learn more',
+    back: 'Back',
+    patentsUA: 'Patent database of Ukraine',
+    patentsUSSR: 'Patent database of USSR',
+  },
+};

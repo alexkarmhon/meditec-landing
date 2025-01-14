@@ -1,5 +1,7 @@
 import '../scss/style.scss';
 
+import '../js/translations';
+
 import '../js/heroSlider';
 
 import '/src/js/mobile-menu.js';

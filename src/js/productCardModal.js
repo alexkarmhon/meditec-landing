@@ -1,4 +1,7 @@
 import { products } from './products';
+import { translations } from './translations';
+
+const currentLang = document.documentElement.lang;
 
 const productCardModalOverlay = document.getElementById('production-modal');
 const productCardModalContent = document.getElementById(
@@ -6,37 +9,46 @@ const productCardModalContent = document.getElementById(
 );
 const productCards = document.querySelectorAll('.product-card');
 
+const getTranslation = (key) =>
+  translations[currentLang]?.[key] || translations['uk'][key];
+
 const renderCardById = (cardId) => {
+  const lang = currentLang || 'uk';
+
   const { id, image, paragraphs, price, title, volume, isSpecial } =
     products.find((product) => product.id === `${cardId}`);
 
   const specialBadge = isSpecial
-    ? `<span>(Спеціальна пропозиція)</span>`
-    : `<span>(${volume})</span>`;
+    ? `<span>${getTranslation('specialBadge')}</span>`
+    : `<span>(${volume[lang] || getTranslation('volumeLabel')})</span>`;
 
   const priceInfo = isSpecial
-    ? `<span class="product-card__button-price"></span> Замовити`
-    : `<span class="product-card__button-price">Ціна:</span> ${price} грн.`;
-  productCardModalContent.innerHTML = `
+    ? `<span class="product-card__button-price"></span> ${getTranslation(
+        'order'
+      )}`
+    : `<span class="product-card__button-price">${getTranslation(
+        'price'
+      )}</span> ${price} ${getTranslation('currency')}`;
 
+  productCardModalContent.innerHTML = `
   <div class="production__modal-image-box">
     <img
      src=${image}
-      alt=${title}
+      alt=${title[lang]}
       loading="lazy"
       data-lazy="true"
     />
     <h3 class="production__modal-title">
-      ${title}
+      ${title[lang]}
       ${specialBadge}
     </h3>
-    <button class="main-button main-button--modal-product-card">
+    <button onclick="openProductOrderModal('${id}')" class="main-button main-button--modal-product-card">
       <i class="fa-solid fa-cart-arrow-down"></i>
       <p>${priceInfo}</p>
     </button>
   </div>
   <div class="production__modal-description-box">
-    ${paragraphs
+    ${paragraphs[lang]
       .map((paragraph) => {
         return `<p class="production__modal-text">${paragraph}</p>`;
       })
@@ -45,7 +57,9 @@ const renderCardById = (cardId) => {
       class="production__modal-info-less"
       onclick="closeProductCardModal()"
     >
-      Назад... <span><i class="fa-solid fa-minus"></i></span>
+      ${getTranslation(
+        'back'
+      )}... <span><i class="fa-solid fa-minus"></i></span>
     </p>
   </div>`;
 };
