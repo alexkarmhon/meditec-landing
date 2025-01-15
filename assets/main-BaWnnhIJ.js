@@ -19,16 +19,12 @@
   }).observe(document, { childList: true, subtree: true });
   function getFetchOpts(link) {
     const fetchOpts = {};
-    if (link.integrity)
-      fetchOpts.integrity = link.integrity;
-    if (link.referrerPolicy)
-      fetchOpts.referrerPolicy = link.referrerPolicy;
+    if (link.integrity) fetchOpts.integrity = link.integrity;
+    if (link.referrerPolicy) fetchOpts.referrerPolicy = link.referrerPolicy;
     if (link.crossOrigin === "use-credentials")
       fetchOpts.credentials = "include";
-    else if (link.crossOrigin === "anonymous")
-      fetchOpts.credentials = "omit";
-    else
-      fetchOpts.credentials = "same-origin";
+    else if (link.crossOrigin === "anonymous") fetchOpts.credentials = "omit";
+    else fetchOpts.credentials = "same-origin";
     return fetchOpts;
   }
   function processPreload(link) {
@@ -39,7 +35,6 @@
     fetch(link.href, fetchOpts);
   }
 })();
-const style = "";
 const translations = {
   uk: {
     specialBadge: "(Спеціальна пропозиція)",
@@ -52,7 +47,9 @@ const translations = {
     learnMore: "Докладніше",
     back: "Назад",
     patentsUA: "База патентів України",
-    patentsUSSR: "База патентів СРСР"
+    patentsUSSR: "База патентів СРСР",
+    successToastText: "Успішно надіслано!",
+    errorToastText: "Помилка відправки!"
   },
   en: {
     specialBadge: "(Special Offer)",
@@ -65,7 +62,9 @@ const translations = {
     learnMore: "Learn more",
     back: "Back",
     patentsUA: "Patent database of Ukraine",
-    patentsUSSR: "Patent database of USSR"
+    patentsUSSR: "Patent database of USSR",
+    successToastText: "Successfully sent!",
+    errorToastText: "Sending error!"
   }
 };
 let myIndex = 0;
@@ -312,10 +311,10 @@ const products = [
   }
 ];
 const productList = document.getElementById("product-list");
-const currentLang$3 = document.documentElement.lang;
-const getTranslation$2 = (key) => {
+const currentLang$4 = document.documentElement.lang;
+const getTranslation$3 = (key) => {
   var _a;
-  return ((_a = translations[currentLang$3]) == null ? void 0 : _a[key]) || translations["uk"][key];
+  return ((_a = translations[currentLang$4]) == null ? void 0 : _a[key]) || translations["uk"][key];
 };
 const createProductCardUk = ({
   id,
@@ -326,13 +325,13 @@ const createProductCardUk = ({
   isSpecial,
   discount
 }) => {
-  const lang = currentLang$3 || "uk";
-  const specialBadge = isSpecial ? `<span>${getTranslation$2("specialBadge")}</span>` : `<span>(${volume[lang] || getTranslation$2("volumeLabel")})</span>`;
-  const priceInfo = isSpecial ? `<span class="product-card__button-price"></span> ${getTranslation$2(
+  const lang = currentLang$4 || "uk";
+  const specialBadge = isSpecial ? `<span>${getTranslation$3("specialBadge")}</span>` : `<span>(${volume[lang] || getTranslation$3("volumeLabel")})</span>`;
+  const priceInfo = isSpecial ? `<span class="product-card__button-price"></span> ${getTranslation$3(
     "order"
-  )}` : `<span class="product-card__button-price">${getTranslation$2(
+  )}` : `<span class="product-card__button-price">${getTranslation$3(
     "price"
-  )}</span> ${price} ${getTranslation$2("currency")}`;
+  )}</span> ${price} ${getTranslation$3("currency")}`;
   const discountLabel = isSpecial && discount ? `<div class="discount">
           <p class="value">-${discount}</p>
         </div>` : "";
@@ -354,7 +353,7 @@ const createProductCardUk = ({
             ${specialBadge}
           </h3>
           <p class="product-card__info-more">
-             ${getTranslation$2("learnMore")}...
+             ${getTranslation$3("learnMore")}...
             <span><i class="fa-solid fa-plus"></i></span>
           </p>
         </div>
@@ -369,25 +368,25 @@ const createProductCardUk = ({
 };
 const cards = products.map(createProductCardUk).join("");
 productList.innerHTML = cards;
-const currentLang$2 = document.documentElement.lang;
+const currentLang$3 = document.documentElement.lang;
 const productCardModalOverlay = document.getElementById("production-modal");
 const productCardModalContent = document.getElementById(
   "production-modal-content"
 );
 const productCards = document.querySelectorAll(".product-card");
-const getTranslation$1 = (key) => {
+const getTranslation$2 = (key) => {
   var _a;
-  return ((_a = translations[currentLang$2]) == null ? void 0 : _a[key]) || translations["uk"][key];
+  return ((_a = translations[currentLang$3]) == null ? void 0 : _a[key]) || translations["uk"][key];
 };
 const renderCardById = (cardId) => {
-  const lang = currentLang$2 || "uk";
+  const lang = currentLang$3 || "uk";
   const { id, image, paragraphs, price, title, volume, isSpecial } = products.find((product) => product.id === `${cardId}`);
-  const specialBadge = isSpecial ? `<span>${getTranslation$1("specialBadge")}</span>` : `<span>(${volume[lang] || getTranslation$1("volumeLabel")})</span>`;
-  const priceInfo = isSpecial ? `<span class="product-card__button-price"></span> ${getTranslation$1(
+  const specialBadge = isSpecial ? `<span>${getTranslation$2("specialBadge")}</span>` : `<span>(${volume[lang] || getTranslation$2("volumeLabel")})</span>`;
+  const priceInfo = isSpecial ? `<span class="product-card__button-price"></span> ${getTranslation$2(
     "order"
-  )}` : `<span class="product-card__button-price">${getTranslation$1(
+  )}` : `<span class="product-card__button-price">${getTranslation$2(
     "price"
-  )}</span> ${price} ${getTranslation$1("currency")}`;
+  )}</span> ${price} ${getTranslation$2("currency")}`;
   productCardModalContent.innerHTML = `
   <div class="production__modal-image-box">
     <img
@@ -413,7 +412,7 @@ const renderCardById = (cardId) => {
       class="production__modal-info-less"
       onclick="closeProductCardModal()"
     >
-      ${getTranslation$1(
+      ${getTranslation$2(
     "back"
   )}... <span><i class="fa-solid fa-minus"></i></span>
     </p>
@@ -522,6 +521,360 @@ window.addEventListener("scroll", () => {
   }
   lastScrollY = currentScrollY;
 });
+function getDefaultExportFromCjs(x) {
+  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
+}
+var toastify$1 = { exports: {} };
+/*!
+ * Toastify js 1.12.0
+ * https://github.com/apvarun/toastify-js
+ * @license MIT licensed
+ *
+ * Copyright (C) 2018 Varun A P
+ */
+var toastify = toastify$1.exports;
+var hasRequiredToastify;
+function requireToastify() {
+  if (hasRequiredToastify) return toastify$1.exports;
+  hasRequiredToastify = 1;
+  (function(module) {
+    (function(root, factory) {
+      if (module.exports) {
+        module.exports = factory();
+      } else {
+        root.Toastify = factory();
+      }
+    })(toastify, function(global) {
+      var Toastify2 = function(options) {
+        return new Toastify2.lib.init(options);
+      }, version = "1.12.0";
+      Toastify2.defaults = {
+        oldestFirst: true,
+        text: "Toastify is awesome!",
+        node: void 0,
+        duration: 3e3,
+        selector: void 0,
+        callback: function() {
+        },
+        destination: void 0,
+        newWindow: false,
+        close: false,
+        gravity: "toastify-top",
+        positionLeft: false,
+        position: "",
+        backgroundColor: "",
+        avatar: "",
+        className: "",
+        stopOnFocus: true,
+        onClick: function() {
+        },
+        offset: { x: 0, y: 0 },
+        escapeMarkup: true,
+        ariaLive: "polite",
+        style: { background: "" }
+      };
+      Toastify2.lib = Toastify2.prototype = {
+        toastify: version,
+        constructor: Toastify2,
+        // Initializing the object with required parameters
+        init: function(options) {
+          if (!options) {
+            options = {};
+          }
+          this.options = {};
+          this.toastElement = null;
+          this.options.text = options.text || Toastify2.defaults.text;
+          this.options.node = options.node || Toastify2.defaults.node;
+          this.options.duration = options.duration === 0 ? 0 : options.duration || Toastify2.defaults.duration;
+          this.options.selector = options.selector || Toastify2.defaults.selector;
+          this.options.callback = options.callback || Toastify2.defaults.callback;
+          this.options.destination = options.destination || Toastify2.defaults.destination;
+          this.options.newWindow = options.newWindow || Toastify2.defaults.newWindow;
+          this.options.close = options.close || Toastify2.defaults.close;
+          this.options.gravity = options.gravity === "bottom" ? "toastify-bottom" : Toastify2.defaults.gravity;
+          this.options.positionLeft = options.positionLeft || Toastify2.defaults.positionLeft;
+          this.options.position = options.position || Toastify2.defaults.position;
+          this.options.backgroundColor = options.backgroundColor || Toastify2.defaults.backgroundColor;
+          this.options.avatar = options.avatar || Toastify2.defaults.avatar;
+          this.options.className = options.className || Toastify2.defaults.className;
+          this.options.stopOnFocus = options.stopOnFocus === void 0 ? Toastify2.defaults.stopOnFocus : options.stopOnFocus;
+          this.options.onClick = options.onClick || Toastify2.defaults.onClick;
+          this.options.offset = options.offset || Toastify2.defaults.offset;
+          this.options.escapeMarkup = options.escapeMarkup !== void 0 ? options.escapeMarkup : Toastify2.defaults.escapeMarkup;
+          this.options.ariaLive = options.ariaLive || Toastify2.defaults.ariaLive;
+          this.options.style = options.style || Toastify2.defaults.style;
+          if (options.backgroundColor) {
+            this.options.style.background = options.backgroundColor;
+          }
+          return this;
+        },
+        // Building the DOM element
+        buildToast: function() {
+          if (!this.options) {
+            throw "Toastify is not initialized";
+          }
+          var divElement = document.createElement("div");
+          divElement.className = "toastify on " + this.options.className;
+          if (!!this.options.position) {
+            divElement.className += " toastify-" + this.options.position;
+          } else {
+            if (this.options.positionLeft === true) {
+              divElement.className += " toastify-left";
+              console.warn("Property `positionLeft` will be depreciated in further versions. Please use `position` instead.");
+            } else {
+              divElement.className += " toastify-right";
+            }
+          }
+          divElement.className += " " + this.options.gravity;
+          if (this.options.backgroundColor) {
+            console.warn('DEPRECATION NOTICE: "backgroundColor" is being deprecated. Please use the "style.background" property.');
+          }
+          for (var property in this.options.style) {
+            divElement.style[property] = this.options.style[property];
+          }
+          if (this.options.ariaLive) {
+            divElement.setAttribute("aria-live", this.options.ariaLive);
+          }
+          if (this.options.node && this.options.node.nodeType === Node.ELEMENT_NODE) {
+            divElement.appendChild(this.options.node);
+          } else {
+            if (this.options.escapeMarkup) {
+              divElement.innerText = this.options.text;
+            } else {
+              divElement.innerHTML = this.options.text;
+            }
+            if (this.options.avatar !== "") {
+              var avatarElement = document.createElement("img");
+              avatarElement.src = this.options.avatar;
+              avatarElement.className = "toastify-avatar";
+              if (this.options.position == "left" || this.options.positionLeft === true) {
+                divElement.appendChild(avatarElement);
+              } else {
+                divElement.insertAdjacentElement("afterbegin", avatarElement);
+              }
+            }
+          }
+          if (this.options.close === true) {
+            var closeElement = document.createElement("button");
+            closeElement.type = "button";
+            closeElement.setAttribute("aria-label", "Close");
+            closeElement.className = "toast-close";
+            closeElement.innerHTML = "&#10006;";
+            closeElement.addEventListener(
+              "click",
+              (function(event) {
+                event.stopPropagation();
+                this.removeElement(this.toastElement);
+                window.clearTimeout(this.toastElement.timeOutValue);
+              }).bind(this)
+            );
+            var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+            if ((this.options.position == "left" || this.options.positionLeft === true) && width > 360) {
+              divElement.insertAdjacentElement("afterbegin", closeElement);
+            } else {
+              divElement.appendChild(closeElement);
+            }
+          }
+          if (this.options.stopOnFocus && this.options.duration > 0) {
+            var self = this;
+            divElement.addEventListener(
+              "mouseover",
+              function(event) {
+                window.clearTimeout(divElement.timeOutValue);
+              }
+            );
+            divElement.addEventListener(
+              "mouseleave",
+              function() {
+                divElement.timeOutValue = window.setTimeout(
+                  function() {
+                    self.removeElement(divElement);
+                  },
+                  self.options.duration
+                );
+              }
+            );
+          }
+          if (typeof this.options.destination !== "undefined") {
+            divElement.addEventListener(
+              "click",
+              (function(event) {
+                event.stopPropagation();
+                if (this.options.newWindow === true) {
+                  window.open(this.options.destination, "_blank");
+                } else {
+                  window.location = this.options.destination;
+                }
+              }).bind(this)
+            );
+          }
+          if (typeof this.options.onClick === "function" && typeof this.options.destination === "undefined") {
+            divElement.addEventListener(
+              "click",
+              (function(event) {
+                event.stopPropagation();
+                this.options.onClick();
+              }).bind(this)
+            );
+          }
+          if (typeof this.options.offset === "object") {
+            var x = getAxisOffsetAValue("x", this.options);
+            var y = getAxisOffsetAValue("y", this.options);
+            var xOffset = this.options.position == "left" ? x : "-" + x;
+            var yOffset = this.options.gravity == "toastify-top" ? y : "-" + y;
+            divElement.style.transform = "translate(" + xOffset + "," + yOffset + ")";
+          }
+          return divElement;
+        },
+        // Displaying the toast
+        showToast: function() {
+          this.toastElement = this.buildToast();
+          var rootElement;
+          if (typeof this.options.selector === "string") {
+            rootElement = document.getElementById(this.options.selector);
+          } else if (this.options.selector instanceof HTMLElement || typeof ShadowRoot !== "undefined" && this.options.selector instanceof ShadowRoot) {
+            rootElement = this.options.selector;
+          } else {
+            rootElement = document.body;
+          }
+          if (!rootElement) {
+            throw "Root element is not defined";
+          }
+          var elementToInsert = Toastify2.defaults.oldestFirst ? rootElement.firstChild : rootElement.lastChild;
+          rootElement.insertBefore(this.toastElement, elementToInsert);
+          Toastify2.reposition();
+          if (this.options.duration > 0) {
+            this.toastElement.timeOutValue = window.setTimeout(
+              (function() {
+                this.removeElement(this.toastElement);
+              }).bind(this),
+              this.options.duration
+            );
+          }
+          return this;
+        },
+        hideToast: function() {
+          if (this.toastElement.timeOutValue) {
+            clearTimeout(this.toastElement.timeOutValue);
+          }
+          this.removeElement(this.toastElement);
+        },
+        // Removing the element from the DOM
+        removeElement: function(toastElement) {
+          toastElement.className = toastElement.className.replace(" on", "");
+          window.setTimeout(
+            (function() {
+              if (this.options.node && this.options.node.parentNode) {
+                this.options.node.parentNode.removeChild(this.options.node);
+              }
+              if (toastElement.parentNode) {
+                toastElement.parentNode.removeChild(toastElement);
+              }
+              this.options.callback.call(toastElement);
+              Toastify2.reposition();
+            }).bind(this),
+            400
+          );
+        }
+      };
+      Toastify2.reposition = function() {
+        var topLeftOffsetSize = {
+          top: 15,
+          bottom: 15
+        };
+        var topRightOffsetSize = {
+          top: 15,
+          bottom: 15
+        };
+        var offsetSize = {
+          top: 15,
+          bottom: 15
+        };
+        var allToasts = document.getElementsByClassName("toastify");
+        var classUsed;
+        for (var i = 0; i < allToasts.length; i++) {
+          if (containsClass(allToasts[i], "toastify-top") === true) {
+            classUsed = "toastify-top";
+          } else {
+            classUsed = "toastify-bottom";
+          }
+          var height = allToasts[i].offsetHeight;
+          classUsed = classUsed.substr(9, classUsed.length - 1);
+          var offset = 15;
+          var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+          if (width <= 360) {
+            allToasts[i].style[classUsed] = offsetSize[classUsed] + "px";
+            offsetSize[classUsed] += height + offset;
+          } else {
+            if (containsClass(allToasts[i], "toastify-left") === true) {
+              allToasts[i].style[classUsed] = topLeftOffsetSize[classUsed] + "px";
+              topLeftOffsetSize[classUsed] += height + offset;
+            } else {
+              allToasts[i].style[classUsed] = topRightOffsetSize[classUsed] + "px";
+              topRightOffsetSize[classUsed] += height + offset;
+            }
+          }
+        }
+        return this;
+      };
+      function getAxisOffsetAValue(axis, options) {
+        if (options.offset[axis]) {
+          if (isNaN(options.offset[axis])) {
+            return options.offset[axis];
+          } else {
+            return options.offset[axis] + "px";
+          }
+        }
+        return "0px";
+      }
+      function containsClass(elem, yourClass) {
+        if (!elem || typeof yourClass !== "string") {
+          return false;
+        } else if (elem.className && elem.className.trim().split(/\s+/gi).indexOf(yourClass) > -1) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      Toastify2.lib.init.prototype = Toastify2.lib;
+      return Toastify2;
+    });
+  })(toastify$1);
+  return toastify$1.exports;
+}
+var toastifyExports = requireToastify();
+const Toastify = /* @__PURE__ */ getDefaultExportFromCjs(toastifyExports);
+const currentLang$2 = document.documentElement.lang;
+const getTranslation$1 = (key) => {
+  var _a;
+  return ((_a = translations[currentLang$2]) == null ? void 0 : _a[key]) || translations["uk"][key];
+};
+const showSuccessToast = () => {
+  Toastify({
+    text: getTranslation$1("successToastText"),
+    duration: 3e3,
+    close: true,
+    gravity: "top",
+    position: "center",
+    style: {
+      background: "linear-gradient(to right,rgba(69, 181, 127, 0.70),rgba(61, 201, 122, 0.70))"
+    },
+    stopOnFocus: true
+  }).showToast();
+};
+const showErrorToast = (errorText) => {
+  Toastify({
+    text: getTranslation$1("errorToastText"),
+    duration: 3e3,
+    close: true,
+    gravity: "top",
+    position: "center",
+    style: {
+      background: "linear-gradient(to right,rgba(255, 95, 108, 0.70),rgba(255, 139, 113, 0.7))"
+    },
+    stopOnFocus: true
+  }).showToast();
+};
 const currentLang$1 = document.documentElement.lang;
 const productOrderModalOverlay = document.getElementById("order-modal");
 const form$2 = document.getElementById("orderForm");
@@ -540,10 +893,9 @@ function sendOrder(feedback) {
     }
     return response.json();
   }).then((data) => {
-    console.log("Відповідь сервера:", data);
-    alert("Success");
+    showSuccessToast();
   }).catch((error) => {
-    console.error("Помилка:", error);
+    showErrorToast();
   });
 }
 const openProductOrderModal = (productId) => {
@@ -553,19 +905,23 @@ const openProductOrderModal = (productId) => {
   );
   const lang = currentLang$1 || "uk";
   orderTitle.innerText = `${title[lang]} (${volume[lang]})`;
-  form$2.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const orderForm = e.target;
-    const feedbackFormData = new FormData(e.target);
-    feedbackFormData.append("productId", id);
-    feedbackFormData.append("productTitle", title[lang]);
-    feedbackFormData.append("productVolume", volume[lang]);
-    feedbackFormData.append("productPrice", price);
-    const feedback = Object.fromEntries(feedbackFormData);
-    sendOrder(feedback);
-    orderForm.reset();
-    closeProductOrderModal();
-  });
+  form$2.addEventListener(
+    "submit",
+    (e) => {
+      e.preventDefault();
+      const orderForm = e.target;
+      const feedbackFormData = new FormData(e.target);
+      feedbackFormData.append("productId", id);
+      feedbackFormData.append("productTitle", title[lang]);
+      feedbackFormData.append("productVolume", volume[lang]);
+      feedbackFormData.append("productPrice", price);
+      const feedback = Object.fromEntries(feedbackFormData);
+      sendOrder(feedback);
+      orderForm.reset();
+      closeProductOrderModal();
+    },
+    { once: true }
+  );
 };
 const closeProductOrderModal = () => {
   productOrderModalOverlay.style.display = "none";
@@ -590,19 +946,16 @@ const sendInvitation = (invitation) => {
     }
     return response.json();
   }).then((data) => {
-    console.log("Відповідь сервера:", data);
-    alert("Success");
+    showSuccessToast();
   }).catch((error) => {
-    console.error("Помилка:", error);
+    showErrorToast();
   });
 };
 form$1.addEventListener("submit", (e) => {
   e.preventDefault();
-  alert("Invitation");
   const invForm = e.target;
   const invFormData = new FormData(invForm);
   const invUserData = Object.fromEntries(invFormData);
-  console.log(invUserData);
   sendInvitation(invUserData);
   invForm.reset();
 });
@@ -850,20 +1203,16 @@ const sendContact = (contact) => {
     }
     return response.json();
   }).then((data) => {
-    console.log("Відповідь сервера:", data);
-    alert("Success");
+    showSuccessToast();
   }).catch((error) => {
-    console.error(`Помилка: ${error}`);
+    showErrorToast();
   });
 };
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  alert("Send contact");
   const contactForm = e.target;
-  console.log(contactForm);
   const contactFormData = new FormData(contactForm);
   const contactUserData = Object.fromEntries(contactFormData);
-  console.log(contactUserData);
   sendContact(contactUserData);
   contactForm.reset();
 });

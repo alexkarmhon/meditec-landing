@@ -1,4 +1,12 @@
 @charset "UTF-8";
+:root {
+  --background-image: url("/meditec-landing/images/hero-background-en.svg");
+}
+
+html[lang=uk] {
+  --background-image: url("/meditec-landing/images/hero-background.svg");
+}
+
 /* roboto-condensed-100 - cyrillic_latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -1514,8 +1522,9 @@ section {
           align-items: center;
 }
 .header__logo img {
-  width: 110px;
+  width: 70px;
   height: auto;
+  margin: 0 1px;
   background-color: inherit;
 }
 .header__contacts-list {
@@ -2317,15 +2326,6 @@ section {
 .footer__link:hover {
   color: #c8aa76;
 }
-
-:root {
-  --background-image: url("/meditec-landing/images/hero-background-en.svg");
-}
-
-html[lang=uk] {
-  --background-image: url("/meditec-landing/images/hero-background.svg");
-}
-
 @media screen and (min-width: 425px){
   .contacts__address-link {
     font-family: "Calibri", sans-serif;
@@ -2335,13 +2335,11 @@ html[lang=uk] {
     line-height: 18px;
   }
 }
-
 @media screen and (min-width: 480px){
   .container {
     margin: 0 auto;
   }
 }
-
 @media screen and (min-width: 600px) and (max-width: 767px){
   .hero__slider-content {
     font-family: "Calibri", sans-serif;
@@ -2350,20 +2348,17 @@ html[lang=uk] {
     font-weight: 400;
   }
 }
-
 @media screen and (min-width: 667px){
   .to-top-btn__icon {
     width: 32px;
     height: 32px;
   }
 }
-
 @media screen and (min-height: 768px) and (orientation: landscape){
   .hero .container {
     min-height: 75vh;
   }
 }
-
 @media screen and (min-width: 768px){
   .subtitle {
     font-family: "Calibri", sans-serif;
@@ -2379,6 +2374,9 @@ html[lang=uk] {
     -webkit-justify-content: space-between;
        -moz-box-pack: justify;
             justify-content: space-between;
+  }
+  .header__logo img {
+    width: 110px;
   }
   .header__contacts-list {
     display: -webkit-box;
@@ -2557,7 +2555,6 @@ html[lang=uk] {
     grid-column: span 4/span 12;
   }
 }
-
 @media screen and (min-width: 768px) and (max-width: 1023px){
   .about__content {
     -webkit-box-orient: vertical;
@@ -2571,13 +2568,11 @@ html[lang=uk] {
     width: 100%;
   }
 }
-
 @media screen and (min-width: 768px) and (orientation: landscape){
   .mobile-menu {
     display: none;
   }
 }
-
 @media screen and (min-width: 1024px){
   .section__title {
     font-family: "Calibri", sans-serif;
@@ -2650,13 +2645,11 @@ html[lang=uk] {
             justify-content: space-between;
   }
 }
-
 @media screen and (min-width: 1024px) and (max-width: 1048px){
   .product-card__title {
     font-size: 16px;
   }
 }
-
 @media screen and (min-width: 1024px) and (orientation: landscape){
   .production__modal-content {
     width: 65vw;
@@ -2672,7 +2665,6 @@ html[lang=uk] {
     overflow: auto;
   }
 }
-
 @media screen and (min-width: 1440px){
   .product-card__title {
     font-family: "Roboto Condensed", Arial, sans-serif;
@@ -2681,7 +2673,6 @@ html[lang=uk] {
     line-height: 24px;
   }
 }
-
 @media screen and (min-width: 1440px) and (orientation: landscape){
   .production__modal-content {
     padding-top: 20px;
@@ -2715,7 +2706,6 @@ html[lang=uk] {
     scrollbar-width: thin;
   }
 }
-
 @media screen and (max-width: 1024px) and (orientation: landscape){
   .gallery__modal {
     padding: 40px;
@@ -2724,7 +2714,6 @@ html[lang=uk] {
     width: 600px;
   }
 }
-
 @media screen and (max-width: 1023px) and (orientation: landscape){
   .production__modal-content {
     overflow: auto;
@@ -2742,13 +2731,11 @@ html[lang=uk] {
     grid-column: span 6/span 12;
   }
 }
-
 @media screen and (max-height: 767px) and (orientation: landscape){
   .hero .container {
     min-height: 100vh;
   }
 }
-
 @media screen and (max-width: 767px) and (orientation: landscape){
   .production__modal-image-box {
     grid-column: span 7/span 12;
@@ -2763,7 +2750,6 @@ html[lang=uk] {
     grid-column: span 5/span 12;
   }
 }
-
 @media screen and (max-height: 430px) and (orientation: landscape){
   .gallery__modal {
     padding: 40px;
@@ -2771,4 +2757,97 @@ html[lang=uk] {
   .gallery__modal-slides {
     width: 280px;
   }
+}/*!
+ * Toastify js 1.12.0
+ * https://github.com/apvarun/toastify-js
+ * @license MIT licensed
+ *
+ * Copyright (C) 2018 Varun A P
+ */
+
+.toastify {
+    padding: 12px 20px;
+    color: #ffffff;
+    display: inline-block;
+    -webkit-box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+            box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+    background: -webkit-linear-gradient(315deg, #73a5ff, #5477f5);
+    background: -moz-linear-gradient(315deg, #73a5ff, #5477f5);
+    background: linear-gradient(135deg, #73a5ff, #5477f5);
+    position: fixed;
+    opacity: 0;
+    -webkit-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    -moz-transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    max-width: -webkit-calc(50% - 20px);
+    max-width: -moz-calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    z-index: 2147483647;
+}
+
+.toastify.on {
+    opacity: 1;
+}
+
+.toast-close {
+    background: transparent;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    opacity: 0.4;
+    padding: 0 5px;
+}
+
+.toastify-right {
+    right: 15px;
+}
+
+.toastify-left {
+    left: 15px;
+}
+
+.toastify-top {
+    top: -150px;
+}
+
+.toastify-bottom {
+    bottom: -150px;
+}
+
+.toastify-rounded {
+    border-radius: 25px;
+}
+
+.toastify-avatar {
+    width: 1.5em;
+    height: 1.5em;
+    margin: -7px 5px;
+    border-radius: 2px;
+}
+
+.toastify-center {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    max-width: -webkit-fit-content;
+    max-width: fit-content;
+    max-width: -moz-fit-content;
+}
+
+@media only screen and (max-width: 360px) {
+    .toastify-right, .toastify-left {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+    }
 }
