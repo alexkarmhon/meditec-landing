@@ -1,14 +1,6 @@
 @use '../utils/vars';
 @use '../utils/mixins';
 
-:root {
-  --background-image: url('/images/hero-background-en.svg');
-}
-
-html[lang='uk'] {
-  --background-image: url('/images/hero-background.svg');
-}
-
 .hero {
   position: relative;
   width: 100%;
