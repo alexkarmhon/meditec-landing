@@ -24,13 +24,6 @@
                 <li><a class="menu__lang-bar-link" href="/">Укр</a></li>
                 <li>
                   <a
-                    class="menu__lang-bar-link menu__lang-bar-link--ru"
-                    href="#"
-                    >Рус</a
-                  >
-                </li>
-                <li>
-                  <a
                     class="menu__lang-bar-link"
                     href="/meditec-landing/eng.html"
                     >Eng</a
@@ -105,11 +98,6 @@
                 <a href="/" class="mobile-menu__lang">Укр</a>
               </li>
               <li>
-                <a href="#" class="mobile-menu__lang mobile-menu__lang--ru"
-                  >Рус</a
-                >
-              </li>
-              <li>
                 <a href="/meditec-landing/eng.html" class="mobile-menu__lang"
                   >Eng</a
                 >
@@ -160,6 +148,7 @@
               </p>
               <ul id="product-list" class="production__list"></ul>
             </div>
+            <!-- Products modals -->
             <div id="production-modal" class="modal-overlay">
               <button class="modal-close-btn" onclick="closeProductCardModal()">
                 <img src="/images/icons/x-mark.svg" alt="close button icon" />
@@ -187,6 +176,7 @@
                       type="text"
                       class="form__input"
                       placeholder=" "
+                      required
                     />
                     <label for="contact-user-name" class="form__label"
                       >Ваше Ім'я</label
@@ -195,10 +185,11 @@
                   <div class="form__input-group">
                     <input
                       id="order-user-email"
-                      name="email"
                       type="email"
+                      name="email"
                       class="form__input"
                       placeholder=" "
+                      required
                     />
                     <label for="contact-user-email" class="form__label"
                       >Ваш Email</label
@@ -212,6 +203,7 @@
                       name="tel"
                       class="form__input"
                       placeholder=" "
+                      required
                     />
                     <label for="contact-user-tel" class="form__label"
                       >Ваш Телефон</label
@@ -224,11 +216,12 @@
                   >
                     <div class="form__captcha">
                       <input
-                        type="text"
                         id="captcha_form"
+                        type="text"
                         name="captcha"
                         class="form__input form__input--captcha"
                         placeholder=" "
+                        required
                       />
                       <label
                         for="captcha_form"
@@ -320,9 +313,10 @@
                     <input
                       id="inv-form-name"
                       type="text"
-                      class="form__input"
                       name="name"
+                      class="form__input"
                       placeholder=" "
+                      required
                     />
                     <label for="inv-form-name" class="form__label"
                       >Ваше Ім'я</label
@@ -333,9 +327,10 @@
                     <input
                       id="inv-form-email"
                       type="email"
-                      class="form__input"
                       name="email"
+                      class="form__input"
                       placeholder=" "
+                      required
                     />
                     <label for="inv-form-email" class="form__label"
                       >Ваш Email</label
@@ -346,9 +341,10 @@
                     <input
                       id="inv-form-tel"
                       type="tel"
-                      class="form__input"
                       name="tel"
+                      class="form__input"
                       placeholder=" "
+                      required
                     />
                     <label for="inv-form-tel" class="form__label"
                       >Ваш Телефон</label
@@ -363,11 +359,12 @@
                   >
                     <div class="form__captcha">
                       <input
-                        type="text"
                         id="captcha_form"
+                        type="text"
                         name="captcha"
                         class="form__input form__input--captcha"
                         placeholder=" "
+                        required
                       />
                       <label
                         for="captcha_form"
@@ -716,9 +713,10 @@
                   <input
                     id="contact-user-name"
                     type="text"
-                    class="form__input"
                     name="name"
+                    class="form__input"
                     placeholder=" "
+                    required
                   />
                   <label for="contact-user-name" class="form__label"
                     >Ваше Ім'я</label
@@ -731,6 +729,7 @@
                     name="email"
                     class="form__input"
                     placeholder=" "
+                    required
                   />
                   <label for="contact-user-email" class="form__label"
                     >Ваш Email</label
@@ -744,6 +743,7 @@
                     name="tel"
                     class="form__input"
                     placeholder=" "
+                    required
                   />
                   <label for="contact-user-tel" class="form__label"
                     >Ваш Телефон</label
@@ -753,10 +753,11 @@
                 <div class="form__input-group form__input-group--textarea">
                   <textarea
                     id="contact-user-message"
+                    name="message"
                     class="form__input form__input--textarea"
                     rows="4"
                     placeholder=" "
-                    name="message"
+                    required
                   ></textarea>
                   <label for="contact-user-message" class="form__label"
                     >Повідомлення</label
