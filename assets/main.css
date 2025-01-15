@@ -1426,10 +1426,12 @@ section {
           transform: translate(-50%, -50%);
   width: 90vw;
   max-width: 500px;
-  height: 80vh;
+  max-height: 80vh;
+  height: auto;
   padding: 12px;
   background: #f8fcfd;
   background-color: white;
+  overflow-y: auto;
 }
 .order__subtitle {
   font-family: "Roboto Condensed", Arial, sans-serif;
@@ -1447,6 +1449,22 @@ section {
   font-weight: 300;
   display: block;
   color: #828282;
+}
+.order__form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  overflow-y: auto; /* Додайте це для забезпечення прокручування */
 }
 
 .to-top-btn {
