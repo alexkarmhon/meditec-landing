@@ -1,3 +1,11 @@
+:root {
+  --background-image: url('/images/hero-background-en.svg');
+}
+
+html[lang='uk'] {
+  --background-image: url('/images/hero-background.svg');
+}
+
 $main-title-color: #6d6d6d;
 $section-title-color: #66696c;
 $sub-title-color: #66696c;

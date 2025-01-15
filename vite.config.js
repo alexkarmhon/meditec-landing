@@ -1,13 +1,13 @@
-import imagemin from "imagemin";
-import imageminWebp from "imagemin-webp";
-import path from "path";
-import { defineConfig } from "vite";
-import glob from "fast-glob";
-import { fileURLToPath } from "url";
-import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import imagemin from 'imagemin';
+import imageminWebp from 'imagemin-webp';
+import path from 'path';
+import { defineConfig } from 'vite';
+import glob from 'fast-glob';
+import { fileURLToPath } from 'url';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
-  base: "/meditec-landing/" || "/",
+  base: '/meditec-landing/' || '/',
   plugins: [
     ViteImageOptimizer({
       png: {
@@ -21,19 +21,19 @@ export default defineConfig({
       },
     }),
     {
-      ...imagemin(["./src/img/**/*.{jpg,png,jpeg}"], {
-        destination: "./src/img/webp/",
+      ...imagemin(['./src/img/**/*.{jpg,png,jpeg}'], {
+        destination: './src/img/webp/',
         plugins: [imageminWebp({ quality: 86 })],
       }),
-      apply: "serve",
+      apply: 'serve',
     },
   ],
   build: {
-    minify: false, // disable minification
+    minify: false,
     rollupOptions: {
       input: Object.fromEntries(
         glob
-          .sync(["./*.html", "./pages/**/*.html"])
+          .sync(['./*.html', './pages/**/*.html'])
           .map((file) => [
             path.relative(
               __dirname,
@@ -43,17 +43,8 @@ export default defineConfig({
           ])
       ),
       output: {
-        assetFileNames: "assets/[name].[ext]",
-        publicPath: "/meditec-landing/",
-      },
-    },
-  },
-  server: {
-    proxy: {
-      "/api/send-email": {
-        target: "https://api.sendgrid.com/v3/mail/send",
-        changeOrigin: true,
-        secure: false,
+        assetFileNames: 'assets/[name].[ext]',
+        publicPath: '/meditec-landing/',
       },
     },
   },

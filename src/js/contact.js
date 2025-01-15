@@ -1,12 +1,14 @@
-const form = document.getElementById("contact-form");
+import { showSuccessToast, showErrorToast } from './toasts';
+
+const form = document.getElementById('contact-form');
 // const BASE_URL = "http://localhost:3000"; //for localhost
-const BASE_URL = "https://meditec-landing.vercel.app";
+const BASE_URL = 'https://meditec-landing.vercel.app';
 
 const sendContact = (contact) => {
   fetch(`${BASE_URL}/api/contact`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(contact),
   })
@@ -17,23 +19,19 @@ const sendContact = (contact) => {
       return response.json();
     })
     .then((data) => {
-      console.log("Відповідь сервера:", data);
-      alert("Success");
+      showSuccessToast();
     })
     .catch((error) => {
-      console.error(`Помилка: ${error}`);
+      showErrorToast();
     });
 };
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  alert("Send contact");
 
   const contactForm = e.target;
-  console.log(contactForm);
   const contactFormData = new FormData(contactForm);
   const contactUserData = Object.fromEntries(contactFormData);
-  console.log(contactUserData);
   sendContact(contactUserData);
 
   contactForm.reset();

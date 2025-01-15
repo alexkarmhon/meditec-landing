@@ -1,4 +1,5 @@
 import { products } from './products';
+import { showSuccessToast, showErrorToast } from './toasts';
 
 const currentLang = document.documentElement.lang;
 const productOrderModalOverlay = document.getElementById('order-modal');
@@ -22,11 +23,10 @@ function sendOrder(feedback) {
       return response.json();
     })
     .then((data) => {
-      console.log('Відповідь сервера:', data);
-      alert('Success');
+      showSuccessToast();
     })
     .catch((error) => {
-      console.error('Помилка:', error);
+      showErrorToast();
     });
 }
 
@@ -41,20 +41,24 @@ const openProductOrderModal = (productId) => {
 
   orderTitle.innerText = `${title[lang]} (${volume[lang]})`;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const orderForm = e.target;
-    const feedbackFormData = new FormData(e.target);
-    feedbackFormData.append('productId', id);
-    feedbackFormData.append('productTitle', title[lang]);
-    feedbackFormData.append('productVolume', volume[lang]);
-    feedbackFormData.append('productPrice', price);
+  form.addEventListener(
+    'submit',
+    (e) => {
+      e.preventDefault();
+      const orderForm = e.target;
+      const feedbackFormData = new FormData(e.target);
+      feedbackFormData.append('productId', id);
+      feedbackFormData.append('productTitle', title[lang]);
+      feedbackFormData.append('productVolume', volume[lang]);
+      feedbackFormData.append('productPrice', price);
 
-    const feedback = Object.fromEntries(feedbackFormData);
-    sendOrder(feedback);
-    orderForm.reset();
-    closeProductOrderModal();
-  });
+      const feedback = Object.fromEntries(feedbackFormData);
+      sendOrder(feedback);
+      orderForm.reset();
+      closeProductOrderModal();
+    },
+    { once: true }
+  );
 };
 
 const closeProductOrderModal = () => {

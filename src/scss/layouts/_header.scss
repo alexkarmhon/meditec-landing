@@ -31,8 +31,9 @@
     align-items: center;
 
     img {
-      width: 110px;
+      width: 70px;
       height: auto;
+      margin: 0 1px;
       background-color: inherit;
     }
   }
@@ -57,6 +58,11 @@
   .header {
     &__nav-bar {
       justify-content: space-between;
+    }
+    &__logo {
+      img {
+        width: 110px;
+      }
     }
     &__contacts-list {
       display: flex;

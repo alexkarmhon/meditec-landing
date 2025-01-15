@@ -28,11 +28,3 @@
 @use 'layouts/partners';
 @use 'layouts/contacts';
 @use 'layouts/footer';
-
-:root {
-  --background-image: url('/images/hero-background-en.svg');
-}
-
-html[lang='uk'] {
-  --background-image: url('/images/hero-background.svg');
-}

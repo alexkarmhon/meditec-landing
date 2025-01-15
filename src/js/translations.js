@@ -11,6 +11,8 @@ export const translations = {
     back: 'Назад',
     patentsUA: 'База патентів України',
     patentsUSSR: 'База патентів СРСР',
+    successToastText: 'Успішно надіслано!',
+    errorToastText: 'Помилка відправки!',
   },
   en: {
     specialBadge: '(Special Offer)',
@@ -24,5 +26,7 @@ export const translations = {
     back: 'Back',
     patentsUA: 'Patent database of Ukraine',
     patentsUSSR: 'Patent database of USSR',
+    successToastText: 'Successfully sent!',
+    errorToastText: 'Sending error!',
   },
 };

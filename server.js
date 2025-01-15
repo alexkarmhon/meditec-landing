@@ -1,32 +1,31 @@
-import express from "express";
-import bodyParser from "body-parser";
-import nodemailer from "nodemailer";
-import cors from "cors";
-import dotenv from "dotenv";
+import express from 'express';
+import bodyParser from 'body-parser';
+import nodemailer from 'nodemailer';
+import cors from 'cors';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
 const app = express();
 
-// Використання CORS
 app.use(
   cors({
     origin: [
-      "http://localhost:4173",
-      "http://localhost:5173",
-      "https://meditec-landing.vercel.app",
-    ], // URL вашого клієнтського додатка
+      'http://localhost:4173',
+      'http://localhost:5173',
+      'https://meditec-landing.vercel.app',
+    ],
   })
 );
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.send("Сервер працює. Ви перебуваєте на кореневій сторінці.");
+app.get('/', (req, res) => {
+  res.send('Сервер працює. Ви перебуваєте на кореневій сторінці.');
 });
 
-app.post("/api/order", async (req, res) => {
+app.post('/api/order', async (req, res) => {
   const {
     name,
     email,
@@ -39,9 +38,9 @@ app.post("/api/order", async (req, res) => {
   } = req.body;
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com", // Вказуємо SMTP-сервер Gmail
-    port: 465, // Порт для захищеного з'єднання (SSL/TLS)
-    secure: true, // true для порту 465, false для інших
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.VITE_APP_USER,
       pass: process.env.VITE_APP_PASS,
@@ -53,7 +52,7 @@ app.post("/api/order", async (req, res) => {
 
   const mailOptions = {
     from: `${email}`,
-    to: "89o.kh89@gmail.com",
+    to: '89o.kh89@gmail.com',
     subject: `Повідомлення від ${name}`,
     text: `
       Повідомлення від: ${name}, тел: ${tel}, email: ${email} 
@@ -67,18 +66,18 @@ app.post("/api/order", async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: "Лист успішно відправлено!" });
+    res.status(200).json({ message: 'Лист успішно відправлено!' });
   } catch (error) {
-    res.status(500).send("Помилка відправки листа.");
-    res.status(500).json({ error: "Помилка відправки листа." });
+    res.status(500).send('Помилка відправки листа.');
+    res.status(500).json({ error: 'Помилка відправки листа.' });
   }
 });
 
-app.post("/api/invitation", async (req, res) => {
+app.post('/api/invitation', async (req, res) => {
   const { name, email, tel, captcha } = req.body;
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: {
@@ -92,7 +91,7 @@ app.post("/api/invitation", async (req, res) => {
 
   const mailOptions = {
     from: `${email}`,
-    to: "89o.kh89@gmail.com",
+    to: '89o.kh89@gmail.com',
     subject: `Повідомлення від ${name}`,
     text: `
       Повідомлення від: ${name}, тел: ${tel}, email: ${email} 
@@ -102,18 +101,18 @@ app.post("/api/invitation", async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: "Лист успішно відправлено" });
+    res.status(200).json({ message: 'Лист успішно відправлено' });
   } catch (error) {
-    res.status(500).send("Помилка відправки листа.");
-    res.status(500).json({ error: "Помилка відправки листа." });
+    res.status(500).send('Помилка відправки листа.');
+    res.status(500).json({ error: 'Помилка відправки листа.' });
   }
 });
 
-app.post("/api/contact", async (req, res) => {
+app.post('/api/contact', async (req, res) => {
   const { name, email, tel, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: {
@@ -127,7 +126,7 @@ app.post("/api/contact", async (req, res) => {
 
   const mailOptions = {
     from: `${email}`,
-    to: "89o.kh89@gmail.com",
+    to: '89o.kh89@gmail.com',
     subject: `Повідомлення від ${name}`,
     text: `
       Повідомлення від: ${name}, тел: ${tel}, email: ${email}  
@@ -136,11 +135,11 @@ app.post("/api/contact", async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: "Лист успішно відправлено" });
+    res.status(200).json({ message: 'Лист успішно відправлено' });
   } catch (error) {
-    res.status(500).send("Помилка відправки листа.");
-    res.status(500).json({ error: "Помилка відправки листа." });
+    res.status(500).send('Помилка відправки листа.');
+    res.status(500).json({ error: 'Помилка відправки листа.' });
   }
 });
 
-app.listen(3000, () => console.log("Сервер запущено на http://localhost:3000"));
+app.listen(3000, () => console.log('Сервер запущено на http://localhost:3000'));

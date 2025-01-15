@@ -1,11 +1,14 @@
-const form = document.getElementById("inv-form");
+import { showSuccessToast, showErrorToast } from './toasts';
+
+const form = document.getElementById('inv-form');
 // const BASE_URL = "http://localhost:3000"; //for localhost
-const BASE_URL = "https://meditec-landing.vercel.app";
+const BASE_URL = 'https://meditec-landing.vercel.app';
+
 const sendInvitation = (invitation) => {
   fetch(`${BASE_URL}/api/invitation`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(invitation),
   })
@@ -16,22 +19,19 @@ const sendInvitation = (invitation) => {
       return response.json();
     })
     .then((data) => {
-      console.log("Відповідь сервера:", data);
-      alert("Success");
+      showSuccessToast();
     })
     .catch((error) => {
-      console.error("Помилка:", error);
+      showErrorToast();
     });
 };
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  alert("Invitation");
 
   const invForm = e.target;
   const invFormData = new FormData(invForm);
   const invUserData = Object.fromEntries(invFormData);
-  console.log(invUserData);
   sendInvitation(invUserData);
 
   invForm.reset();
