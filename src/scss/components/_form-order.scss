@@ -1,5 +1,5 @@
-@use "../utils/vars";
-@use "../utils/mixins";
+@use '../utils/vars';
+@use '../utils/mixins';
 
 .order {
   position: absolute;
@@ -8,10 +8,12 @@
   transform: translate(-50%, -50%);
   width: 90vw;
   max-width: 500px;
-  height: 80vh;
+  max-height: 80vh;
+  height: auto;
   padding: 12px;
   background: vars.$background-color-section-main;
   background-color: white;
+  overflow-y: auto;
 
   &__subtitle {
     @include mixins.roboto-condensed(24px, 300);
@@ -26,5 +28,14 @@
       display: block;
       color: #828282;
     }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    overflow-y: auto; /* Додайте це для забезпечення прокручування */
   }
 }
