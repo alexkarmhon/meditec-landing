@@ -1543,14 +1543,6 @@ section {
 .menu {
   display: none;
 }
-:root {
-  --background-image: url("/meditec-landing/images/hero-background-en.svg");
-}
-
-html[lang=uk] {
-  --background-image: url("/meditec-landing/images/hero-background.svg");
-}
-
 .hero {
   position: relative;
   width: 100%;
@@ -2325,6 +2317,15 @@ html[lang=uk] {
 .footer__link:hover {
   color: #c8aa76;
 }
+
+:root {
+  --background-image: url("/meditec-landing/images/hero-background-en.svg");
+}
+
+html[lang=uk] {
+  --background-image: url("/meditec-landing/images/hero-background.svg");
+}
+
 @media screen and (min-width: 425px){
   .contacts__address-link {
     font-family: "Calibri", sans-serif;
@@ -2334,11 +2335,13 @@ html[lang=uk] {
     line-height: 18px;
   }
 }
+
 @media screen and (min-width: 480px){
   .container {
     margin: 0 auto;
   }
 }
+
 @media screen and (min-width: 600px) and (max-width: 767px){
   .hero__slider-content {
     font-family: "Calibri", sans-serif;
@@ -2347,17 +2350,20 @@ html[lang=uk] {
     font-weight: 400;
   }
 }
+
 @media screen and (min-width: 667px){
   .to-top-btn__icon {
     width: 32px;
     height: 32px;
   }
 }
+
 @media screen and (min-height: 768px) and (orientation: landscape){
   .hero .container {
     min-height: 75vh;
   }
 }
+
 @media screen and (min-width: 768px){
   .subtitle {
     font-family: "Calibri", sans-serif;
@@ -2551,6 +2557,7 @@ html[lang=uk] {
     grid-column: span 4/span 12;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1023px){
   .about__content {
     -webkit-box-orient: vertical;
@@ -2564,11 +2571,13 @@ html[lang=uk] {
     width: 100%;
   }
 }
+
 @media screen and (min-width: 768px) and (orientation: landscape){
   .mobile-menu {
     display: none;
   }
 }
+
 @media screen and (min-width: 1024px){
   .section__title {
     font-family: "Calibri", sans-serif;
@@ -2641,11 +2650,13 @@ html[lang=uk] {
             justify-content: space-between;
   }
 }
+
 @media screen and (min-width: 1024px) and (max-width: 1048px){
   .product-card__title {
     font-size: 16px;
   }
 }
+
 @media screen and (min-width: 1024px) and (orientation: landscape){
   .production__modal-content {
     width: 65vw;
@@ -2661,6 +2672,7 @@ html[lang=uk] {
     overflow: auto;
   }
 }
+
 @media screen and (min-width: 1440px){
   .product-card__title {
     font-family: "Roboto Condensed", Arial, sans-serif;
@@ -2669,6 +2681,7 @@ html[lang=uk] {
     line-height: 24px;
   }
 }
+
 @media screen and (min-width: 1440px) and (orientation: landscape){
   .production__modal-content {
     padding-top: 20px;
@@ -2702,6 +2715,7 @@ html[lang=uk] {
     scrollbar-width: thin;
   }
 }
+
 @media screen and (max-width: 1024px) and (orientation: landscape){
   .gallery__modal {
     padding: 40px;
@@ -2710,6 +2724,7 @@ html[lang=uk] {
     width: 600px;
   }
 }
+
 @media screen and (max-width: 1023px) and (orientation: landscape){
   .production__modal-content {
     overflow: auto;
@@ -2727,11 +2742,13 @@ html[lang=uk] {
     grid-column: span 6/span 12;
   }
 }
+
 @media screen and (max-height: 767px) and (orientation: landscape){
   .hero .container {
     min-height: 100vh;
   }
 }
+
 @media screen and (max-width: 767px) and (orientation: landscape){
   .production__modal-image-box {
     grid-column: span 7/span 12;
@@ -2746,6 +2763,7 @@ html[lang=uk] {
     grid-column: span 5/span 12;
   }
 }
+
 @media screen and (max-height: 430px) and (orientation: landscape){
   .gallery__modal {
     padding: 40px;
