@@ -464,6 +464,8 @@ const slides = document.getElementsByClassName("gallery__modal-slide");
 const dots = document.getElementsByClassName("gallery__modal-image-demo");
 const captionText = document.getElementById("caption");
 let slideIndex = 1;
+let startX = 0;
+let endX = 0;
 function openModal() {
   modal.style.display = "block";
 }
@@ -500,16 +502,30 @@ modal.addEventListener("click", (e) => {
     closeModal();
   }
 });
-window.openModal = openModal;
-window.closeModal = closeModal;
-window.currentSlide = currentSlide;
-window.plusSlides = plusSlides;
 images.forEach((img, index) => {
   img.addEventListener("click", () => {
     openModal();
     currentSlide(index + 1);
   });
 });
+modal.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+modal.addEventListener("touchmove", (e) => {
+  endX = e.touches[0].clientX;
+});
+modal.addEventListener("touchend", () => {
+  const swipeThreshold = 50;
+  if (startX - endX > swipeThreshold) {
+    plusSlides(1);
+  } else if (endX - startX > swipeThreshold) {
+    plusSlides(-1);
+  }
+});
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.currentSlide = currentSlide;
+window.plusSlides = plusSlides;
 let lastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
   const header = document.querySelector(".header");
