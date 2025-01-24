@@ -1,8 +1,8 @@
-import '../scss/style.scss';
+import '/src/scss/style.scss';
 
-import '../js/translations';
+import '/src/js/translations';
 
-import '../js/heroSlider';
+import '/src/js/heroSlider';
 
 import '/src/js/mobile-menu.js';
 
@@ -25,5 +25,7 @@ import '/src/js/patents';
 import '/src/js/contact';
 
 import '/src/js/scrollToTop';
+
+import '/src/js/scroll-animation';
 
 console.log('Hello. If you see this string - code is normal');
